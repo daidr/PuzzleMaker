@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html xmlns:wb="http://open.weibo.com/wb">
+<head>
+  <meta charset="utf-8">
+  <meta name="google" value="notranslate">
+  <link rel="shortcut icon" href="favicon.ico">
+  <meta property="wb:webmaster" content="bf28000a534b6657" />
+  <title>拼图式编写插件</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="help/style.css">
+  <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="iconfont/material-icons.css">
+  <link rel="stylesheet" href="css/Lobibox.min.css">
+  <script type=text/javascript src="js/Base64.js"></script>
+  <script>
+	var serverpath = "http://cqpm.daidr.me/code/apps/";
+  </script>
+
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="js/jquery-ui-1.10.4.min.js"></script>
+  <script src="face/face.js"></script>
+  <script src="js/jquery.mCustomScrollbar.min.js"></script>
+  <script src="js/jquery.ba-resize.min.js"></script>
+  <script src="//tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=4031974087" type="text/javascript" charset="utf-8"></script>
+  
+  
+</head>
+<body>
+  <table width="100%" height="100%">
+    <tr>
+      <td colspan=2>
+        <table width="100%">
+          <tr id="tabRow" height="1em">
+            <td id="tab_blocks" class="tabon">...</td>
+			
+            <td class="tabmax">
+			  <a class="score" href="#"></a>
+			  <wb:login-button type="2,5" onlogin="login" onlogout="logout" style="top: -9px;position: relative;">登录按钮</wb:login-button>
+			  <button id="docButton" class="notext" style="padding:1px 7px" title="...">
+				<i class="material-icons" style="font-size:27px;color:#5f5f5f;">live_help</i>
+              </button>
+			  <table style="margin-bottom: -2px;height: 28px;border-left: 2px solid #aaa;display: inline-block;"></table>
+			  <select name="projectid" class="projectid">
+				<option value="temp">浏览器本地缓存</option>
+			  </select>
+			  <button id="switchButton" class="notext" style="padding:1px 7px;display:none" title="...">
+				<i class="material-icons" style="font-size:27px;color:#5f5f5f;">settings_input_svideo</i>
+              </button>
+			  <button id="pullButton" class="notext" style="padding:1px 7px;display:none" title="...">
+				<i class="material-icons" style="font-size:27px;color:#5f5f5f;">cloud_download</i>
+              </button>
+			  <button id="saveButton" class="notext" style="padding:1px 7px;display:none" title="...">
+				<i class="material-icons" style="font-size:27px;color:#5f5f5f;">cloud_upload</i>
+              </button>
+			  <table style="margin-bottom: -2px;height: 28px;border-left: 2px solid #aaa;display: inline-block;"></table>
+			  <input id="addcqwpk" type="file" name="addcqwpk" style="display: none;" accept="application/xml" />
+			  <button id="addButton" class="notext" style="padding:1px 7px" title="...">
+				<i class="material-icons" style="font-size:27px;color:#5f5f5f;">publish</i>
+              </button>
+			  <input id="loadcqwpk" type="file" name="loadcqwpk" style="display: none;" accept="application/xml" />
+			  <button id="loadButton" class="notext" style="padding:1px 7px" title="...">
+				<i class="material-icons" style="font-size:27px;color:#5f5f5f;">file_upload</i>
+              </button>
+			  <table style="margin-bottom: -2px;height: 28px;border-left: 2px solid #aaa;display: inline-block;"></table>
+			  <button id="downloadButton" class="notext" style="padding:1px 7px" title="...">
+				<i class="material-icons" style="font-size:27px;color:#5f5f5f;">save</i>
+              </button>
+			  <button id="temporaryButton" class="notext" style="padding:1px 7px" title="...">
+				<i class="material-icons" style="font-size:27px;color:#5f5f5f;">sd_card</i>
+              </button>
+			  <table style="margin-bottom: -2px;height: 28px;border-left: 2px solid #aaa;display: inline-block;"></table>
+			  <button id="trashButton" class="notext primary" style="padding:1px 7px" title="...">
+				<i class="material-icons" style="font-size:27px;">delete</i>
+              </button>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td height="99%" colspan=2 id="content_area">
+      </td>
+    </tr>
+  </table>
+  <div id="content_blocks" class="content"></div>
+  <div id="content_doc" class="content" style="visibility: visible; top: 36px; right: 0px;position: absolute;"><div id="content_doc_in"></div></div>
+  <div></div>
+<xml id="toolbox" style="display: none"></xml>
+
+  <script src="blockly_compressed.js"></script>
+  <script src="msg/zh-hans.js"></script>
+  <script src="msg/zh-hans_2.js"></script>
+  <!-- 拼图载入 -->
+  <script src="blocks/math.js"></script>
+  <script src="blocks/text.js"></script>
+  <script src="blocks/loops.js"></script>
+  <script src="blocks/procedures.js"></script>
+  <script src="blocks/colour.js"></script>
+  <script src="blocks/logic.js"></script>
+  <script src="blocks/lists.js"></script>
+  <script src="blocks/variables.js"></script>
+  <script src="blocks/cqcode.js"></script>
+  <script src="blocks/cqevent.js"></script>
+  <script src="blocks/cqfunc.js"></script>
+  <script src="blocks/sysdisk.js"></script>
+
+  <script src="javascript.js"></script>
+  <script src="blocks/generators/math.js"></script>
+  <script src="blocks/generators/text.js"></script>
+  <script src="blocks/generators/loops.js"></script>
+  <script src="blocks/generators/procedures.js"></script>
+  <script src="blocks/generators/colour.js"></script>
+  <script src="blocks/generators/logic.js"></script>
+  <script src="blocks/generators/lists.js"></script>
+  <script src="blocks/generators/variables.js"></script>
+  <script src="blocks/generators/cqcode.js"></script>
+  <script src="blocks/generators/cqevent.js"></script>
+  <script src="blocks/generators/cqfunc.js"></script>
+  <script src="blocks/generators/sysdisk.js"></script>
+  <!-- 拼图载入 -->
+  
+  <script src="js/lobibox.min.js"></script>
+  <script src="js/des.js"></script>
+  <script src="js/code.js"></script>
+  <script src="js/buttonevents.js"></script>
+  <script>
+    var user;
+  	function login(o) {
+		user = o;
+		console.log(o);
+		cusnotify('success','mini',true,5000,MSG['LoginSuccessful'].replace('%1', o.screen_name),false);
+		$.post(serverpath + "score.php",{id:o.idstr},function(result){
+			$(".score").html("积分:" + result);
+		});
+		$(".projectid").append("<option value=\"1\">代码槽位 1</option><option value=\"2\">代码槽位 2</option><option value=\"3\">代码槽位 3</option><option value=\"4\">代码槽位 4</option><option value=\"5\">代码槽位 5</option>");
+	}
+	 
+	function logout() {
+		$(".score").html("");
+		cusnotify('success','mini',true,5000,MSG['LoginoutSuccessful'],false);
+		$(".projectid").html("<option value=\"temp\">浏览器本地缓存</option>");
+	}
+  </script>
+</body>
+</html>
