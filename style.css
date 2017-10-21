@@ -223,5 +223,8 @@ button {
     line-height: 40px;
 }
 
+a[title='站长统计'] {
+    display: none;
+}
 
 .projectid::-ms-expand { display: none; }
