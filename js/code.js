@@ -364,10 +364,13 @@ Code.discard = function() {
   if (count < 2 ||
       window.confirm(Blockly.Msg.DELETE_ALL_BLOCKS.replace('%1', count))) {
     Code.workspace.clear();
+	_czc.push(["_trackEvent", "菜单", "清空拼图", user.idstr, "确认操作", "trashButton"]);
 	cusnotify('success','mini',true,3000,MSG['DeleteBlocksSuccessful'].replace('%1', count));
     if (window.location.hash) {
       window.location.hash = '';
-    }
+    } else {
+	  _czc.push(["_trackEvent", "菜单", "清空拼图", user.idstr, "取消操作", "trashButton"]);
+	}
   }
   
 };
