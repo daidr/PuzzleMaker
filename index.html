@@ -8,11 +8,7 @@
   <title>拼图式编写插件</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="help/style.css">
-  <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
-  <link rel="stylesheet" href="iconfont/material-icons.css">
-  <link rel="stylesheet" href="css/Lobibox.min.css">
   <script src="https://s19.cnzz.com/z_stat.php?id=1265534042&web_id=1265534042" language="JavaScript"></script>
-  <script type="text/javascript" src="js/Base64.js"></script>
   <script>
 	var serverpath = "https://cqpm.daidr.me/code/apps/";
   </script>
@@ -21,17 +17,48 @@
 	var _czc = _czc || [];
 	_czc.push(["_setAccount", "1265534042"]);
   </script>
+  <style>
+	  .loading-page {
+	  background:#e0e0e0;
+	  position: fixed;
+	  top:0px;
+	  bottom:0px;
+	  left:0px;
+	  right:0px;
+	  z-index:9999;
 
-  <script src="js/jquery-3.2.1.min.js"></script>
-  <script src="js/jquery-ui-1.10.4.min.js"></script>
-  <script src="face/face.js"></script>
-  <script src="js/jquery.mCustomScrollbar.min.js"></script>
-  <script src="js/jquery.ba-resize.min.js"></script>
+	  display: -webkit-box;
+	  -webkit-box-orient: horizontal;
+	  -webkit-box-pack: center;
+	  -webkit-box-align: center;
+	  
+	  display: -moz-box;
+	  -moz-box-orient: horizontal;
+	  -moz-box-pack: center;
+	  -moz-box-align: center;
+	  
+	  display: -o-box;
+	  -o-box-orient: horizontal;
+	  -o-box-pack: center;
+	  -o-box-align: center;
+	  
+	  display: -ms-box;
+	  -ms-box-orient: horizontal;
+	  -ms-box-pack: center;
+	  -ms-box-align: center;
+	  
+	  display: box;
+	  box-orient: horizontal;
+	  box-pack: center;
+	  box-align: center;
+	}
+  </style>
   <script src="//tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=4031974087" type="text/javascript" charset="utf-8"></script>
   
   
 </head>
 <body>
+  <div class="loading-page"><img alt="loading" height="450" src="loading.gif" /></div>
   <table width="100%" height="100%">
     <tr>
       <td colspan=2>
@@ -93,6 +120,15 @@
   <div></div>
 <xml id="toolbox" style="display: none"></xml>
 
+  <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="iconfont/material-icons.css">
+  <link rel="stylesheet" href="css/Lobibox.min.css">
+  <script type="text/javascript" src="js/Base64.js"></script>
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="js/jquery-ui-1.10.4.min.js"></script>
+  <script src="face/face.js"></script>
+  <script src="js/jquery.mCustomScrollbar.min.js"></script>
+  <script src="js/jquery.ba-resize.min.js"></script>
   <script src="blockly_compressed.js"></script>
   <script src="msg/zh-hans.js"></script>
   <script src="msg/zh-hans_2.js"></script>
@@ -148,5 +184,6 @@
 		$(".projectid").html("<option value=\"temp\">浏览器本地缓存</option>");
 	}
   </script>
+  <script>$(".loading-page").slideToggle();</script>
 </body>
 </html>
