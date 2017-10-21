@@ -224,13 +224,11 @@ $('#docButton').click(function() {
 	$("#content_doc").animate({width:"30%"});
 	setTimeout("SVGResizeFun()",400);
 	setTimeout("DOCINResizeFun()",400);
-	return;
    } else {
 	isDocOpen = 0;
 	$("#content_blocks").animate({width:"100%"});
 	$("#content_doc").animate({width:"0px"});
 	setTimeout("SVGResizeFun()",400);
-	return;
    }
    _czc.push(["_trackEvent", "菜单", "帮助文档", "被单击",user.idstr, "docButton"]);
 });
