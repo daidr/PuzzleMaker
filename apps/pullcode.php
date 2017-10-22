@@ -38,7 +38,7 @@ $pid_num = $uid . "-" . $pid;
 
 $result = $conn -> query("SELECT style FROM cqpmcodes WHERE `pid`='$pid_num'");　　
 $row = $result -> fetch_row();
-$thestyle = $row['style'];
+$thestyle = $row[0];
 if($thestyle == ""){
 	echo "empty";
 	exit;
