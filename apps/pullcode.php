@@ -1,5 +1,5 @@
 <?php
-error_reporting(0);
+
 require("conn.php");
 $uid = $_COOKIE["cqpm_uid"];
 $account = $_COOKIE["weibojs_4031974087"];
