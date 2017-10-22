@@ -8,6 +8,7 @@
   <title>拼图式编写插件</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="help/style.css">
+  <link rel="stylesheet" href="css/animate.min.css">
   <script src="https://s19.cnzz.com/z_stat.php?id=1265534042&web_id=1265534042" language="JavaScript"></script>
   <script>
 	var serverpath = "https://cqpm.daidr.me/code/apps/";
@@ -51,14 +52,51 @@
 	  box-orient: horizontal;
 	  box-pack: center;
 	  box-align: center;
+
+	  font-size:75px;
 	}
+	.loading-l {
+		animation-delay: 1.1s;
+	}
+	.loading-o {
+		animation-delay: 1.2s;
+	}
+	.loading-a {
+		animation-delay: 1.3s;
+	}
+	.loading-d {
+		animation-delay: 1.4s;
+	}
+	.loading-i {
+		animation-delay: 1.5s;
+	}
+	.loading-n {
+		animation-delay: 1.6s;
+	}
+	.loading-g {
+		animation-delay: 1.7s;
+	}
+	.loading-1 {
+		animation-delay: 1.8s;
+	}
+	.loading-2 {
+		animation-delay: 1.9s;
+	}
+	.loading-3 {
+		animation-delay: 2s;
+	}
+	[class*="loading-"]{
+		text-shadow: 1px 3px 6px #e0e0e0, 0 0 0 #000, 1px 3px 6px #e0e0e0;
+	}
+
+
   </style>
   <script src="//tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=4031974087" type="text/javascript" charset="utf-8"></script>
   
   
 </head>
 <body>
-  <div class="loading-page"><img alt="loading" height="450" src="loading.gif" /></div>
+  <div class="loading-page"><img class="flipInX animated loadinglogo" alt="loading" height="450" src="loading.gif" /><p style="color:#ff3000;color: rgba(255, 48, 0, 0.7);" class="bounce animated infinite loading-l">L</p><p style="color:#ff9a00;color:rgba(255, 154, 0, 0.7);" class="bounce animated infinite loading-o">o</p><p style="color:#309a00;color:rgba(48, 154, 0, 0.7);" class="bounce animated infinite loading-a">a</p><p style="color:#0065ff;color: rgba(0, 101, 255, 0.7);" class="bounce animated infinite loading-d">d</p><p style="color:#6530cf;color: rgba(0, 101, 255, 0.7);" class="bounce animated infinite loading-i">i</p><p style="color:#6530cf;color: rgba(0, 101, 255, 0.7);" class="bounce animated infinite loading-n">n</p><p style="color:#6530cf;color: rgba(0, 101, 255, 0.7);" class="bounce animated infinite loading-g">g</p><p style="color:#467fd4;color:rgba(70, 127, 212, 0.7);" class="bounce animated infinite loading-1">.</p><p style="color:#467fd4;color:rgba(70, 127, 212, 0.7);" class="bounce animated infinite loading-2">.</p><p style="color:#467fd4;color:rgba(70, 127, 212, 0.7);" class="bounce animated infinite loading-3">.</p></div>
   <table width="100%" height="100%">
     <tr>
       <td colspan=2>
