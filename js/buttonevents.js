@@ -323,7 +323,9 @@ $("#pullButton").click(function(){
 					cusnotify('error','mini',true,4000,MSG['pullError'],false);
 				} else if(result == "nopid"){
 					cusnotify('error','mini',true,4000,MSG['NoPid'],false);
-				} else if(result != ""){
+				} else if(result == "empty"){
+					cusnotify('error','mini',true,4000,MSG['pullEmpty'],false);
+				}else if(result != ""){
 					Code.workspace.clear();
 					Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom(doDecode(result)), Code.workspace);
 					cusnotify('success','mini',true,5000,MSG['pullSuccessful'].replace('%1', Code.workspace.getAllBlocks().length),false);
