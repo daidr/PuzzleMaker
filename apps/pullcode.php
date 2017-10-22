@@ -1,13 +1,7 @@
 <?php
 include('Requests-1.7.0/library/Requests.php');
 Requests::register_autoloader();
-
-$mysql_server_name='mysql.coding.io';
-$mysql_username='user-C0YUg9csPs';
-$mysql_password='!;)t{-x_L``G0S-p3ZcR';
-$mysql_database='db-vDwMVW9bzh';
-$conn=new mysqli_connect($mysql_server_name,$mysql_username,$mysql_password,$mysql_database);
-
+require("conn.php");
 $uid = $_COOKIE["cqpm_uid"];
 $account = $_COOKIE["weibojs_4031974087"];
 $uidt = $_POST['uid'];
