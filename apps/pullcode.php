@@ -38,7 +38,7 @@ $pid_num = $uid . "-" . $pid;
 $sql ="SELECT style FROM cqpmcodes WHERE `pid`='$pid_num'"; //SQL语句
 $result = mysqli_query($conn,$sql); //查询
 while($row = mysqli_fetch_row($result)){
-	$thestyle = $row['style'];
+	$thestyle = $row[0];
 	if($thestyle == ""){
 		echo "empty";
 		mysqli_free_result($result);
