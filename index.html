@@ -19,7 +19,9 @@
 	_czc.push(["_setAccount", "1265534042"]);
   </script>
   <style>
-	  .loading-page {
+	::-moz-selection{text-shadow:none;background:#D6EDFF;}
+	::selection{text-shadow:none;background:#D6EDFF;}
+	  .loadingpage {
 	  background:#e0e0e0;
 	  position: fixed;
 	  top:0px;
@@ -87,6 +89,7 @@
 	}
 	[class*="loading-"]{
 		text-shadow: 1px 3px 6px #e0e0e0, 0 0 0 #000, 1px 3px 6px #e0e0e0;
+		display: inline-block;
 	}
 
 
@@ -96,7 +99,7 @@
   
 </head>
 <body>
-  <div class="loading-page"><img class="flipInX animated loadinglogo" alt="loading" height="450" src="loading.gif" /><p style="color:#ff3000;color: rgba(255, 48, 0, 0.7);" class="bounce animated infinite loading-l">L</p><p style="color:#ff9a00;color:rgba(255, 154, 0, 0.7);" class="bounce animated infinite loading-o">o</p><p style="color:#309a00;color:rgba(48, 154, 0, 0.7);" class="bounce animated infinite loading-a">a</p><p style="color:#0065ff;color: rgba(0, 101, 255, 0.7);" class="bounce animated infinite loading-d">d</p><p style="color:#6530cf;color: rgba(0, 101, 255, 0.7);" class="bounce animated infinite loading-i">i</p><p style="color:#6530cf;color: rgba(0, 101, 255, 0.7);" class="bounce animated infinite loading-n">n</p><p style="color:#6530cf;color: rgba(0, 101, 255, 0.7);" class="bounce animated infinite loading-g">g</p><p style="color:#467fd4;color:rgba(70, 127, 212, 0.7);" class="bounce animated infinite loading-1">.</p><p style="color:#467fd4;color:rgba(70, 127, 212, 0.7);" class="bounce animated infinite loading-2">.</p><p style="color:#467fd4;color:rgba(70, 127, 212, 0.7);" class="bounce animated infinite loading-3">.</p></div>
+  <div class="loadingpage"><img class="flipInX animated loadinglogo" alt="loading" height="450" src="loading.gif" /><div class="flipInX animated"><p style="color:#ff3000;color: rgba(255, 48, 0, 0.7);" class="bounce animated infinite loading-l">L</p><p style="color:#ff9a00;color:rgba(255, 154, 0, 0.7);" class="bounce animated infinite loading-o">o</p><p style="color:#309a00;color:rgba(48, 154, 0, 0.7);" class="bounce animated infinite loading-a">a</p><p style="color:#0065ff;color: rgba(0, 101, 255, 0.7);" class="bounce animated infinite loading-d">d</p><p style="color:#6530cf;color: rgba(0, 101, 255, 0.7);" class="bounce animated infinite loading-i">i</p><p style="color:#6530cf;color: rgba(0, 101, 255, 0.7);" class="bounce animated infinite loading-n">n</p><p style="color:#6530cf;color: rgba(0, 101, 255, 0.7);" class="bounce animated infinite loading-g">g</p><p style="color:#467fd4;color:rgba(70, 127, 212, 0.7);" class="bounce animated infinite loading-1">.</p><p style="color:#467fd4;color:rgba(70, 127, 212, 0.7);" class="bounce animated infinite loading-2">.</p><p style="color:#467fd4;color:rgba(70, 127, 212, 0.7);" class="bounce animated infinite loading-3">.</p></div></div>
   <table width="100%" height="100%">
     <tr>
       <td colspan=2>
@@ -222,6 +225,6 @@
 		$(".projectid").html("<option value=\"temp\">浏览器本地缓存</option>");
 	}
   </script>
-  <script>$(".loading-page").slideToggle();</script>
+  <script>$(".loadingpage").slideToggle();</script>
 </body>
 </html>
