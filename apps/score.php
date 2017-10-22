@@ -15,7 +15,7 @@
 		 'content' => $query
 		);
 
-	$url = "https://api.ppoi.org/user/balance";
+	$url = "http://api.ppoi.org/user/balance";
 	$context = stream_context_create($options);
 	$res = file_get_contents($url, false, $context);
 
