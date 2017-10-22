@@ -1,9 +1,17 @@
 <?php
-	$uid = $_POST['id'];
-	$data = 'secret=s9xlSSrsOjtBgd8kPT7comyg&sitekey=DjrcXUshI3GJuza0LmsY9rz2&name='.$uid;
-	$url = "https://api.ppoi.org/user/balance";
+	error_reporting(0);
+	include('Requests-1.7.0/library/Requests.php');
+	Requests::register_autoloader();
 
-	$res = http_request($url, $data);
+	$uid = $_POST['id'];
+	//$data = 'secret=s9xlSSrsOjtBgd8kPT7comyg&sitekey=DjrcXUshI3GJuza0LmsY9rz2&name='.$uid;
+	//$url = "https://api.ppoi.org/user/balance";
+
+	//$res = http_request($url, $data);
+
+	$data = array('secret' => 's9xlSSrsOjtBgd8kPT7comyg', 'sitekey' => 'DjrcXUshI3GJuza0LmsY9rz2', 'name' => $uid);
+	$res = Requests::post('https://api.ppoi.org/user/balance', array(), $data);
+
 	if ($res == "") {
 		echo "error";
 		exit;
