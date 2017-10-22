@@ -11,7 +11,7 @@
 
 	$data = array('secret' => 's9xlSSrsOjtBgd8kPT7comyg', 'sitekey' => 'DjrcXUshI3GJuza0LmsY9rz2', 'name' => $uid);
 	$res = Requests::post('https://api.ppoi.org/user/balance', array(), $data);
-
+	$res = $res->body;
 	if ($res == "") {
 		echo "error";
 		exit;
