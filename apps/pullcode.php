@@ -1,5 +1,6 @@
 <?php
-
+include('Requests-1.7.0/library/Requests.php');
+Requests::register_autoloader();
 require("conn.php");
 $uid = $_COOKIE["cqpm_uid"];
 $account = $_COOKIE["weibojs_4031974087"];
@@ -34,16 +35,15 @@ if ($json->error) {
 
 $pid_num = $uid . "-" . $pid;
 
-$sql ="SELECT style FROM cqpmcodes WHERE `pid`='$pid_num'"; //SQL语句
-$result = mysqli_query($sql,$conn); //查询
-while($row = mysqli_fetch_array($result)){
-	$thestyle = $row['style'];
-	if($thestyle == ""){
-		echo "empty";
-		exit;
-	}
-	echo $thestyle;
+
+$result = $conn -> query("SELECT style FROM cqpmcodes WHERE `pid`='$pid_num'");　　
+$row = $result -> fetch_row();
+$thestyle = $row['style'];
+if($thestyle == ""){
+	echo "empty";
+	exit;
 }
+echo $thestyle;
 
 function getUrlKeyValue($url)
 	{
