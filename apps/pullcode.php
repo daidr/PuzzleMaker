@@ -35,8 +35,8 @@ if ($json->error) {
 $pid_num = $uid . "-" . $pid;
 
 $sql ="SELECT style FROM cqpmcodes WHERE `pid`='$pid_num'"; //SQL语句
-$result = mysql_query($sql,$conn); //查询
-while($row = mysql_fetch_array($result)){
+$result = mysqli_query($sql,$conn); //查询
+while($row = mysqli_fetch_array($result)){
 	$thestyle = $row['style'];
 	if($thestyle == ""){
 		echo "empty";
