@@ -7,9 +7,9 @@ $account = $_COOKIE["weibojs_4031974087"];
 $uidt = $_POST['uid'];
 $pid = $_POST['pid'];
 
-if($uid <> $uidt){echo "error";exit;}
-if($uid == ""){echo "error";exit;}
-if($pid == ""){echo "nopid";exit;}
+if($uid <> $uidt){echo "error";mysqli_close($conn);exit;}
+if($uid == ""){echo "error";mysqli_close($conn);exit;}
+if($pid == ""){echo "nopid";mysqli_close($conn);exit;}
 
 
 $values_array = getUrlKeyValue("?".$account);
@@ -23,14 +23,14 @@ $res = $res->body;
 $json=json_decode($res);
 if ($res == "") {
 	echo "error";
+	mysqli_close($conn);
 	exit;
 }
 
 if ($json->error) {
-	echo "error";
-	exit;
+	echo "error";mysqli_close($conn);exit;
 } else {
-	if($json->uid <> $uid){echo "error";exit;}
+	if($json->uid <> $uid){echo "error";mysqli_close($conn);exit;}
 }
 
 $pid_num = $uid . "-" . $pid;

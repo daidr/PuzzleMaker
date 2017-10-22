@@ -10,9 +10,9 @@ $account = $_COOKIE["weibojs_4031974087"];
 $uidt = $_POST['uid'];
 $pid = $_POST['pid'];
 
-if($uid <> $uidt){echo "error";exit;}
-if($style == "" || $code == "" || $uid == ""){echo "error";exit;}
-if($pid == ""){echo "nopid";exit;}
+if($uid <> $uidt){echo "error";mysqli_close($conn);exit;}
+if($style == "" || $code == "" || $uid == ""){echo "error";mysqli_close($conn);exit;}
+if($pid == ""){echo "nopid";mysqli_close($conn);exit;}
 
 
 $values_array = getUrlKeyValue("?".$account);
@@ -28,40 +28,42 @@ $res = $res->body;
 $json=json_decode($res);
 if ($res == "") {
 	echo "error";
+	mysqli_close($conn);
 	exit;
 }
 
 if ($json->error) {
 	echo "error";
+	mysqli_close($conn);
 	exit;
 } else {
-	if($json->uid <> $uid){echo "error";exit;}
+	if($json->uid <> $uid){echo "error";mysqli_close($conn);exit;}
 }
 
 $pid_num = $uid . "-" . $pid;
 
 $sql ="SELECT pid FROM allcodes WHERE `uid`='$uid'"; //SQL语句
-$result = mysql_query($sql,$conn); //查询
-while($row = mysql_fetch_array($result)){
-	$maxpidnum = $row['pid'];
+$result = mysqli_query($conn,$sql); //查询
+while($row = mysqli_fetch_row($result)){
+	$maxpidnum = $row[0];
 }
 
 if((int)$maxpidnum == 0){
 	$sql = "INSERT INTO allcodes (uid,pid) VALUES (\"".$uid."\",\"5\")";
-	mysql_query($sql,$conn);
+	mysqli_query($conn,$sql);
 	$maxpidnum = "5";
 }
-if((int)$pid > (int)$maxpidnum){echo "exceed";exit;}
+if((int)$pid > (int)$maxpidnum){echo "exceed";mysqli_free_result($result);mysqli_close($conn);exit;}
 
-$sql ="SELECT * FROM cqpmsys WHERE `key`='id'"; //SQL语句
-$result = mysql_query($sql,$conn); //查询
-while($row = mysql_fetch_array($result)){
-	$allid = $row['value'];
+$sql ="SELECT value FROM cqpmsys WHERE `key`='id'"; //SQL语句
+$result = mysqli_query($conn,$sql); //查询
+while($row = mysqli_fetch_row($result)){
+	$allid = $row[0];
 }
 
 if(strstr($allid,"*".$pid_num."*")){
 	$sql = "UPDATE cqpmcodes SET code = \"$code\",style=\"$style\" WHERE `pid`='$pid_num'";
-	if(mysql_query($sql,$conn)){
+	if(mysqli_query($conn,$sql)){
 		echo "ok";
 	} else {
 		echo "error";
@@ -73,7 +75,7 @@ if(strstr($allid,"*".$pid_num."*")){
 	$sql_array = explode('|||||',$sql);
 	$isError = 0;
 	for($index=0;$index<count($sql_array);$index++){
-		if(mysql_query($sql_array[$index],$conn)){
+		if(mysqli_query($conn,$sql_array[$index])){
 		} else {
 			$isError = $isError + 1;
 		}
@@ -85,6 +87,9 @@ if(strstr($allid,"*".$pid_num."*")){
 		echo "error";
 	}
 }
+
+mysqli_free_result($result);
+mysqli_close($conn);
 
 function getUrlKeyValue($url)
 	{
