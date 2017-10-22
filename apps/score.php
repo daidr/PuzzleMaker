@@ -1,7 +1,5 @@
 <?php
 	$uid = $_POST['id'];
-	$data = 'secret=s9xlSSrsOjtBgd8kPT7comyg&sitekey=DjrcXUshI3GJuza0LmsY9rz2&name='.$uid;
-	$url = "https://api.ppoi.org/user/balance";
 
 	$data = array(
     'secret'=>'s9xlSSrsOjtBgd8kPT7comyg&sitekey=DjrcXUshI3GJuza0LmsY9rz2',

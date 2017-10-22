@@ -16,14 +16,22 @@ if($pid == ""){echo "nopid";exit;}
 $values_array = getUrlKeyValue("?".$account);
 $account = $values_array['access_token'];
 
+$data = array(
+    'access_token'=>$account
+    );
+$query = http_build_query($data);
 
-$url = "https://api.weibo.com/2/account/get_uid.json?access_token=".$account;
-$res = http_request($url);
-$json=json_decode($res);
+$url = 'https://api.weibo.com/2/account/get_uid.json';
+
+$res = file_get_contents($url.'?'.$query);
+
 if ($res == "") {
 	echo "error";
 	exit;
 }
+
+$json=json_decode($res);
+
 
 if ($json->error) {
 	echo "error";
@@ -92,10 +100,6 @@ function getUrlKeyValue($url)
 		return $result;
 	}
 
-function http_request($uri)
-	{
-		    $data = file_get_contents($uri);
-			return $data;
-	}
+
 
 ?>
