@@ -1,13 +1,7 @@
 <?php
 include('Requests-1.7.0/library/Requests.php');
-Requests::register_autoloader();
-
-$mysql_server_name='mysql.coding.io';
-$mysql_username='user-C0YUg9csPs';
-$mysql_password='!;)t{-x_L``G0S-p3ZcR';
-$mysql_database='db-vDwMVW9bzh';
-$conn=new mysqli($mysql_server_name,$mysql_username,$mysql_password,$mysql_database);
-
+	Requests::register_autoloader();
+require("conn.php");
 $uid = $_COOKIE["cqpm_uid"];
 $account = $_COOKIE["weibojs_4031974087"];
 $uidt = $_POST['uid'];
@@ -41,15 +35,21 @@ if ($json->error) {
 
 $pid_num = $uid . "-" . $pid;
 
-
-$result = $conn -> query("SELECT style FROM cqpmcodes WHERE `pid`='$pid_num'");　　
-$row = $result -> fetch_row();
-$thestyle = $row[0];
-if($thestyle == ""){
-	echo "empty";
-	exit;
+$sql ="SELECT style FROM cqpmcodes WHERE `pid`='$pid_num'"; //SQL语句
+$result = mysqli_query($conn,$sql); //查询
+while($row = mysqli_fetch_row($result)){
+	$thestyle = $row['style'];
+	if($thestyle == ""){
+		echo "empty";
+		mysqli_free_result($result);
+		mysqli_close($conn);
+		exit;
+	}
+	echo $thestyle;
 }
-echo $thestyle;
+
+mysqli_free_result($result);
+mysqli_close($conn);
 
 function getUrlKeyValue($url)
 	{
