@@ -1,12 +1,20 @@
 {
     "files": [
         {
-	    "zhname": "PuzzleMaker本地解析组件",
+	    "zhname": "PuzzleMaker本体插件",
 	    "version": "0.4 Beta",
-	    "filename": "me.daidr.puzzle",
+	    "filename": "me.daidr.puzzle.cpk",
             "path": "{cqfile}\\app\\me.daidr.puzzle.cpk",
             "md5": "048c0aa2d5946c3e3770078556553eb6",
             "url": "http://cqpm.daidr.me/download/me.daidr.puzzle.cpk"
+        },
+	{
+	    "zhname": "MUJS解析组件",
+	    "version": "1.0.1 Release",
+	    "filename": "mujs.dll",
+            "path": "{cqfile}\\bin\\mujs.dll",
+            "md5": "9c1b8ea10dd1144345bac88412fd0c69",
+            "url": "http://cqpm.daidr.me/download/mujs.dll"
         }
     ],
     "notice": "本次更新主要更新以下内容：\n1.新增 '获取当前时间戳' 拼图"
