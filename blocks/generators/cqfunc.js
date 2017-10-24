@@ -30,6 +30,6 @@ Blockly.JavaScript['cq_sendlike'] = function(block) {
 Blockly.JavaScript['cq_addlog'] = function(block) {
   var dropdown_type = block.getFieldValue('type');
   var value_content = Blockly.JavaScript.valueToCode(block, 'content', Blockly.JavaScript.ORDER_ATOMIC);
-  var code = "addLog(" + dropdown_type + "," + value_content + ");\n";
+  var code = "addLog(\"" + dropdown_type + "\"," + value_content + ");\n";
   return code;
 };
