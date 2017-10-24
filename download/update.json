@@ -5,7 +5,7 @@
 	    "version": "0.4 Beta",
 	    "filename": "me.daidr.puzzle.cpk",
             "path": "{cqfile}\\app\\me.daidr.puzzle.cpk",
-            "md5": "048c0aa2d5946c3e3770078556553eb6",
+            "md5": "a85762cac851c120807109fb1ce362a4",
             "url": "http://cqpm.daidr.me/download/me.daidr.puzzle.cpk"
         },
 	{
@@ -17,5 +17,5 @@
             "url": "http://cqpm.daidr.me/download/mujs.dll"
         }
     ],
-    "notice": "本次更新主要更新以下内容：\n1.新增 '获取当前时间戳' 拼图"
+    "notice": "欢迎您参加PuzzleMaker内测"
 }
