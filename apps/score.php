@@ -1,6 +1,5 @@
 <?php
 	error_reporting(0);
-	header('Server: PuzzleServer');
 	include('Requests-1.7.0/library/Requests.php');
 	Requests::register_autoloader();
 

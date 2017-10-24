@@ -1,5 +1,5 @@
 <?php
-header('Server: PuzzleServer');
+error_reporting(0);
 include('Requests-1.7.0/library/Requests.php');
 Requests::register_autoloader();
 require("conn.php");
