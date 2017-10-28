@@ -1,7 +1,6 @@
 .linklist {
 	display: block;
 	padding:10px 0;
-	border-bottom:1px solid #ccc;
 	width: 85%;
 	text-align: center;
 	margin:0 auto;
@@ -150,7 +149,7 @@
 }
 
 .docend::before{
-	content: "The End";
+	content: attr(texts);
     font-size: 13px;
     color: #c5c5c5;
     left: calc(80% / 2 + 62px / 2);
@@ -158,4 +157,31 @@
     margin-top: -10px;
     background: #fff;
     padding: 0 6px;
+}
+
+#demo_workspace{
+    height: 400px;
+    width: 80%;
+	margin:0 auto;
+}
+
+#demo_workspace > .injectionDiv{
+    border-radius: 18px 18px 0 0;
+    border: solid 1px #e3e3e3;
+}
+
+.demo_workspace_copy{
+    height: 60px;
+    width: 80%;
+	background: linear-gradient(to right,#66a6ff,#89f7fe);
+    margin: 0 auto;
+    border-radius: 0 0 18px 18px;
+    filter: grayscale(100%);
+	cursor: pointer;
+	-webkit-transition: filter .5s;
+    transition: filter .5s;
+}
+
+.demo_workspace_copy:hover{
+    filter: grayscale(0%);
 }

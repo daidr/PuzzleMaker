@@ -220,8 +220,8 @@ $('#docButton').click(function() {
 	
    if(isDocOpen == 0) {
 	isDocOpen = 1;
-	$("#content_blocks").animate({width:"70%"});
-	$("#content_doc").animate({width:"30%"});
+	$("#content_blocks").animate({width:"55%"});
+	$("#content_doc").animate({width:"45%"});
 	setTimeout("SVGResizeFun()",400);
 	setTimeout("DOCINResizeFun()",400);
    } else {

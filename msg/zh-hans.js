@@ -46,7 +46,7 @@ var MSG = {
   LoginSuccessful: "欢迎，%1",
   LoginoutSuccessful:"退出成功",
   NotLoggedIn:"未登录，请登录后继续操作",
-  UploadSuccessful:"代码上传完成，你的插件码为：<br /><br />%1",
+  UploadSuccessful:"代码上传完成，你的唯一绑定码为：<br /><br />%1",
   UploadFail:"代码上传失败，请稍后再试。",
   PidExceed:"你的插件数量已经到达上限", 
   NoPid:"你没有选择保存到哪个插件槽位",
