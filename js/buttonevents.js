@@ -246,6 +246,7 @@ $(document).ready(function(){
 				setCookie("access_token",atoken,expires_in*0.0000116);
 				$.post(serverpath + "showuser.php",{uid:getCookie("uid")},function(result){
 					user = JSON.parse(result);
+					location.href="https://cqpm.daidr.me";
 					cusnotify('success','mini',true,5000,MSG['LoginSuccessful'].replace('%1', user.screen_name),false);
 				});
 				$(".login").remove();
