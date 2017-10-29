@@ -20,6 +20,6 @@
 		$expires_in = $json->expires_in;
 		echo $access_token . "|||||" . $uid . "|||||" . $expires_in;
 	} else {
-		echo $res;
+		echo "error";
 	}
 ?>

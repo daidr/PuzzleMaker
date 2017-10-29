@@ -216,7 +216,7 @@ $(document).ready(function(){
 	});
 
 	if(getCookie("access_token") != null){
-		$.get("https://api.weibo.com/2/users/show.json?access_token="+getCookie("access_token"),function(result){
+		$.post(serverpath + "showuser.php",{uid:getCookie("uid")},function(result){
 			user = JSON.parse(result);
 			$(".login").remove();
 			$.post(serverpath + "score.php",{id:user.idstr},function(result){
@@ -241,8 +241,9 @@ $(document).ready(function(){
 				cusnotify('info','mini',true,3000,MSG['LoginError'],false);
 				return;
 			}
+			setCookie("uid",uid);
 			setCookie("access_token",atoken,expires_in*0.0000116);
-			$.get("https://api.weibo.com/2/users/show.json?access_token="+getCookie("access_token"),function(result){
+			$.post(serverpath + "showuser.php",{uid:getCookie("uid")},function(result){
 				user = JSON.parse(result);
 				cusnotify('success','mini',true,5000,MSG['LoginSuccessful'].replace('%1', user.screen_name),false);
 			});
