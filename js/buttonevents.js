@@ -214,6 +214,33 @@ $(document).ready(function(){
 		}
 
 	});
+
+	if(GetQueryString("code") != null){
+		var oauthcode = GetQueryString("code");
+		$.post(serverpath + "oauthcodetoatoken.php",{code:oauthcode},function(result){
+			if(result == "error"){
+				cusnotify('error','mini',true,3000,MSG['LoginError'],false);
+				return;
+			}
+			var res_a = result.split("|||||"); 
+			var atoken = res_a[0];
+			var uid = res_a[1];
+			if(uid == undefined){
+				cusnotify('error','mini',true,3000,MSG['LoginError'],false);
+				return;
+			}
+			cusnotify('success','mini',true,5000,MSG['LoginSuccessful'].replace('%1', uid),false);
+			user.login="1";
+			user.idstr=uid;
+			user.uid=uid;
+			document.cookie="access_token="+atoken;
+			$(".login").remove();
+			$.post(serverpath + "score.php",{id:user.idstr},function(result){
+				$(".score").html("积分:" + result);
+			});
+		$(".projectid").append("<option value=\"1\">代码槽位 1</option><option value=\"2\">代码槽位 2</option><option value=\"3\">代码槽位 3</option><option value=\"4\">代码槽位 4</option><option value=\"5\">代码槽位 5</option>");
+		});
+	}
 	//_czc.push(["_trackEvent", "页面", "被打开", "","", ""]);
 });
 
@@ -274,7 +301,7 @@ $(".score").click(function(){
 });
 
 $("#saveButton").click(function(){
-	if(WB2.checkLogin()){
+	if(user.login == "1"){
 		//登录
 		if (thepid == "temp"){cusnotify('info','mini',true,4000,MSG['ChooseFirst'],false);return;}
 		var xmlcontent = Blockly.Xml.domToPrettyText(Blockly.Xml.workspaceToDom(Code.workspace));
@@ -289,7 +316,7 @@ $("#saveButton").click(function(){
 			var basexml = doEncode(xmlcontent);
 			var basecode = doEncode(codecontent);
 			cusnotify('info','mini',true,3000,MSG['Uploading'],false);
-			setCookie("cqpm_uid",user.idstr,0.0000579);
+			setCookie("cqpm_uid",user.idstr,0.0001000);
 			$.post(serverpath + "upcode.php",{code:basecode,style:basexml,uid:user.idstr,pid:thepid},function(result){
 				if(result == "ok"){
 					cusnotify('success','mini',true,0,MSG['UploadSuccessful'].replace('%1', user.idstr),false);
@@ -313,7 +340,7 @@ $("#saveButton").click(function(){
 
 
 $("#pullButton").click(function(){
-	if(WB2.checkLogin()){
+	if(user.login == "1"){
 		//登录
 		if (thepid == "temp"){cusnotify('info','mini',true,4000,MSG['ChooseFirst'],false);return;}
 		var xmlcontent = Blockly.Xml.domToPrettyText(Blockly.Xml.workspaceToDom(Code.workspace));
@@ -456,5 +483,17 @@ $(".projectid").change(function() {
 	}
 });
 
+
+$(".tologin").click(function(){
+	location.href="https://api.weibo.com/oauth2/authorize?client_id=4031974087&redirect_uri=http://cqpm.daidr.me&response_type=code";
+});
+
+
+
+function GetQueryString(name){
+     var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+     var r = window.location.search.substr(1).match(reg);
+     if(r!=null)return  unescape(r[2]); return null;
+}
 
 

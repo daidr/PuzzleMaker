@@ -6,7 +6,7 @@ require("conn.php");
 $style = str_replace("\n","",$_POST['style']);
 $code = str_replace("\n","",$_POST['code']);
 $uid = $_COOKIE["cqpm_uid"];
-$account = $_COOKIE["weibojs_4031974087"];
+$account = $_COOKIE["access_token"];
 $uidt = $_POST['uid'];
 $pid = $_POST['pid'];
 
@@ -14,9 +14,6 @@ if($uid <> $uidt){echo "error";mysqli_close($conn);exit;}
 if($style == "" || $code == "" || $uid == ""){echo "error";mysqli_close($conn);exit;}
 if($pid == ""){echo "nopid";mysqli_close($conn);exit;}
 
-
-$values_array = getUrlKeyValue("?".$account);
-$account = $values_array['access_token'];
 
 //$url = "https://api.weibo.com/2/account/get_uid.json?access_token=2.00n345vFHekr5E20a7291eed0JDp21";
 $url = "https://api.weibo.com/2/account/get_uid.json?access_token=".$account;
@@ -90,17 +87,5 @@ if(strstr($allid,"*".$pid_num."*")){
 
 mysqli_free_result($result);
 mysqli_close($conn);
-
-function getUrlKeyValue($url)
-	{
-		$result = array();
-		$mr     = preg_match_all('/(\?|&)(.+?)=([^&?]*)/i', $url, $matchs);
-		if ($mr !== false) {
-			for ($i = 0; $i < $mr; $i++) {
-				$result[$matchs[2][$i]] = $matchs[3][$i];
-			}
-		}
-		return $result;
-	}
 
 ?>

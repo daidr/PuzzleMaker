@@ -229,3 +229,9 @@ a[title='站长统计'] {
 }
 
 .projectid::-ms-expand { display: none; }
+
+.alreadylogin{
+    font-size: 12px;
+    color: #0078b6;
+    line-height: 16px;
+}

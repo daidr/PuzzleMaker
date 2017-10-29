@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html xmlns:wb="http://open.weibo.com/wb">
+<html>
 <head>
   <meta charset="utf-8">
   <meta name="google" value="notranslate">
   <link rel="shortcut icon" href="favicon.ico">
-  <meta property="wb:webmaster" content="bf28000a534b6657" />
   <title>拼图式编写插件</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="help/style.css">
   <link rel="stylesheet" href="//cdn.staticfile.org/animate.css/3.5.2/animate.min.css">
+  <link href="//img.t.sinajs.cn/t4/appstyle/widget/css/loginButton/loginButton.css" type="text/css" rel="stylesheet">
   <script>
 	var serverpath = "apps/";
   </script>
@@ -91,7 +91,6 @@
 
 
   </style>
-  <script src="//tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=4031974087" type="text/javascript" charset="utf-8"></script>
   
   
 </head>
@@ -106,7 +105,7 @@
 			
             <td class="tabmax">
 			  <a class="score" href="#"></a>
-			  <wb:login-button type="2,5" onlogin="login" onlogout="logout" style="top: -9px;position: relative;">登录按钮</wb:login-button>
+			  <div style="top: -9px;position: relative;display: inline-block;" class="login tologin"><div class="WB_loginButton WB_widgets"><a href="javascript:void(0);"><img src="//timg.sjs.sinajs.cn/t4/appstyle/widget/images/loginButton/loginButton_32.png"></a></div></div>
 			  <button id="docButton" class="notext" style="padding:1px 7px" title="...">
 				<i class="material-icons" style="font-size:27px;color:#5f5f5f;">live_help</i>
               </button>
@@ -204,7 +203,7 @@
   <script src="js/code.js"></script>
   <script src="js/buttonevents.js"></script>
   <script>
-    var user;
+    var user={};
   	function login(o) {
 		user = o;
 		console.log(o);
@@ -213,7 +212,7 @@
 			$(".score").html("积分:" + result);
 		});
 		$(".projectid").append("<option value=\"1\">代码槽位 1</option><option value=\"2\">代码槽位 2</option><option value=\"3\">代码槽位 3</option><option value=\"4\">代码槽位 4</option><option value=\"5\">代码槽位 5</option>");
-		_czc.push(["_trackEvent", "菜单", "登录", "微博登录", o.idstr]);
+		//_czc.push(["_trackEvent", "菜单", "登录", "微博登录", o.idstr]);
 	}
 	 
 	function logout() {
