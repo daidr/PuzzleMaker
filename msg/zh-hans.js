@@ -43,7 +43,7 @@ var MSG = {
   AllPuzzleError: "目前的拼图数量 %1块 严重超出正常值(将导致浏览器卡顿)",
   LoadFileWarning: "导入文件的大小 %1字节 超出正常值(可能导致浏览器卡顿)",
   LoadFileError: "导入文件的大小 %1字节 严重超出正常值(将导致浏览器卡顿)",
-  LoginError:"登录失败，请刷新重试",
+  LoginError:"请点击登录按钮，重新确认您的身份",
   LoginSuccessful: "欢迎，%1",
   LoginoutSuccessful:"退出成功",
   NotLoggedIn:"未登录，请登录后继续操作",

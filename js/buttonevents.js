@@ -219,14 +219,14 @@ $(document).ready(function(){
 		var oauthcode = GetQueryString("code");
 		$.post(serverpath + "oauthcodetoatoken.php",{code:oauthcode},function(result){
 			if(result == "error"){
-				cusnotify('error','mini',true,3000,MSG['LoginError'],false);
+				cusnotify('warning','mini',true,3000,"登录失败",false);
 				return;
 			}
 			var res_a = result.split("|||||"); 
 			var atoken = res_a[0];
 			var uid = res_a[1];
 			if(uid == undefined){
-				cusnotify('error','mini',true,3000,MSG['LoginError'],false);
+				cusnotify('info','mini',true,3000,MSG['LoginError'],false);
 				return;
 			}
 			cusnotify('success','mini',true,5000,MSG['LoginSuccessful'].replace('%1', uid),false);
@@ -240,6 +240,9 @@ $(document).ready(function(){
 			});
 		$(".projectid").append("<option value=\"1\">代码槽位 1</option><option value=\"2\">代码槽位 2</option><option value=\"3\">代码槽位 3</option><option value=\"4\">代码槽位 4</option><option value=\"5\">代码槽位 5</option>");
 		});
+	}else{
+			cusnotify('info','mini',true,3000,MSG['LoginError'],false);
+			return;
 	}
 	//_czc.push(["_trackEvent", "页面", "被打开", "","", ""]);
 });
