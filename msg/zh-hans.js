@@ -61,6 +61,7 @@ var MSG = {
   ChooseFirst:"请先选择要载入/上传的代码槽位",
   slotTEMP:"已经定位到浏览器本地缓存",
   slotNoTEMP:"已经定位到 插件槽位%1",
+  addingDemo:"获取实例 %1 内容中...",
   addDemoSuccessful:"插件实例 %1 被载入到编辑器中",
   demo_likedemo:"名片赞实例"
 };
