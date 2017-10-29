@@ -6,7 +6,7 @@
 	    "filename": "me.daidr.puzzle.cpk",
             "path": "{cqfile}\\app\\me.daidr.puzzle.cpk",
             "md5": "4c16de6be9aaaaec4a499261331c7b2a",
-            "url": "https://cqpm.daidr.me/download/me.daidr.puzzle.cpk"
+            "url": "http://cqpm.daidr.me/download/me.daidr.puzzle.cpk"
         },
 	{
 	    "zhname": "MUJS解析组件",
@@ -14,7 +14,7 @@
 	    "filename": "mujs.dll",
             "path": "{cqfile}\\bin\\mujs.dll",
             "md5": "9c1b8ea10dd1144345bac88412fd0c69",
-            "url": "https://cqpm.daidr.me/download/mujs.dll"
+            "url": "http://cqpm.daidr.me/download/mujs.dll"
         }
     ],
     "notice": "PuzzleMaker目前还不是很完善，拼图会不定期增加，感谢您的支持。"
