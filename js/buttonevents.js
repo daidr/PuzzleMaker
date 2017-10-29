@@ -26,7 +26,7 @@ $("#downloadButton").click(function(){
 	var xmlcontent = Blockly.Xml.domToPrettyText(Blockly.Xml.workspaceToDom(Code.workspace));
 	if(xmlcontent == "<xml xmlns=\"http://www.w3.org/1999/xhtml\">\n  <variables></variables>\n</xml>") {
 		cusnotify('warning','mini',true,2500,MSG['WorkspaceIsEmpty'],false);
-		_czc.push(["_trackEvent", "菜单", "下载拼图文件", user.idstr, "失败", "downloadButton"]);
+		//_czc.push(["_trackEvent", "菜单", "下载拼图文件", user.idstr, "失败", "downloadButton"]);
 		return;
 	}
 	//var desxml = des("a", xmlcontent, 1, 0);
@@ -53,15 +53,15 @@ $("#downloadButton").click(function(){
 					var randomfilename = Math.random().toString(36).substr(2);
 					createAndDownloadFile(randomfilename + ".xml",desxml);
 					cusnotify('success','mini',true,5000,MSG['DownloadFileSuccessful'] + randomfilename,false);
-					_czc.push(["_trackEvent", "菜单", "下载拼图文件", user.idstr, "成功-" +randomfilename + ".xml", "downloadButton"]);
+					//_czc.push(["_trackEvent", "菜单", "下载拼图文件", user.idstr, "成功-" +randomfilename + ".xml", "downloadButton"]);
 				} else {
 					createAndDownloadFile(lobibox.$input[0].value + ".xml",desxml);
 					cusnotify('success','mini',true,5000,MSG['DownloadFileSuccessful'] + lobibox.$input[0].value,false);
-					_czc.push(["_trackEvent", "菜单", "下载拼图文件", user.idstr, "成功-" + lobibox.$input[0].value + ".xml", "downloadButton"]);
+					//_czc.push(["_trackEvent", "菜单", "下载拼图文件", user.idstr, "成功-" + lobibox.$input[0].value + ".xml", "downloadButton"]);
 				}
 			} else if (type === 'cancel') {
 				cusnotify('info','mini',true,2000,MSG['OperatingCancel'],false);
-				_czc.push(["_trackEvent", "菜单", "下载拼图文件", user.idstr, "取消", "downloadButton"]);
+				//_czc.push(["_trackEvent", "菜单", "下载拼图文件", user.idstr, "取消", "downloadButton"]);
 			}
 		}
 	});
@@ -71,7 +71,7 @@ $("#downloadButton").click(function(){
 
 $('#loadButton').click(function() {
    $('#loadcqwpk').click();
-   _czc.push(["_trackEvent", "菜单", "载入拼图文件", user.idstr,"按钮按下", "loadButton"]);
+   //_czc.push(["_trackEvent", "菜单", "载入拼图文件", user.idstr,"按钮按下", "loadButton"]);
 });
 
 $("#loadcqwpk").change(function(){
@@ -86,27 +86,29 @@ $("#loadcqwpk").change(function(){
 		reader.onload = function(evt){ //读取完文件之后会回来这里
 			var fileString = evt.target.result; // 读取文件内容
 			var fileLength = objFile.files[0].size;
-			if (fileLength > 900000){
+			/*if (fileLength > 900000){
 				if (fileLength < 1200000){
 					cusnotify('warning','mini',true,5000,MSG['LoadFileWarning'].replace('%1', fileLength),false);
-					_czc.push(["_trackEvent", "菜单", "载入拼图文件", user.idstr, "文件过大", "loadButton"]);
+					//_czc.push(["_trackEvent", "菜单", "载入拼图文件", user.idstr, "文件过大", "loadButton"]);
 				} else {
 					cusnotify('error','mini',true,5000,MSG['LoadFileError'].replace('%1', fileLength),false);
-					_czc.push(["_trackEvent", "菜单", "载入拼图文件", user.idstr, "文件过大(超大)", "loadButton"]);
+					//_czc.push(["_trackEvent", "菜单", "载入拼图文件", user.idstr, "文件过大(超大)", "loadButton"]);
 				}
-			}
+			}*/
 			Code.workspace.clear();
 			Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom(fileString), Code.workspace);
 			if (Code.workspace.getAllBlocks().length < 1000){
 				cusnotify('success','mini',true,3000,MSG['LoadFileSuccessful'].replace('%1', Code.workspace.getAllBlocks().length),false);
-				_czc.push(["_trackEvent", "菜单", "载入拼图文件", user.idstr, "成功", "loadButton"]);
+				//_czc.push(["_trackEvent", "菜单", "载入拼图文件", user.idstr, "成功", "loadButton"]);
 			} else if (Code.workspace.getAllBlocks().length > 1000){
 				if (Code.workspace.getAllBlocks().length < 1500) {
-					cusnotify('warning','mini',true,5000,MSG['AllPuzzleWarning'].replace('%1', Code.workspace.getAllBlocks().length),false);
-					_czc.push(["_trackEvent", "菜单", "载入拼图文件", user.idstr, "拼图过多", "loadButton"]);
+					cusnotify('success','mini',true,3000,MSG['LoadFileSuccessful'].replace('%1', Code.workspace.getAllBlocks().length),false);
+					//cusnotify('warning','mini',true,5000,MSG['AllPuzzleWarning'].replace('%1', Code.workspace.getAllBlocks().length),false);
+					//_czc.push(["_trackEvent", "菜单", "载入拼图文件", user.idstr, "拼图过多", "loadButton"]);
 				} else {
-					cusnotify('error','mini',true,5000,MSG['AllPuzzleError'].replace('%1', Code.workspace.getAllBlocks().length),false);
-					_czc.push(["_trackEvent", "菜单", "载入拼图文件", user.idstr, "拼图过多(超多)", "loadButton"]);
+					cusnotify('success','mini',true,3000,MSG['LoadFileSuccessful'].replace('%1', Code.workspace.getAllBlocks().length),false);
+					//cusnotify('error','mini',true,5000,MSG['AllPuzzleError'].replace('%1', Code.workspace.getAllBlocks().length),false);
+					//_czc.push(["_trackEvent", "菜单", "载入拼图文件", user.idstr, "拼图过多(超多)", "loadButton"]);
 				}
 			}
 		}
@@ -115,7 +117,7 @@ $("#loadcqwpk").change(function(){
 
 $('#addButton').click(function() {
    $('#addcqwpk').click();
-   _czc.push(["_trackEvent", "菜单", "追加拼图文件", user.idstr,"按钮按下", "addButton"]);
+   //_czc.push(["_trackEvent", "菜单", "追加拼图文件", user.idstr,"按钮按下", "addButton"]);
 });
 
 $("#addcqwpk").change(function(){
@@ -130,26 +132,28 @@ $("#addcqwpk").change(function(){
 		reader.onload = function(evt){ //读取完文件之后会回来这里
 			var fileString = evt.target.result; // 读取文件内容
 			var fileLength = objFile.files[0].size;
-			if (fileLength > 900000){
+			/*if (fileLength > 900000){
 				if (fileLength < 1200000){
 					cusnotify('warning','mini',true,5000,MSG['LoadFileWarning'].replace('%1', fileLength),false);
-					_czc.push(["_trackEvent", "菜单", "追加拼图文件", user.idstr,"文件过大", "addButton"]);
+					//_czc.push(["_trackEvent", "菜单", "追加拼图文件", user.idstr,"文件过大", "addButton"]);
 				} else {
 					cusnotify('error','mini',true,5000,MSG['LoadFileError'].replace('%1', fileLength),false);
-					_czc.push(["_trackEvent", "菜单", "追加拼图文件", user.idstr,"文件过大(超大)", "addButton"]);
+					//_czc.push(["_trackEvent", "菜单", "追加拼图文件", user.idstr,"文件过大(超大)", "addButton"]);
 				}
-			}
+			}*/
 			Blockly.Xml.appendDomToWorkspace(Blockly.Xml.textToDom(fileString), Code.workspace);
 			if (Code.workspace.getAllBlocks().length < 1000){
 				cusnotify('success','mini',true,3000,MSG['addFileSuccessful'].replace('%1', Code.workspace.getAllBlocks().length),false);
-				_czc.push(["_trackEvent", "菜单", "追加拼图文件", user.idstr,"成功", "addButton"]);
+				//_czc.push(["_trackEvent", "菜单", "追加拼图文件", user.idstr,"成功", "addButton"]);
 			} else if (Code.workspace.getAllBlocks().length > 1000){
 				if (Code.workspace.getAllBlocks().length < 1500) {
-					cusnotify('warning','mini',true,5000,MSG['AllPuzzleWarning'].replace('%1', Code.workspace.getAllBlocks().length),false);
-					_czc.push(["_trackEvent", "菜单", "追加拼图文件", user.idstr,"拼图过多", "addButton"]);
+					cusnotify('success','mini',true,3000,MSG['addFileSuccessful'].replace('%1', Code.workspace.getAllBlocks().length),false);
+					//cusnotify('warning','mini',true,5000,MSG['AllPuzzleWarning'].replace('%1', Code.workspace.getAllBlocks().length),false);
+					//_czc.push(["_trackEvent", "菜单", "追加拼图文件", user.idstr,"拼图过多", "addButton"]);
 				} else {
-					cusnotify('error','mini',true,5000,MSG['AllPuzzleError'].replace('%1', Code.workspace.getAllBlocks().length),false);
-					_czc.push(["_trackEvent", "菜单", "追加拼图文件", user.idstr,"拼图过多(超多)", "addButton"]);
+					cusnotify('success','mini',true,3000,MSG['addFileSuccessful'].replace('%1', Code.workspace.getAllBlocks().length),false);
+					//cusnotify('error','mini',true,5000,MSG['AllPuzzleError'].replace('%1', Code.workspace.getAllBlocks().length),false);
+					//_czc.push(["_trackEvent", "菜单", "追加拼图文件", user.idstr,"拼图过多(超多)", "addButton"]);
 				}
 			}
 		}
@@ -160,14 +164,14 @@ $('#temporaryButton').click(function() {
    var xmlcontent = Blockly.Xml.domToPrettyText(Blockly.Xml.workspaceToDom(Code.workspace));
 	if(xmlcontent == "<xml xmlns=\"http://www.w3.org/1999/xhtml\">\n  <variables></variables>\n</xml>") {
 		cusnotify('warning','mini',true,2500,MSG['WorkspaceIsEmpty'],false);
-		_czc.push(["_trackEvent", "菜单", "缓存拼图", user.idstr, "失败", "temporaryButton"]);
+		//_czc.push(["_trackEvent", "菜单", "缓存拼图", user.idstr, "失败", "temporaryButton"]);
 		return;
 	} else {
 		//var desxml = des("a", xmlcontent, 1, 0);
 		var desxml = xmlcontent;
 		window.localStorage.setItem("puzzleTemporary",desxml);
 		cusnotify('success','mini',true,3000,MSG['SaveTemporarySuccessful'].replace('%1', desxml.replace(/[^\x00-\xff]/gi, "--").length),false);
-		_czc.push(["_trackEvent", "菜单", "缓存拼图", user.idstr, "成功", "temporaryButton"]);
+		//_czc.push(["_trackEvent", "菜单", "缓存拼图", user.idstr, "成功", "temporaryButton"]);
 	}
 });
 
@@ -210,7 +214,7 @@ $(document).ready(function(){
 		}
 
 	});
-	_czc.push(["_trackEvent", "页面", "被打开", "","", ""]);
+	//_czc.push(["_trackEvent", "页面", "被打开", "","", ""]);
 });
 
 
@@ -230,7 +234,7 @@ $('#docButton').click(function() {
 	$("#content_doc").animate({width:"0px"});
 	setTimeout("SVGResizeFun()",400);
    }
-   _czc.push(["_trackEvent", "菜单", "帮助文档", "被单击",user.idstr, "docButton"]);
+   //_czc.push(["_trackEvent", "菜单", "帮助文档", "被单击",user.idstr, "docButton"]);
 });
 
 function SVGResizeFun(){
@@ -289,7 +293,7 @@ $("#saveButton").click(function(){
 			$.post(serverpath + "upcode.php",{code:basecode,style:basexml,uid:user.idstr,pid:thepid},function(result){
 				if(result == "ok"){
 					cusnotify('success','mini',true,0,MSG['UploadSuccessful'].replace('%1', user.idstr),false);
-					_czc.push(["_trackEvent", "菜单", "上传代码", user.idstr,"槽位"+thepid, "saveButton"]);
+					//_czc.push(["_trackEvent", "菜单", "上传代码", user.idstr,"槽位"+thepid, "saveButton"]);
 				} else if(result == "error"){
 					cusnotify('error','mini',true,4000,MSG['UploadFail'],false);
 				} else if(result == "nopid"){
@@ -303,7 +307,7 @@ $("#saveButton").click(function(){
 	} else {
 		//未登录
 		cusnotify('error','mini',true,3000,MSG['NotLoggedIn'],false);
-		_czc.push(["_trackEvent", "菜单", "上传代码", "未登录","", "saveButton"]);
+		//_czc.push(["_trackEvent", "菜单", "上传代码", "未登录","", "saveButton"]);
 	}
 });
 
@@ -329,14 +333,14 @@ $("#pullButton").click(function(){
 					Code.workspace.clear();
 					Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom(doDecode(result)), Code.workspace);
 					cusnotify('success','mini',true,5000,MSG['pullSuccessful'].replace('%1', Code.workspace.getAllBlocks().length),false);
-					_czc.push(["_trackEvent", "菜单", "拉取代码", user.idstr,"槽位"+thepid, "pullButton"]);
+					//_czc.push(["_trackEvent", "菜单", "拉取代码", user.idstr,"槽位"+thepid, "pullButton"]);
 				}
 			});
 		
 	} else {
 		//未登录
 		cusnotify('error','mini',true,3000,MSG['NotLoggedIn'],false);
-		_czc.push(["_trackEvent", "菜单", "拉取代码", "未登录","", "pullButton"]);
+		//_czc.push(["_trackEvent", "菜单", "拉取代码", "未登录","", "pullButton"]);
 	}
 });
 

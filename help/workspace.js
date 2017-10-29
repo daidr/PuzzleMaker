@@ -13,7 +13,9 @@ var demoWorkspace =
 	});
 
 function readyDemo(sel){
-	var filePath = "help/demos/" + sel.attr("demofile") + ".demo";
+	var demoname = sel.attr("demofile");
+	sel.after("<div class=\"demo_workspace_copy\" demofile=\"" + demoname + "\"><p>覆盖到编辑器</p></div>")
+	var filePath = "help/demos/" + demoname + ".demo";
 	$.get(filePath,function(result){
 		demoWorkspace.clear();
 		var xml = Blockly.Xml.textToDom(doDecode(result));
@@ -27,3 +29,9 @@ function addToWorkspace(){
 }
 
 readyDemo($("#demo_workspace"));
+$(".demo_workspace_copy").click(function (){
+	var demoname = $(this).attr("demofile");
+	var xml = Blockly.Xml.workspaceToDom(demoWorkspace);
+	Blockly.Xml.domToWorkspace(xml, Code.workspace);
+	cusnotify('success','mini',true,4000,MSG['addDemoSuccessful'].replace('%1', MSG['demo_' + demoname]),false);
+});
