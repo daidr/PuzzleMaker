@@ -215,7 +215,18 @@ $(document).ready(function(){
 
 	});
 
-	if(GetQueryString("code") != null){
+	if(getCookie("access_token") != null){
+		$.get("https://api.weibo.com/2/users/show.json?access_token="+getCookie("access_token"),function(result){
+			user = JSON.parse(result);
+			$(".login").remove();
+			$.post(serverpath + "score.php",{id:user.idstr},function(result){
+				$(".score").html("积分:" + result);
+			});
+			cusnotify('success','mini',true,5000,MSG['LoginSuccessful'].replace('%1', user.screen_name),false);
+			$(".projectid").append("<option value=\"1\">代码槽位 1</option><option value=\"2\">代码槽位 2</option><option value=\"3\">代码槽位 3</option><option value=\"4\">代码槽位 4</option><option value=\"5\">代码槽位 5</option>");
+		});
+	} else {
+		if(GetQueryString("code") != null){
 		var oauthcode = GetQueryString("code");
 		$.post(serverpath + "oauthcodetoatoken.php",{code:oauthcode},function(result){
 			if(result == "error"){
@@ -225,15 +236,16 @@ $(document).ready(function(){
 			var res_a = result.split("|||||"); 
 			var atoken = res_a[0];
 			var uid = res_a[1];
+			var expires_in = res_a[2];
 			if(uid == undefined){
 				cusnotify('info','mini',true,3000,MSG['LoginError'],false);
 				return;
 			}
-			cusnotify('success','mini',true,5000,MSG['LoginSuccessful'].replace('%1', uid),false);
-			user.login="1";
-			user.idstr=uid;
-			user.uid=uid;
-			document.cookie="access_token="+atoken;
+			setCookie("access_token",atoken,expires_in*0.0000116);
+			$.get("https://api.weibo.com/2/users/show.json?access_token="+getCookie("access_token"),function(result){
+				user = JSON.parse(result);
+				cusnotify('success','mini',true,5000,MSG['LoginSuccessful'].replace('%1', user.screen_name),false);
+			});
 			$(".login").remove();
 			$.post(serverpath + "score.php",{id:user.idstr},function(result){
 				$(".score").html("积分:" + result);
@@ -241,9 +253,14 @@ $(document).ready(function(){
 		$(".projectid").append("<option value=\"1\">代码槽位 1</option><option value=\"2\">代码槽位 2</option><option value=\"3\">代码槽位 3</option><option value=\"4\">代码槽位 4</option><option value=\"5\">代码槽位 5</option>");
 		});
 	}else{
-			cusnotify('info','mini',true,3000,MSG['LoginError'],false);
-			return;
+		cusnotify('info','mini',true,3000,MSG['LoginError'],false);
+		return;
 	}
+	
+	
+	}
+
+	
 	//_czc.push(["_trackEvent", "页面", "被打开", "","", ""]);
 });
 
@@ -380,6 +397,15 @@ var exdate=new Date()
 exdate.setDate(exdate.getDate()+expiredays)
 document.cookie=c_name+ "=" +escape(value)+
 ((expiredays==null) ? "" : ";expires="+exdate.toGMTString())
+}
+
+function getCookie(name)
+{
+var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
+if(arr=document.cookie.match(reg))
+return unescape(arr[2]);
+else
+return null;
 }
 
 function getNonFunctions(c) {

@@ -17,7 +17,8 @@
 	if ($json->access_token){
 		$access_token = $json->access_token;
 		$uid = $json->uid;
-		echo $access_token . "|||||" . $uid;
+		$expires_in = $json->expires_in;
+		echo $access_token . "|||||" . $uid . "|||||" . $expires_in;
 	} else {
 		echo $res;
 	}
