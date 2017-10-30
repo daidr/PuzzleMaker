@@ -219,6 +219,10 @@ $(document).ready(function(){
 		$.post(serverpath + "showuser.php",{uid:getCookie("uid")},function(result){
 			console.log(JSON.parse(result));
 			user = JSON.parse(result);
+			if(user.error_code){
+				cusnotify('info','mini',true,3000,MSG['LoginError'],false);
+				return;
+			}
 			user.login = "1";
 			$(".userinfobtn").css("display","inline-block");
 			$(".username").attr("href","http://weibo.com/u/"+user.idstr);
