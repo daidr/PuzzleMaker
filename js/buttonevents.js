@@ -529,6 +529,8 @@ $(".userinfobtn").click(function(){
 
 $(".loginout").click(function(){
 	$.post(serverpath + "loginout.php",{access_token:getCookie("access_token")},function(result){
+		delCookie("uid");
+		delCookie("access_token");
 		setTimeout(function(){location.href="http://cqpm.daidr.me";},1000);
 	});
 });
@@ -540,4 +542,12 @@ function GetQueryString(name){
      if(r!=null)return  unescape(r[2]); return null;
 }
 
+function delCookie(name)
+{
+var exp = new Date();
+exp.setTime(exp.getTime() - 1);
+var cval=getCookie(name);
+if(cval!=null)
+document.cookie= name + "="+cval+";expires="+exp.toGMTString();
+}
 
