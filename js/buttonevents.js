@@ -219,6 +219,7 @@ $(document).ready(function(){
 		$.post(serverpath + "showuser.php",{uid:getCookie("uid")},function(result){
 			console.log(JSON.parse(result));
 			user = JSON.parse(result);
+			user.login = "1";
 			$(".login").remove();
 			$.post(serverpath + "score.php",{id:user.idstr},function(result){
 				$(".score").html("积分:" + result);
@@ -246,14 +247,7 @@ $(document).ready(function(){
 				setCookie("access_token",atoken,expires_in*0.0000116);
 				$.post(serverpath + "showuser.php",{uid:getCookie("uid")},function(result){
 					user = JSON.parse(result);
-					location.href="https://cqpm.daidr.me";
-					cusnotify('success','mini',true,5000,MSG['LoginSuccessful'].replace('%1', user.screen_name),false);
-				});
-				$(".login").remove();
-				$.post(serverpath + "score.php",{id:user.idstr},function(result){
-					$(".score").html("积分:" + result);
-				});
-			$(".projectid").append("<option value=\"1\">代码槽位 1</option><option value=\"2\">代码槽位 2</option><option value=\"3\">代码槽位 3</option><option value=\"4\">代码槽位 4</option><option value=\"5\">代码槽位 5</option>");
+					location.href="http://cqpm.daidr.me";
 			});
 		}else{
 			cusnotify('info','mini',true,3000,MSG['LoginError'],false);
