@@ -243,7 +243,7 @@ $(document).ready(function(){
 					cusnotify('info','mini',true,3000,MSG['LoginError'],false);
 					return;
 				}
-				setCookie("uid",uid);
+				setCookie("uid",uid,100);
 				setCookie("access_token",atoken,expires_in*0.0000116);
 				$.post(serverpath + "showuser.php",{uid:getCookie("uid")},function(result){
 					user = JSON.parse(result);
