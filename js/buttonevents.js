@@ -531,6 +531,10 @@ $(".loginout").click(function(){
 	$.post(serverpath + "loginout.php",{access_token:getCookie("access_token")},function(result){
 		delCookie("uid");
 		delCookie("access_token");
+		cusnotify('success','mini',true,5000,MSG['LoginoutSuccessful'],false);
+		$(".userinfo").remove();
+		$(".userinfobtn").remove();
+		$(".projectid").html("<option value=\"temp\">浏览器本地缓存</option>");
 		setTimeout(function(){location.href="http://cqpm.daidr.me";},1000);
 	});
 });
