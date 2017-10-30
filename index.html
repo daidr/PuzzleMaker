@@ -101,7 +101,7 @@
             <td id="tab_blocks" class="tabon">...</td>
 			
             <td class="tabmax">
-			  <a class="score" href="#"></a>
+			  <a class="userinfobtn">用户信息</a>
 			  <div style="top: -9px;position: relative;display: inline-block;" class="login tologin"><div class="WB_loginButton WB_widgets"><a href="javascript:void(0);"><img src="media/loginButton_32.png"></a></div></div>
 			  <button id="docButton" class="notext" style="padding:1px 7px" title="...">
 				<i class="material-icons" style="font-size:27px;color:#5f5f5f;">live_help</i>
@@ -149,13 +149,22 @@
       </td>
     </tr>
   </table>
+  <div class="userinfo">
+	<span class="useroutput"><i class="material-icons">person</i>用户名：<a class="username userinfo_val" href="#" target="_blank"></a></span>
+	<br />
+	<span class="useroutput"><i class="material-icons">vpn_key</i>唯一绑定码：<a class="bindingcode userinfo_val"></a></span>
+	<br />
+	<span class="useroutput"><i class="material-icons">storage</i>可用槽位：<a class="slot userinfo_val">5</a></span>
+	<br />
+	<span class="useroutput"><i class="material-icons">account_balance_wallet</i>积分：<a class="score userinfo_val" href="#"></a></span>
+  </div>
   <div id="content_blocks" class="content"></div>
   <div id="content_doc" class="content" style="visibility: visible; top: 36px; right: 0px;position: absolute;"><div id="content_doc_in"></div></div>
   <div></div>
 <xml id="toolbox" style="display: none"></xml>
 
   <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
-  <link rel="stylesheet" href="//fonts.geekzu.org/icon?family=Material+Icons">
+  <link rel="stylesheet" href="iconfont/material-icons.css">
   <link rel="stylesheet" href="css/Lobibox.min.css">
   <script type="text/javascript" src="js/Base64.js"></script>
   <script src="//cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
@@ -201,22 +210,18 @@
   <script src="js/buttonevents.js"></script>
   <script>
     var user={};
-  	function login(o) {
-		user = o;
-		console.log(o);
-		cusnotify('success','mini',true,5000,MSG['LoginSuccessful'].replace('%1', o.screen_name),false);
-		$.post(serverpath + "score.php",{id:o.idstr},function(result){
-			$(".score").html("积分:" + result);
-		});
-		$(".projectid").append("<option value=\"1\">代码槽位 1</option><option value=\"2\">代码槽位 2</option><option value=\"3\">代码槽位 3</option><option value=\"4\">代码槽位 4</option><option value=\"5\">代码槽位 5</option>");
-		//_czc.push(["_trackEvent", "菜单", "登录", "微博登录", o.idstr]);
-	}
 	 
 	function logout() {
 		$(".score").html("");
 		cusnotify('success','mini',true,5000,MSG['LoginoutSuccessful'],false);
 		$(".projectid").html("<option value=\"temp\">浏览器本地缓存</option>");
 	}
+
+	function userinforeplace() {
+		$(".userinfo").css("left",$(".userinfobtn").offset().left + "px");
+		$(".userinfo").css("top",$(".userinfobtn").offset().top + 27 + "px");
+	}
+	 window.setInterval("userinforeplace()",500);
   </script>
   <script>$(".loadingpage").slideToggle();</script>
 </body>

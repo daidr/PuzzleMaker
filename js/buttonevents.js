@@ -204,7 +204,7 @@ $(document).ready(function(){
 	$("#content_doc").mCustomScrollbar({
 		theme:"dark",autoHideScrollbar:true
 	});
-	setTimeout("readTemporary();",500);
+	setTimeout("readTemporary();Code.init();",500);
 	$(".projectid").change(function(){
 		var pid = $(".projectid").val();
 		if (pid == "temp"){
@@ -220,9 +220,13 @@ $(document).ready(function(){
 			console.log(JSON.parse(result));
 			user = JSON.parse(result);
 			user.login = "1";
+			$(".userinfobtn").css("display","inline-block");
+			$(".username").attr("href","http://weibo.com/u/"+user.idstr);
+			$(".username").html(user.screen_name);
+			$(".bindingcode").html(user.idstr);
 			$(".login").remove();
 			$.post(serverpath + "score.php",{id:user.idstr},function(result){
-				$(".score").html("积分:" + result);
+				$(".score").html(result);
 			});
 			cusnotify('success','mini',true,5000,MSG['LoginSuccessful'].replace('%1', user.screen_name),false);
 			$(".projectid").append("<option value=\"1\">代码槽位 1</option><option value=\"2\">代码槽位 2</option><option value=\"3\">代码槽位 3</option><option value=\"4\">代码槽位 4</option><option value=\"5\">代码槽位 5</option>");
@@ -513,6 +517,10 @@ $(".projectid").change(function() {
 
 $(".tologin").click(function(){
 	location.href="https://api.weibo.com/oauth2/authorize?client_id=4031974087&redirect_uri=http://cqpm.daidr.me&response_type=code";
+});
+
+$(".userinfobtn").click(function(){
+	$(".userinfo").slideToggle();
 });
 
 

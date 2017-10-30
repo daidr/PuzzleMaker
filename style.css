@@ -194,15 +194,6 @@ button {
 	height:auto;
 }
 
-.score {
-	font-size: 12px;
-    color: #0078b6;
-    line-height: 16px;
-    position: relative;
-    left: -10px;
-    top: -8px;
-}
-
 .viewproblem {
     position: fixed;
 	color:#ff0000;
@@ -245,4 +236,45 @@ a[title='站长统计'] {
 
 .WB_widgets .WB_linkA, .WB_widgets .WB_linkA a, .WB_widgets a {
     color: #0078b6;
+}
+
+.userinfobtn {
+	font-size: 12px;
+    color: #0078b6;
+    line-height: 16px;
+    position: relative;
+    left: -10px;
+    top: -8px;
+	cursor: pointer;
+	display:none;
+}
+
+.userinfo {
+	padding:5px;
+	width:auto;
+	height:auto;
+	background:#f3f3f3;
+	border:solid 1px #cacaca;
+	position: fixed;
+    z-index: 9998;
+	border-radius: 0 0 15px 15px;
+	padding-bottom:10px;
+	display:none;
+}
+
+.userinfo_val {
+	font-size: 15px;
+    color: #464646;
+}
+.useroutput {
+	font-size: 15px;
+    color: #7d7d7d;
+	margin-left: 8px;
+	margin-right: 4px;
+}
+
+.useroutput>i{
+	color: #7d7d7d;
+	position: relative;
+    top: 6px;
 }
