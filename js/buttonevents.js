@@ -204,7 +204,7 @@ $(document).ready(function(){
 	$("#content_doc").mCustomScrollbar({
 		theme:"dark",autoHideScrollbar:true
 	});
-	setTimeout("readTemporary();Code.init();",500);
+	setTimeout("readTemporary();",500);
 	$(".projectid").change(function(){
 		var pid = $(".projectid").val();
 		if (pid == "temp"){
@@ -523,6 +523,11 @@ $(".userinfobtn").click(function(){
 	$(".userinfo").slideToggle();
 });
 
+$(".loginout").click(function(){
+	$.post(serverpath + "loginout.php",{access_token:getCookie("access_token")},function(result){
+		setTimeout(function(){location.href="http://cqpm.daidr.me";},1000);
+	});
+});
 
 
 function GetQueryString(name){
