@@ -234,3 +234,15 @@ a[title='站长统计'] {
     color: #0078b6;
     line-height: 16px;
 }
+
+.WB_loginButton img {
+    vertical-align: middle;
+}
+
+.WB_widgets fieldset, .WB_widgets img {
+    border: 0;
+}
+
+.WB_widgets .WB_linkA, .WB_widgets .WB_linkA a, .WB_widgets a {
+    color: #0078b6;
+}
