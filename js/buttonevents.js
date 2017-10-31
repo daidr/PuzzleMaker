@@ -240,7 +240,7 @@ $(document).ready(function(){
 			var oauthcode = GetQueryString("code");
 			$.post(serverpath + "oauthcodetoatoken.php",{code:oauthcode},function(result){
 				if(result == "error"){
-					cusnotify('warning','mini',true,3000,"登录失败",false);
+					cusnotify('warning','mini',true,3000,"登录失败，请重新登录",false);
 					return;
 				}
 				var res_a = result.split("|||||"); 
@@ -529,8 +529,9 @@ $(".userinfobtn").click(function(){
 
 $(".loginout").click(function(){
 	$.post(serverpath + "loginout.php",{access_token:getCookie("access_token")},function(result){
-		delCookie("uid");
-		delCookie("access_token");
+		//delCookie("uid");
+		//delCookie("access_token");
+		clearCookies();
 		cusnotify('success','mini',true,5000,MSG['LoginoutSuccessful'],false);
 		$(".userinfo").remove();
 		$(".userinfobtn").remove();
@@ -555,3 +556,10 @@ if(cval!=null)
 document.cookie= name + "="+cval+";expires="+exp.toGMTString();
 }
 
+function clearCookies() {
+	var keys = document.cookie.match(/[^ =;]+(?=\=)/g);
+	if (keys) {
+		for (var i = keys.length; i--;)
+		document.cookie = keys[i] + '=0;expires=' + new Date(0).toUTCString()
+	}
+}
