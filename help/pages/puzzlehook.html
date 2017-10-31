@@ -1,0 +1,37 @@
+<!--Header Start-->
+<div class="doctitlemask"></div>
+<i class="material-icons docback" style="font-size:27px;color:#5f5f5f;cursor: pointer;">arrow_back</i>
+<p class="doctitle">使用PuzzleHook</p>
+<!--Header End-->
+
+<!--Body Start-->
+<div class="docbody">
+	<p class="docsubtitle">一、PuzzleHook是什么</p>
+	<p class="doccontent">         PuzzleHook可以实现自动化同步拼图。当你通过Puzzle编辑器将代码上传后，往往需要手动向机器人发送“拉取拼图”来同步机器人本地的代码。使用PuzzleHook可以帮你省去该步骤，当你上传代码后，编辑器会自动请求你的机器人同步代码。但是，这需要你的机器能被外网访问。</p>
+	<p class="docsubtitle">二、PuzzleHook基本要求</p>
+	<p class="doccontent">         使用PuzzleHook需要你机器人所在的 电脑/vps 能被外网所访问。例如，一台具有独立公网ip的vps/电脑。如果你没有达到这个要求，也不要心急。你可以通过映射软件(花生壳、路由侠等...)将内网端口做一个映射。PuzzleHook使用了30432端口。</p>
+	<p class="docsubtitle">二、配置PuzzleHook</p>
+	<p class="doccontent">         你只需要在该页面配置，配置完成后，PuzzleHook会被自动启用。配置储存在浏览器中，更换浏览器/清空缓存/退出登录 需要重新配置。禁用PuzzleHook将编辑框留空保存即可。</p>
+	<p class="doccontent">         Token可以在你的酷Q Puzzle插件配置窗口找到。这是唯一验证PuzzleHook接口身份的票据，请务必做好保密工作。</p>
+	<input placeholder="ip/域名(不带端口号)" type="text" id="help_input" style="margin-bottom: -1px;border-radius: 10px 10px 0 0;" class="hookip">
+	<input placeholder="Token" type="text" id="help_input" class="hooktoken">
+	<div style="border-radius: 0 0 10px 10px;margin-top: -1px;" id="help_btn" class="hooksave">保存</div>
+</div>
+
+<!--Body End-->
+
+<!--Footer Start-->
+<hr class="docend" texts="The End" />
+<!--Footer End-->
+
+<!--Scripts Start-->
+<script>
+$(".hookip").val(getCookie("hookip"));
+$(".hooktoken").val(getCookie("hooktoken"));
+$(".hooksave").click(function(){
+	setCookie("hookip",$(".hookip").val(),365);
+	setCookie("hooktoken",$(".hooktoken").val(),365);
+	cusnotify('success','mini',true,3000,"PuzzleHook配置成功保存",false);
+});
+</script>
+<!--Scripts End-->

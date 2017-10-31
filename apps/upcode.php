@@ -88,4 +88,10 @@ if(strstr($allid,"*".$pid_num."*")){
 mysqli_free_result($result);
 mysqli_close($conn);
 
+$token = $_COOKIE['hooktoken'];
+$ip = $_COOKIE['hookip'];
+if($token="" || $ip=""){}else{
+$data = array('token' => $token);
+Requests::post('http://'.$ip.':30432', array(), $data);
+}
 ?>

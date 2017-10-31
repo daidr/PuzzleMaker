@@ -2,10 +2,10 @@
     "files": [
         {
 	    "zhname": "PuzzleMaker本体插件",
-	    "version": "0.4 Beta",
+	    "version": "0.5 Beta",
 	    "filename": "me.daidr.puzzle.cpk",
             "path": "{cqfile}\\app\\me.daidr.puzzle.cpk",
-            "md5": "4c16de6be9aaaaec4a499261331c7b2a",
+            "md5": "9ce392c39202af68f84c6627027cc2ab",
             "url": "http://cqpm.daidr.me/download/me.daidr.puzzle.cpk"
         },
 	{
@@ -17,5 +17,5 @@
             "url": "http://cqpm.daidr.me/download/mujs.dll"
         }
     ],
-    "notice": "PuzzleMaker目前还不是很完善，拼图会不定期增加，感谢您的支持。"
+    "notice": "PuzzleMaker目前还不是很完善，拼图会不定期增加，感谢您的支持。\n\n0.4B -> 0.5B的更新内容：\n新增PuzzleHook功能"
 }

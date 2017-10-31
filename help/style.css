@@ -247,3 +247,46 @@
 	animation: backshake .5s linear;
 	-webkit-animation: backshake .5s linear;
 }
+
+#help_input {
+    width: 50%;
+    border: 1px solid #CCC;
+    background: #FFF;
+    padding: 10px;
+    font: 400 12px/16px "Open Sans", Helvetica, Arial, sans-serif;
+    display: block;
+    margin: 0 auto;
+}
+
+#help_input:hover {
+    -webkit-transition: border-color 0.3s ease-in-out;
+    -moz-transition: border-color 0.3s ease-in-out;
+    transition: border-color 0.3s ease-in-out;
+    border: 1px solid #AAA;
+}
+
+#help_input:focus {
+    outline: 0;
+    border: 1px solid #999;
+}
+
+#help_btn{
+	width: 50%;
+    border: 1px solid #CCC;
+    background: #FFF;
+    padding: 10px;
+    font: 400 12px/16px "Open Sans", Helvetica, Arial, sans-serif;
+    display: block;
+    margin: 0 auto;
+	text-align: center;
+	color:#7575a1;
+	cursor: pointer;
+}
+
+#help_btn:hover{
+	-webkit-transition:color 0.3s ease-in-out,background-color 0.3s ease-in-out;
+    -moz-transition: color 0.3s ease-in-out,background-color 0.3s ease-in-out;
+    transition: color 0.3s ease-in-out,background-color 0.3s ease-in-out;
+    background: #CCC;
+	color:#fff;
+}
