@@ -200,6 +200,12 @@ function readTemporary(){
 }
 
 $(document).ready(function(){
+	if(getCookie("hooktoken")==""){
+		setCookie("hooktoken","",365);
+	}
+	if(getCookie("hookip")==""){
+		setCookie("hookip","",365);
+	}
 	loadHelp();
 	$("#content_doc").mCustomScrollbar({
 		theme:"dark",autoHideScrollbar:true
