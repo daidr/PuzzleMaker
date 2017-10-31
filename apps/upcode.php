@@ -88,9 +88,9 @@ if(strstr($allid,"*".$pid_num."*")){
 mysqli_free_result($result);
 mysqli_close($conn);
 
-$token = $_COOKIE['hooktoken'];
-$ip = $_COOKIE['hookip'];
-if($token="" || $ip=""){}else{
+$token = isset($_COOKIE['hooktoken']) && !empty($_COOKIE['hooktoken']) ? $_COOKIE['hooktoken'] : "empty";
+$ip = isset($_COOKIE['hookip']) && !empty($_COOKIE['hookip']) ? $_COOKIE['hookip'] : "empty";
+if($token="empty" || $ip="empty"){}else{
 $data = array('token' => $token);
 Requests::post('http://'.$ip.':30432', array(), $data);
 }
