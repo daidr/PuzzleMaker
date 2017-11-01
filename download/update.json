@@ -1,7 +1,7 @@
 {
     "files": [
         {
-	    "zhname": "PuzzleMaker本体插件",
+	    "zhname": "PuzzleMaker解析插件",
 	    "version": "0.5 Beta",
 	    "filename": "me.daidr.puzzle.cpk",
             "path": "{cqfile}\\app\\me.daidr.puzzle.cpk",
