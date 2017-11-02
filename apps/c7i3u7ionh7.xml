@@ -1,0 +1,233 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <variables>
+    <variable type="" id="EPDE@QN*vOgxozTYP115">群_消息内容</variable>
+    <variable type="" id="uZFF-w%fW[dv!)jCAotu">群_发送时间</variable>
+    <variable type="" id="n*VlegPY-9MJ5uJ{tmfV">群_来源群号</variable>
+    <variable type="" id="I[LTpIhjn5nDWAYuo!@*">群_来源QQ</variable>
+    <variable type="" id="!hC0@nW:EML8U;B9C5PA">关键字列表</variable>
+    <variable type="" id="|zVmHi)#kBqSGNEH`uPI">循环次数</variable>
+    <variable type="" id="%yX^%/NqbZ9^u$q}/5xx">{listVariable}</variable>
+  </variables>
+  <block type="cqevent_allevent" id="n2%h(qs^4$g*`#UTv@ze" x="-30" y="-10">
+    <field name="dispose">1</field>
+    <value name="eventTypeInput">
+      <block type="event_cqsys" id="*{gN;mc5`qN)vvz/(@A|">
+        <field name="event_type">CQGroupMsg</field>
+      </block>
+    </value>
+    <statement name="action">
+      <block type="variables_set" id="M;F[r-`!)$GXx`,sVX_G">
+        <field name="VAR" id="EPDE@QN*vOgxozTYP115" variabletype="">群_消息内容</field>
+        <value name="VALUE">
+          <block type="from_msg" id="E|lqDn,sW#z5*qbi{V6h"></block>
+        </value>
+        <next>
+          <block type="variables_set" id="~9=bl/{3w:;@Z@BTFT.q">
+            <field name="VAR" id="uZFF-w%fW[dv!)jCAotu" variabletype="">群_发送时间</field>
+            <value name="VALUE">
+              <block type="from_time" id="SnXr%?l3=OFmYI9p!!7a"></block>
+            </value>
+            <next>
+              <block type="variables_set" id="x7+m/;kaI2VB,:=J1T9U">
+                <field name="VAR" id="n*VlegPY-9MJ5uJ{tmfV" variabletype="">群_来源群号</field>
+                <value name="VALUE">
+                  <block type="fromgroup_group" id="19E3dL7TYlY2:9c6WPOo"></block>
+                </value>
+                <next>
+                  <block type="variables_set" id="uRLz0`Y4vRv]+{+mQe`S">
+                    <field name="VAR" id="I[LTpIhjn5nDWAYuo!@*" variabletype="">群_来源QQ</field>
+                    <value name="VALUE">
+                      <block type="from_person" id="$Vi!6xJ?5X;I+@*R~PHv"></block>
+                    </value>
+                    <next>
+                      <block type="variables_set" id="4aYn]]w?aaFSxJ@e2_c[">
+                        <field name="VAR" id="!hC0@nW:EML8U;B9C5PA" variabletype="">关键字列表</field>
+                        <comment pinned="true" h="53" w="211">创建一个含有广告关键字的列表</comment>
+                        <value name="VALUE">
+                          <block type="lists_create_with" id="2`1p.eqY2p!H^{m%:9x:">
+                            <mutation items="4"></mutation>
+                            <value name="ADD0">
+                              <block type="text" id="-Ljak[JP}PH4k%lc!T,d">
+                                <field name="TEXT">加群</field>
+                              </block>
+                            </value>
+                            <value name="ADD1">
+                              <block type="text" id="v$j09rE12~i^3T/$R8zw">
+                                <field name="TEXT">刷钻</field>
+                              </block>
+                            </value>
+                            <value name="ADD2">
+                              <block type="text" id="mCH~v6C2Ta4QAU[6_?MU">
+                                <field name="TEXT">毛片</field>
+                              </block>
+                            </value>
+                            <value name="ADD3">
+                              <block type="text" id="0Fl6-MHbgUduG}ZcJ7(Z">
+                                <field name="TEXT">傻逼</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="variables_set" id="4,3J9@]W#-X/C%S2!%ja">
+                            <field name="VAR" id="|zVmHi)#kBqSGNEH`uPI" variabletype="">循环次数</field>
+                            <value name="VALUE">
+                              <block type="math_number" id="KrcD_`@`]X?,i-TI$E3x">
+                                <field name="NUM">0</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="controls_repeat_ext" id="adR4:?Ra~ALk_kU^MR=W">
+                                <comment pinned="true" h="50" w="207">根据 关键字 数量进行循环，依次判断关键字是否存在</comment>
+                                <value name="TIMES">
+                                  <shadow type="math_number" id="e`I#8$qo2Hg|r2IhzopM">
+                                    <field name="NUM">10</field>
+                                  </shadow>
+                                  <block type="lists_length" id="}/@*bh-dY_X4ZCHuOlzY">
+                                    <value name="VALUE">
+                                      <block type="variables_get" id="_!NYrMFU)`NA6omsH$y0">
+                                        <field name="VAR" id="!hC0@nW:EML8U;B9C5PA" variabletype="">关键字列表</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <statement name="DO">
+                                  <block type="variables_set" id="`o{I#G(DR6/h8nlMTkYZ">
+                                    <field name="VAR" id="|zVmHi)#kBqSGNEH`uPI" variabletype="">循环次数</field>
+                                    <value name="VALUE">
+                                      <block type="math_arithmetic" id="l*pLq3{}i:IxxUg5Q*5R">
+                                        <field name="OP">ADD</field>
+                                        <value name="A">
+                                          <shadow type="math_number" id="T!c:DgYW!;OmD-BXB0rK">
+                                            <field name="NUM">1</field>
+                                          </shadow>
+                                          <block type="variables_get" id="B:p)3rZlS7m1$qZi?N2}">
+                                            <field name="VAR" id="|zVmHi)#kBqSGNEH`uPI" variabletype="">循环次数</field>
+                                          </block>
+                                        </value>
+                                        <value name="B">
+                                          <shadow type="math_number" id="a3=zLxpN|%4ivN!z9bfP">
+                                            <field name="NUM">1</field>
+                                          </shadow>
+                                          <block type="math_number" id="=T?F=KiIyI^-a?4ugpoL">
+                                            <field name="NUM">1</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                    <next>
+                                      <block type="controls_if" id="`MCrM{1W?3fi5i2|zMC)">
+                                        <mutation else="1"></mutation>
+                                        <value name="IF0">
+                                          <block type="logic_compare" id="JE?MdmW!`r3C=1FsXxf+">
+                                            <field name="OP">EQ</field>
+                                            <comment pinned="true" h="63" w="196">从 关键字列表 中获取关键字，如果返回“0”则未找到</comment>
+                                            <value name="A">
+                                              <block type="text_indexOf" id="S3695M_4u8@k$xypdO6,">
+                                                <field name="END">FIRST</field>
+                                                <value name="VALUE">
+                                                  <block type="variables_get" id="9gG4,|aj67ON8*|YJEye">
+                                                    <field name="VAR" id="EPDE@QN*vOgxozTYP115" variabletype="">群_消息内容</field>
+                                                  </block>
+                                                </value>
+                                                <value name="FIND">
+                                                  <shadow type="text" id="AI4OOMKzTA+ir!4^glli">
+                                                    <field name="TEXT">abc</field>
+                                                  </shadow>
+                                                  <block type="lists_getIndex" id=")7SRGvWKD$j)!Off=pl+">
+                                                    <mutation statement="false" at="true"></mutation>
+                                                    <field name="MODE">GET</field>
+                                                    <field name="WHERE">FROM_START</field>
+                                                    <comment pinned="true" h="48" w="153">根据循环次数取出相应关键字</comment>
+                                                    <value name="VALUE">
+                                                      <block type="variables_get" id="Splf:ldezaxD*|.ONP,#">
+                                                        <field name="VAR" id="!hC0@nW:EML8U;B9C5PA" variabletype="">关键字列表</field>
+                                                      </block>
+                                                    </value>
+                                                    <value name="AT">
+                                                      <block type="variables_get" id="w9!522zP$:,vs76:F:d{">
+                                                        <field name="VAR" id="|zVmHi)#kBqSGNEH`uPI" variabletype="">循环次数</field>
+                                                      </block>
+                                                    </value>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </value>
+                                            <value name="B">
+                                              <block type="math_number" id="q2_0(Ece`P2x]Aj6JLyf">
+                                                <field name="NUM">0</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                        <statement name="DO0">
+                                          <block type="controls_flow_statements" id="k@$4uy^}Cb}]fOv+z7NU">
+                                            <field name="FLOW">CONTINUE</field>
+                                            <comment pinned="true" h="57" w="186">没有广告关键字，跳出本次循环，进行下次循环</comment>
+                                          </block>
+                                        </statement>
+                                        <statement name="ELSE">
+                                          <block type="cq_sendmsg" id="X#QAlttj|[tPRo~;[|LX">
+                                            <field name="type">group</field>
+                                            <value name="idnumber">
+                                              <shadow type="math_number" id="{Owmqr3Nx#:GhmBhkv.B">
+                                                <field name="NUM">1234567</field>
+                                              </shadow>
+                                              <block type="variables_get" id=".Lf%OMHqjq2B!L}$@T?,">
+                                                <field name="VAR" id="n*VlegPY-9MJ5uJ{tmfV" variabletype="">群_来源群号</field>
+                                              </block>
+                                            </value>
+                                            <value name="msg">
+                                              <shadow type="text" id="Q5vhkxSP4(1Ijgbhl*1d">
+                                                <field name="TEXT">这是一条测试消息</field>
+                                              </shadow>
+                                              <block type="text_join" id=".f9J=pG)P.7/HUq;UZsN">
+                                                <mutation items="2"></mutation>
+                                                <value name="ADD0">
+                                                  <block type="cqcode_at" id="@12}X@Q%#!Y2la(I.Gl0">
+                                                    <field name="isNoSpace">false</field>
+                                                    <value name="QQID">
+                                                      <shadow type="math_number" id="Nam%:XROtj,j(~P0hMEH">
+                                                        <field name="NUM">1234567</field>
+                                                      </shadow>
+                                                      <block type="variables_get" id="w|R,.?S/S},E+7?f0qx6">
+                                                        <field name="VAR" id="I[LTpIhjn5nDWAYuo!@*" variabletype="">群_来源QQ</field>
+                                                      </block>
+                                                    </value>
+                                                  </block>
+                                                </value>
+                                                <value name="ADD1">
+                                                  <block type="text" id="_8#n7Hpo?Z#@/kN)8]zP">
+                                                    <field name="TEXT">你想造反？？？</field>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </value>
+                                            <next>
+                                              <block type="controls_flow_statements" id="b)n[siJs~b;.z{E*87x?">
+                                                <field name="FLOW">BREAK</field>
+                                                <comment pinned="true" h="63" w="158">含有关键字，跳出所有循环并进行相关操作</comment>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </statement>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </statement>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

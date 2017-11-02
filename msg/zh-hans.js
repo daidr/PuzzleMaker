@@ -64,5 +64,6 @@ var MSG = {
   slotNoTEMP:"已经定位到 插件槽位%1",
   addingDemo:"获取实例 %1 内容中...",
   addDemoSuccessful:"插件实例 %1 被载入到编辑器中",
-  demo_likedemo:"名片赞实例"
+  demo_likedemo:"名片赞实例",
+  demo_adkillerdemo:"广告检测插件实例"
 };
