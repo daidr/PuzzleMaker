@@ -196,6 +196,14 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
     "helpUrl": "%{BKY_TEXT_CHARAT_HELPURL}",
     "inputsInline": true,
     "mutator": "text_charAt_mutator"
+  },
+  {
+    "type": "text_enter",
+    "message0": "换行",
+    "output": "String",
+    "colour": "%{BKY_TEXTS_HUE}",
+    "tooltip": "返回 换行符 文本",
+    "helpUrl": ""
   }
 ]);  // END JSON EXTRACT (Do not delete this comment.)
 
