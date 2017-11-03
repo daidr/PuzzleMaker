@@ -33,3 +33,11 @@ Blockly.JavaScript['cq_addlog'] = function(block) {
   var code = "addLog(\"" + dropdown_type + "\"," + value_content + ");\n";
   return code;
 };
+
+Blockly.JavaScript['cq_jinyan'] = function(block) {
+  var value_groupnumber = Blockly.JavaScript.valueToCode(block, 'groupnumber', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_idnumber = Blockly.JavaScript.valueToCode(block, 'idnumber', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_time = Blockly.JavaScript.valueToCode(block, 'time', Blockly.JavaScript.ORDER_ATOMIC);
+  var code = "setJinyan(" + value_groupnumber + "," + value_idnumber + "," + value_time + ");\n";
+  return code;
+};

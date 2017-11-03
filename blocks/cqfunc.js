@@ -115,5 +115,38 @@ Blockly.defineBlocksWithJsonArray([
   "colour": "%{BKY_CQFUNC_HUE}",
   "tooltip": "输出各类型的日志，方便调试",
   "helpUrl": ""
+},
+{
+  "type": "cq_jinyan",
+  "message0": "禁言指定Q号 %1 群号 %2 Q号 %3 时长(秒) %4",
+  "args0": [
+    {
+      "type": "input_dummy",
+      "align": "RIGHT"
+    },
+    {
+      "type": "input_value",
+      "name": "groupnumber",
+      "check": "Number",
+      "align": "RIGHT"
+    },
+    {
+      "type": "input_value",
+      "name": "idnumber",
+      "check": "Number",
+      "align": "RIGHT"
+    },
+    {
+      "type": "input_value",
+      "name": "time",
+      "check": "Number",
+      "align": "RIGHT"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": "%{BKY_CQFUNC_HUE}",
+  "tooltip": "禁言指定QQ号，时间单位为秒。如果时间为0则为解禁。本参数无返回值",
+  "helpUrl": ""
 }
 ]);
