@@ -277,6 +277,15 @@
         </value>
       </block>
     </category>
+	<category name="%{BKY_CATTIME}" colour="%{BKY_TIME_HUE}">
+      <block type="cq_timestamptostr">
+	    <value name="timestamp">
+		  <shadow type="variables_get">
+			<field name="VAR">{textVariable}</field>
+		  </shadow>
+		</value>
+	  </block>
+    </category>
 	<sep></sep>
 	<category name="%{BKY_CATSYSDISK}" colour="%{BKY_SYSDISK_HUE}">
       <block type="sysdisk_getlocalpath"></block>
@@ -320,7 +329,8 @@
     </category>
 	<sep></sep>
 	<category name="%{BKY_CATCQFUNC}" colour="%{BKY_CQFUNC_HUE}">
-      <block type="cq_sendmsg">
+	  <block type="cq_getgrouplist"></block>
+	  <block type="cq_sendmsg">
 	    <value name="idnumber">
           <shadow type="math_number">
             <field name="NUM">1234567</field>
@@ -341,6 +351,23 @@
 		<value name="times">
           <shadow type="math_number">
             <field name="NUM">10</field>
+          </shadow>
+        </value>
+	  </block>
+	  <block type="cq_jinyan">
+		<value name="groupnumber">
+          <shadow type="math_number">
+            <field name="NUM">1234567</field>
+          </shadow>
+        </value>
+		<value name="idnumber">
+          <shadow type="math_number">
+            <field name="NUM">1234567</field>
+          </shadow>
+        </value>
+		<value name="time">
+          <shadow type="math_number">
+            <field name="NUM">60</field>
           </shadow>
         </value>
 	  </block>

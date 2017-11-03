@@ -41,3 +41,8 @@ Blockly.JavaScript['cq_jinyan'] = function(block) {
   var code = "setJinyan(" + value_groupnumber + "," + value_idnumber + "," + value_time + ");\n";
   return code;
 };
+
+Blockly.JavaScript['cq_getgrouplist'] = function(block) {
+  var code = 'getGroupList()';
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};

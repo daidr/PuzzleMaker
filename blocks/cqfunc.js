@@ -148,5 +148,15 @@ Blockly.defineBlocksWithJsonArray([
   "colour": "%{BKY_CQFUNC_HUE}",
   "tooltip": "禁言指定QQ号，时间单位为秒。如果时间为0则为解禁。本参数无返回值",
   "helpUrl": ""
+},
+{
+  "type": "cq_getgrouplist",
+  "lastDummyAlign0": "RIGHT",
+  "message0": "获取机器人加的所有群",
+  "inputsInline": false,
+  "output": null,
+  "colour": "%{BKY_CQFUNC_HUE}",
+  "tooltip": "输出机器人所加的所有群，格式为“xxxxxxx|xxxxxxx|xxxxxxx”",
+  "helpUrl": ""
 }
 ]);

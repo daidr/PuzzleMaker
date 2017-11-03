@@ -21,6 +21,7 @@ var MSG = {
   catText: "文本",
   catLists: "列表",
   catColour: "颜色",
+  catTime: "时间",
   catVariables: "变量",
   catFunctions: "函数",
   catsysdisk: "磁盘操作",
