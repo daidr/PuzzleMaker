@@ -23,7 +23,7 @@ Blockly.JavaScript['cqcode_shake'] = function(block) {
 Blockly.JavaScript['cqcode_contact'] = function(block) {
   var dropdown_type = block.getFieldValue('TYPE');
   var text_id = Blockly.JavaScript.valueToCode(block, 'number', Blockly.JavaScript.ORDER_ATOMIC);
-  var code = "'[CQ:contact,type=' + " + dropdown_type + " + ',id=' + " +text_id + " + ']'";
+  var code = "'[CQ:contact,type=' + '" + dropdown_type + "' + ',id=' + " +text_id + " + ']'";
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
