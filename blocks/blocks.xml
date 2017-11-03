@@ -405,34 +405,34 @@
 		  <block type="event_cqsys"></block>
 		</value>
 		<value name="action">
-		  <block type="variables_set">
+		  <block type="variables_set" deletable="false" movable="false" editable="false">
             <field name="VAR">群_来源QQ</field>
 			  <value name="VALUE">
-			    <block type="from_person"></block>
+			    <block type="from_person" deletable="false" movable="false" editable="false"></block>
 			  </value>
           </block>
         </value>
 	    <value name="action">
-          <block type="variables_set">
+          <block type="variables_set" deletable="false" movable="false" editable="false">
             <field name="VAR">群_来源群号</field>
 			  <value name="VALUE">
-			    <block type="fromgroup_group"></block>
+			    <block type="fromgroup_group" deletable="false" movable="false" editable="false"></block>
 			  </value>
           </block>
         </value>
 		<value name="action">
-          <block type="variables_set">
+          <block type="variables_set" deletable="false" movable="false" editable="false">
             <field name="VAR">群_发送时间</field>
 			  <value name="VALUE">
-			    <block type="from_time"></block>
+			    <block type="from_time" deletable="false" movable="false" editable="false"></block>
 			  </value>
           </block>
         </value>
 		<value name="action">
-          <block type="variables_set">
+          <block type="variables_set" deletable="false" movable="false" editable="false">
             <field name="VAR">群_消息内容</field>
 			  <value name="VALUE">
-			    <block type="from_msg"></block>
+			    <block type="from_msg" deletable="false" movable="false" editable="false"></block>
 			  </value>
           </block>
         </value>
@@ -442,26 +442,26 @@
 		  <block type="event_cqsys"><field name="event_type">CQFriendMsg</field></block>
 		</value>
 		<value name="action">
-		  <block type="variables_set">
+		  <block type="variables_set" deletable="false" movable="false" editable="false">
             <field name="VAR">私聊_来源QQ</field>
 			  <value name="VALUE">
-			    <block type="from_person"></block>
+			    <block type="from_person" deletable="false" movable="false" editable="false"></block>
 			  </value>
           </block>
         </value>
 		<value name="action">
-          <block type="variables_set">
+          <block type="variables_set" deletable="false" movable="false" editable="false">
             <field name="VAR">私聊_发送时间</field>
 			  <value name="VALUE">
-			    <block type="from_time"></block>
+			    <block type="from_time" deletable="false" movable="false" editable="false"></block>
 			  </value>
           </block>
         </value>
 		<value name="action">
-          <block type="variables_set">
+          <block type="variables_set" deletable="false" movable="false" editable="false">
             <field name="VAR">私聊_消息内容</field>
 			  <value name="VALUE">
-			    <block type="from_msg"></block>
+			    <block type="from_msg" deletable="false" movable="false" editable="false"></block>
 			  </value>
           </block>
         </value>
@@ -471,34 +471,34 @@
 		  <block type="event_cqsys"><field name="event_type">CQDiscussMsg</field></block>
 		</value>
 		<value name="action">
-          <block type="variables_set">
+          <block type="variables_set" deletable="false" movable="false" editable="false">
             <field name="VAR">讨论组_来源讨论组号</field>
 			  <value name="VALUE">
-			    <block type="fromdiscuss_discuss"></block>
+			    <block type="fromdiscuss_discuss" deletable="false" movable="false" editable="false"></block>
 			  </value>
           </block>
         </value>
 		<value name="action">
-		  <block type="variables_set">
+		  <block type="variables_set" deletable="false" movable="false" editable="false">
             <field name="VAR">讨论组_来源QQ</field>
 			  <value name="VALUE">
-			    <block type="from_person"></block>
+			    <block type="from_person" deletable="false" movable="false" editable="false"></block>
 			  </value>
           </block>
         </value>
 		<value name="action">
-          <block type="variables_set">
+          <block type="variables_set" deletable="false" movable="false" editable="false">
             <field name="VAR">讨论组_发送时间</field>
 			  <value name="VALUE">
-			    <block type="from_time"></block>
+			    <block type="from_time" deletable="false" movable="false" editable="false"></block>
 			  </value>
           </block>
         </value>
 		<value name="action">
-          <block type="variables_set">
+          <block type="variables_set" deletable="false" movable="false" editable="false">
             <field name="VAR">讨论组_消息内容</field>
 			  <value name="VALUE">
-			    <block type="from_msg"></block>
+			    <block type="from_msg" deletable="false" movable="false" editable="false"></block>
 			  </value>
           </block>
         </value>
