@@ -35,7 +35,9 @@ $(".demo_workspace_copy").click(function (){
 	cusnotify('info','mini',true,4000,MSG['addingDemo'].replace('%1', MSG['demo_' + demoname]),false);
 	$.get(filePath,function(result){
 		Code.workspace.clear();
-		var xml = Blockly.Xml.textToDom(doDecode(result));
+		var thedemo = doDecode(result);
+		var thedemo = thedemo.replace(/<comment[^>]+>[^<]+<\/comment>/g, "");
+		var xml = Blockly.Xml.textToDom(thedemo);
 		Blockly.Xml.domToWorkspace(xml, Code.workspace);
 		cusnotify('success','mini',true,4000,MSG['addDemoSuccessful'].replace('%1', MSG['demo_' + demoname]),false);
 	});
