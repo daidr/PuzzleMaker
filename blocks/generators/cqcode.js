@@ -23,28 +23,24 @@ Blockly.JavaScript['cqcode_shake'] = function(block) {
 Blockly.JavaScript['cqcode_contact'] = function(block) {
   var dropdown_type = block.getFieldValue('TYPE');
   var text_id = Blockly.JavaScript.valueToCode(block, 'number', Blockly.JavaScript.ORDER_ATOMIC);
-  var code = "[CQ:contact,type=" + dropdown_type + ",id='+" + text_id + "+']'";
-  code = Blockly.JavaScript.quote_(code);
+  var code = "'[CQ:contact,type=' + " + dropdown_type + " + ',id=' + " +text_id + " + ']'";
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
 Blockly.JavaScript['cqcode_emoji_1'] = function(block) {
   var dropdown_emojiid = block.getFieldValue('emojiid');
-  var code = "[CQ:emoji,id='+" + dropdown_emojiid + "+']'";
-  code = Blockly.JavaScript.quote_(code);
+  var code = "'[CQ:emoji,id='+" + dropdown_emojiid + "+']'";
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
 Blockly.JavaScript['cqcode_emoji_2'] = function(block) {
   var text_emojiid = block.getFieldValue('emojiid');
-  var code = "[CQ:emoji,id='+" + text_emojiid + "+']'";
-  code = Blockly.JavaScript.quote_(code);
+  var code = "'[CQ:emoji,id='+" + text_emojiid + "+']'";
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
 Blockly.JavaScript['cqcode_sface_1'] = function(block) {
   var text_sfaceid = block.getFieldValue('sfaceid');
-  var code = "[CQ:sface,id='+" + text_sfaceid + "+']'";
-  code = Blockly.JavaScript.quote_(code);
+  var code = "'[CQ:sface,id='+" + text_sfaceid + "+']'";
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
