@@ -11,6 +11,7 @@ Blockly.Blocks.voiceera.HUE = Blockly.Constants.voiceera.HUE;
 Blockly.Blocks['ve_gettts'] = {
   init: function() {
     this.appendDummyInput()
+		.appendField(new Blockly.FieldImage("media/voiceera.png", 25, 20, "*"))
         .appendField("语音时代_语音合成");
     this.appendValueInput("content")
         .setCheck(null)
