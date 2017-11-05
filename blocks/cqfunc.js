@@ -5,6 +5,9 @@ goog.provide('Blockly.JavaScript.cqfunc');
 
 goog.require('Blockly.JavaScript');
 
+Blockly.Constants.CQFunc.HUE = Blockly.Msg["CQFUNC_HUE"];
+Blockly.Blocks.CQFunc.HUE = Blockly.Constants.CQFunc.HUE;
+
 Blockly.defineBlocksWithJsonArray([
 {
   "type": "cq_sendmsg",
@@ -180,7 +183,7 @@ Blockly.Blocks['cq_getusername'] = {
         .appendField("的昵称");
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(90);
+    this.setColour(Blockly.Blocks.CQFunc.HUE);
  this.setTooltip("根据号码输出昵称，如果没有获取到则返回空");
  this.setHelpUrl("");
  thisBlock = this;
