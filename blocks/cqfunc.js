@@ -191,14 +191,13 @@ Blockly.Blocks['cq_getusername'] = {
   },
   mutationToDom: function() {
     var container = document.createElement('mutation');
-    isQQ = thisBlock.getFieldValue('type') == "qq";
+    var isQQ = this.getFieldValue('type') == "qq";
     container.setAttribute('type', isQQ);
-	this.updateAt_(isQQ);
     return container;
   },
   domToMutation: function(xmlElement) {
-    isQQ = (xmlElement.getAttribute('type') != 'false');
-    this.updateAt_(isQQ);
+    var isTTSC = (xmlElement.getAttribute('type') != 'false');
+    this.updateAt_(isTTSC);
   },
   updateAt_: function(isQQ) {
     this.removeInput('content');
