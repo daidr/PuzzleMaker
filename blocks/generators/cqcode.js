@@ -44,3 +44,10 @@ Blockly.JavaScript['cqcode_sface_1'] = function(block) {
   var code = "'[CQ:sface,id='+" + text_sfaceid + "+']'";
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
+
+Blockly.JavaScript['cqcode_record'] = function(block) {
+  var dropdown_magic = block.getFieldValue('magic');
+  var value_filename = Blockly.JavaScript.valueToCode(block, 'filename', Blockly.JavaScript.ORDER_ATOMIC);
+  var code = "'[CQ:contact,type=' + " + value_filename + " + ',magic=" +dropdown_magic + "]'";
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};

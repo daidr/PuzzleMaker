@@ -36,14 +36,14 @@ Blockly.defineBlocksWithJsonArray([{
   "inputsInline": true,
   "output": "String",
   "colour": "%{BKY_CQCODE_HUE}",
-  "tooltip": "该拼图输出CQ码字符串",
+  "tooltip": "输出at指定QQ的CQ码",
   "helpUrl": ""
 }, {
 	"type": "cqcode_shake",
 	"message0": "窗口抖动(戳一戳)",
 	"output": "String",
 	"colour": "%{BKY_CQCODE_HUE}",
-	"tooltip": "该拼图输出CQ码字符串",
+	"tooltip": "输出抖动(戳一戳)CQ码",
 	"helpUrl": ""
 }, {
   "type": "cqcode_contact",
@@ -75,7 +75,7 @@ Blockly.defineBlocksWithJsonArray([{
   "inputsInline": true,
   "output": "String",
   "colour": "%{BKY_CQCODE_HUE}",
-  "tooltip": "该拼图输出CQ码字符串",
+  "tooltip": "输出名片CQ码",
   "helpUrl": ""
 }, {
 	"type": "cqcode_emoji_1",
@@ -98,7 +98,7 @@ Blockly.defineBlocksWithJsonArray([{
 	}],
 	"output": "String",
 	"colour": "%{BKY_CQCODE_HUE}",
-	"tooltip": "该拼图输出CQ码字符串",
+	"tooltip": "输出emoji表情CQ码",
 	"helpUrl": ""
 }, {
 	"type": "cqcode_emoji_2",
@@ -110,7 +110,7 @@ Blockly.defineBlocksWithJsonArray([{
 	}],
 	"output": "String",
 	"colour": "%{BKY_CQCODE_HUE}",
-	"tooltip": "该拼图输出CQ码字符串",
+	"tooltip": "输出emoji表情CQ码",
 	"helpUrl": ""
 }, {
 	"type": "cqcode_sface_1",
@@ -122,8 +122,41 @@ Blockly.defineBlocksWithJsonArray([{
 	}],
 	"output": "String",
 	"colour": "%{BKY_CQCODE_HUE}",
-	"tooltip": "该拼图输出CQ码字符串",
+	"tooltip": "输出qq表情CQ码",
 	"helpUrl": ""
+},
+{
+  "type": "cqcode_record",
+  "message0": "发送语音 %1 %2 音频文件名 %3",
+  "args0": [
+    {
+      "type": "field_dropdown",
+      "name": "magic",
+      "options": [
+        [
+          "添加「变声」标记",
+          "true"
+        ],
+        [
+          "不添加「变声」标记",
+          "false"
+        ]
+      ]
+    },
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "input_value",
+      "name": "filename",
+      "check": "String",
+      "align": "RIGHT"
+    }
+  ],
+  "output": "String",
+  "colour": "%{BKY_CQCODE_HUE}",
+  "tooltip": "输出发送语音的CQ码，「音频文件名」需存放在酷Q目录的「data\\record\\」下。",
+  "helpUrl": ""
 }
 
 ]);

@@ -409,6 +409,22 @@
         </value>
 	  </block>
 	  <block type="cqcode_shake"></block>
+	  <block type="cqcode_record">
+	    <value name="filename">
+          <shadow type="ve_gettts">
+			<value name="content">
+			  <shadow type="text">
+				<field name="TEXT">你好！语音时代！</field>
+			  </shadow>
+			</value>
+			<value name="ttsgroup">
+			  <shadow type="text">
+				<field name="TEXT">度丫丫.vdb</field>
+			  </shadow>
+			</value>
+          </shadow>
+        </value>
+	  </block>
 	  <block type="cqcode_contact">
 	    <value name="number">
           <shadow type="math_number">
