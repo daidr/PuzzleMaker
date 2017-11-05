@@ -340,14 +340,6 @@
           </shadow>
         </value>
 	  </block>
-	  <block type="ve_gettts">
-	    <value name="content">
-          <shadow type="text">
-            <field name="TEXT">你好！语音时代！</field>
-          </shadow>
-        </value>
-        <field name="ttstype">内置</field>
-	  </block>
     </category>
 	<sep></sep>
 	<category name="%{BKY_CATCQFUNC}" colour="%{BKY_CQFUNC_HUE}">

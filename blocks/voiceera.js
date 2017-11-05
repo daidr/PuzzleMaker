@@ -1,5 +1,4 @@
 'use strict';
-var thisBlock,isTTSC;
 
 goog.provide('Blockly.Blocks.voiceera');  // Deprecated
 goog.provide('Blockly.Constants.voiceera');
@@ -22,9 +21,11 @@ Blockly.Blocks['ve_gettts'] = {
         .setAlign(Blockly.ALIGN_RIGHT)
         .appendField(new Blockly.FieldDropdown([["自定义","outtts"],["内置","intts"]],function(value) {
 		  var newTTSC = (value == 'outtts');
+		  if (newTTSC != isTTSC) {
 			var block = this.sourceBlock_;
 			block.updateAt_(newTTSC);
 			block.setFieldValue(value, 'ttstype');
+		  }
 		  return null;
 		}), "ttstype")
         .appendField("音源");
@@ -33,19 +34,15 @@ Blockly.Blocks['ve_gettts'] = {
     this.setColour(Blockly.Blocks.voiceera.HUE);
  this.setTooltip("合成成功返回音频文件名。合成失败返回-1。本拼图需要安装「语音时代」。\n自定义声源为「bin/VoiceDB」目录下的音源文件");
  this.setHelpUrl("");
- thisBlock = this;
   },
   mutationToDom: function() {
     var container = document.createElement('mutation');
-    isTTSC = thisBlock.getFieldValue('ttstype') == 'outtts';
+    var isTTSC = this.getFieldValue('ttstype') == "outtts";
     container.setAttribute('ttstype', isTTSC);
-	if(isTTSC == false) {
-	this.updateAt_(isTTSC);
-	}
     return container;
   },
   domToMutation: function(xmlElement) {
-    isTTSC = (xmlElement.getAttribute('ttstype') != 'outtts');
+    var isTTSC = (xmlElement.getAttribute('ttstype') != 'false');
     this.updateAt_(isTTSC);
   },
   updateAt_: function(isTTSC) {
@@ -56,10 +53,12 @@ Blockly.Blocks['ve_gettts'] = {
         .setCheck(null)
         .setAlign(Blockly.ALIGN_RIGHT)
         .appendField(new Blockly.FieldDropdown([["自定义","outtts"],["内置","intts"]],function(value) {
-		  var newTTSC = (value == 'outtts');
-			var block = this.sourceBlock_;
-			block.updateAt_(newTTSC);
-			block.setFieldValue('outtts', 'ttstype');
+		    var newTTSC = (value == 'outtts');
+			if (newTTSC != isTTSC) {
+				var block = this.sourceBlock_;
+				block.updateAt_(newTTSC);
+				block.setFieldValue(value, 'ttstype');
+			}
 		  return null;
 		}), "ttstype")
         .appendField("音源");
@@ -68,10 +67,12 @@ Blockly.Blocks['ve_gettts'] = {
 	  this.appendDummyInput("ttsgroup")
         .setAlign(Blockly.ALIGN_RIGHT)
         .appendField(new Blockly.FieldDropdown([["自定义","outtts"],["内置","intts"]],function(value) {
-		  var newTTSC = (value == 'outtts');
-			var block = this.sourceBlock_;
-			block.updateAt_(newTTSC);
-			block.setFieldValue('intts', 'ttstype');
+		    var newTTSC = (value == 'outtts');
+			if (newTTSC != isTTSC) {
+				var block = this.sourceBlock_;
+				block.updateAt_(newTTSC);
+				block.setFieldValue(value, 'ttstype');
+			}
 		  return null;
 		}), "ttstype")
         .appendField("音源")
