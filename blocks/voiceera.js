@@ -59,7 +59,7 @@ Blockly.Blocks['ve_gettts'] = {
 		  var newTTSC = (value == 'outtts');
 			var block = this.sourceBlock_;
 			block.updateAt_(newTTSC);
-			block.setFieldValue(value, 'ttstype');
+			block.setFieldValue('outtts', 'ttstype');
 		  return null;
 		}), "ttstype")
         .appendField("音源");
@@ -71,7 +71,7 @@ Blockly.Blocks['ve_gettts'] = {
 		  var newTTSC = (value == 'outtts');
 			var block = this.sourceBlock_;
 			block.updateAt_(newTTSC);
-			block.setFieldValue(value, 'ttstype');
+			block.setFieldValue('intts', 'ttstype');
 		  return null;
 		}), "ttstype")
         .appendField("音源")
