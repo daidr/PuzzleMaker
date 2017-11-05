@@ -16,6 +16,7 @@ var MSG = {
   catLoops: "循环",
   catcqcode: "CQ码",
   catcqevent: "CQ事件",
+  catvoiceera: "语音时代",
   catcqfunc: "CQ程序",
   catMath: "数学",
   catText: "文本",

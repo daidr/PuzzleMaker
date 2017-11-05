@@ -436,4 +436,6 @@ Blockly.Msg["CQCODE_HUE"] = "45";
 Blockly.Msg["CQEVENT_HUE"] = "300";
 Blockly.Msg["CQFUNC_HUE"] = "270";
 
+Blockly.Msg["VOICEERA_HUE"] = "120";
+
 Blockly.Msg["SYSDISK_HUE"] = "180";
