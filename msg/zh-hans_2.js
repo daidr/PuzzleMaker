@@ -416,7 +416,7 @@ Blockly.Msg.TEXT_CREATE_JOIN_ITEM_TITLE_ITEM = Blockly.Msg.VARIABLES_DEFAULT_NAM
 Blockly.Msg.LISTS_INDEX_OF_INPUT_IN_LIST = Blockly.Msg.LISTS_INLIST;
 Blockly.Msg.PROCEDURES_DEFRETURN_COMMENT = Blockly.Msg.PROCEDURES_DEFNORETURN_COMMENT;
 
-
+Blockly.BlockSvg.START_HAT = true;
 Blockly.Msg["EVENT_GROUP_WARNING"] = "只能用在酷Q群消息事件内部";  // untranslated
 Blockly.Msg["EVENT_DISCUSS_WARNING"] = "只能用在酷Q讨论组消息事件内部";
 Blockly.Msg["EVENT_MSG_WARNING"] = "只能用在酷Q消息事件内部";
@@ -436,6 +436,6 @@ Blockly.Msg["CQCODE_HUE"] = "45";
 Blockly.Msg["CQEVENT_HUE"] = "300";
 Blockly.Msg["CQFUNC_HUE"] = "270";
 
-Blockly.Msg["VOICEERA_HUE"] = "120";
+Blockly.Msg["VOICEERA_HUE"] = "#009AD2";
 
 Blockly.Msg["SYSDISK_HUE"] = "180";
