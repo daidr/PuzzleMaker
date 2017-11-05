@@ -1,8 +1,9 @@
 'use strict';
 
-goog.provide('Blockly.JavaScript.time');
+goog.provide('Blockly.Blocks.time');  // Deprecated
+goog.provide('Blockly.Constants.time');
 
-goog.require('Blockly.JavaScript');
+goog.require('Blockly.Blocks');
 
 Blockly.defineBlocksWithJsonArray([{
   "type": "cq_timestamptostr",

@@ -1,8 +1,9 @@
 'use strict';
 
-goog.provide('Blockly.JavaScript.sysdisk');
+goog.provide('Blockly.Blocks.sysdisk');  // Deprecated
+goog.provide('Blockly.Constants.sysdisk');
 
-goog.require('Blockly.JavaScript');
+goog.require('Blockly.Blocks');
 
 Blockly.defineBlocksWithJsonArray([
 {

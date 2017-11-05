@@ -1,8 +1,9 @@
 'use strict';
 
-goog.provide('Blockly.JavaScript.cqcode');
+goog.provide('Blockly.Blocks.cqcode');  // Deprecated
+goog.provide('Blockly.Constants.cqcode');
 
-goog.require('Blockly.JavaScript');
+goog.require('Blockly.Blocks');
 
 Blockly.defineBlocksWithJsonArray([{
   "type": "cqcode_at",

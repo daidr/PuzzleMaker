@@ -1,8 +1,10 @@
 'use strict';
 
-goog.provide('Blockly.JavaScript.cqevent');
+goog.provide('Blockly.Blocks.cqevent');  // Deprecated
+goog.provide('Blockly.Constants.cqevent');
 
-goog.require('Blockly.JavaScript');
+goog.require('Blockly.Blocks');
+
 
 Blockly.defineBlocksWithJsonArray([{
   "type": "cqevent_allevent",
