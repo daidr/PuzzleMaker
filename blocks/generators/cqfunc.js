@@ -46,3 +46,10 @@ Blockly.JavaScript['cq_getgrouplist'] = function(block) {
   var code = 'getGroupList()';
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
+
+Blockly.JavaScript['cq_getusername'] = function(block) {
+  var dropdown_type = block.getFieldValue('type');
+  var value_number = Blockly.JavaScript.valueToCode(block, 'number', Blockly.JavaScript.ORDER_ATOMIC);
+  var code = "GetUserName(\"" + dropdown_type + "\"," + value_content + ")";
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};

@@ -1,4 +1,5 @@
 'use strict';
+var thisBlock,isQQ;
 
 goog.provide('Blockly.JavaScript.cqfunc');
 
@@ -160,3 +161,48 @@ Blockly.defineBlocksWithJsonArray([
   "helpUrl": ""
 }
 ]);
+
+Blockly.Blocks['cq_getusername'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("获取")
+        .appendField(new Blockly.FieldDropdown([["QQ","qq"]],function(value) {
+		  var newQQ = (value == 'qq');
+			var block = this.sourceBlock_;
+			block.updateAt_(newQQ);
+			block.setFieldValue(value, 'type');
+		  return null;
+		}), "type");
+    this.appendValueInput("number")
+        .setCheck(["Number", "String"])
+        .setAlign(Blockly.ALIGN_RIGHT);
+    this.appendDummyInput('content')
+        .appendField("的昵称");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour(90);
+ this.setTooltip("根据号码输出昵称，如果没有获取到则返回空");
+ this.setHelpUrl("");
+ thisBlock = this;
+  },
+  mutationToDom: function() {
+    var container = document.createElement('mutation');
+    isQQ = thisBlock.getFieldValue('type') == "qq";
+    container.setAttribute('type', isQQ);
+    return container;
+  },
+  domToMutation: function(xmlElement) {
+    isQQ = (xmlElement.getAttribute('type') != 'false');
+    this.updateAt_(isQQ);
+  },
+  updateAt_: function(isQQ) {
+    this.removeInput('content');
+    if (isQQ) {
+      this.appendDummyInput('content')
+        .appendField("的昵称");
+    } else {
+	  this.appendDummyInput('content')
+        .appendField("的群名称");
+	}
+  }
+};
