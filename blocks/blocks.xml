@@ -149,7 +149,7 @@
       <block type="text_indexOf">
         <value name="VALUE">
           <block type="variables_get">
-            <field name="VAR">{textVariable}</field>
+            <field name="VAR">文本</field>
           </block>
         </value>
         <value name="FIND">
@@ -161,14 +161,14 @@
       <block type="text_charAt">
         <value name="VALUE">
           <block type="variables_get">
-            <field name="VAR">{textVariable}</field>
+            <field name="VAR">文本</field>
           </block>
         </value>
       </block>
       <block type="text_getSubstring">
         <value name="STRING">
           <block type="variables_get">
-            <field name="VAR">{textVariable}</field>
+            <field name="VAR">文本</field>
           </block>
         </value>
       </block>
@@ -222,28 +222,28 @@
       <block type="lists_indexOf">
         <value name="VALUE">
           <block type="variables_get">
-            <field name="VAR">{listVariable}</field>
+            <field name="VAR">列表</field>
           </block>
         </value>
       </block>
       <block type="lists_getIndex">
         <value name="VALUE">
           <block type="variables_get">
-            <field name="VAR">{listVariable}</field>
+            <field name="VAR">列表</field>
           </block>
         </value>
       </block>
       <block type="lists_setIndex">
         <value name="LIST">
           <block type="variables_get">
-            <field name="VAR">{listVariable}</field>
+            <field name="VAR">列表</field>
           </block>
         </value>
       </block>
       <block type="lists_getSublist">
         <value name="LIST">
           <block type="variables_get">
-            <field name="VAR">{listVariable}</field>
+            <field name="VAR">列表</field>
           </block>
         </value>
       </block>
@@ -298,7 +298,7 @@
       <block type="cq_timestamptostr">
 	    <value name="timestamp">
 		  <shadow type="variables_get">
-			<field name="VAR">{textVariable}</field>
+			<field name="VAR">时间戳</field>
 		  </shadow>
 		</value>
 	  </block>
