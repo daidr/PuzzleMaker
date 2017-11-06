@@ -619,3 +619,13 @@ Blockly.Constants.Logic.LOGIC_TERNARY_ONCHANGE_MIXIN = {
 
 Blockly.Extensions.registerMixin('logic_ternary',
   Blockly.Constants.Logic.LOGIC_TERNARY_ONCHANGE_MIXIN);
+
+
+
+
+
+Blockly.Blocks["logic_switch_default"]={init:function(){this.appendDummyInput().appendField("当以上语句都不对时");this.appendStatementInput("onDefault").setCheck(null).appendField("执行");this.setPreviousStatement(true,"case");this.setColour(Blockly.Blocks.logic.HUE);this.setTooltip("switch..case语句根(default)");this.setHelpUrl(null)}};
+
+Blockly.Blocks["logic_case"]={init:function(){this.appendValueInput("caseName").appendField("当变量为");this.appendDummyInput().appendField("时");this.appendStatementInput("call").appendField("执行");this.setInputsInline(true);this.setPreviousStatement(true,"case");this.setNextStatement(true,"case");this.setColour(Blockly.Blocks.logic.HUE);this.setTooltip("switch..case语句根(case)");this.setHelpUrl(null)}};
+
+Blockly.Blocks["logic_switch"]={init:function(){this.appendValueInput("value_name").setCheck(null).appendField("当变量");this.appendDummyInput().appendField("拥有以下情况时");this.appendStatementInput("calling").setCheck("case");this.setInputsInline(true);this.setPreviousStatement(true);this.setNextStatement(true);this.setColour(Blockly.Blocks.logic.HUE);this.setTooltip("switch..case语句根(switch)");this.setHelpUrl(null)}};

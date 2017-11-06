@@ -7,6 +7,40 @@
       <block type="logic_boolean"></block>
       <block type="logic_null"></block>
       <block type="logic_ternary"></block>
+	  <block type="logic_switch">
+	    <value name="value_name">
+          <shadow type="variables_get">
+            <field name="VAR">文本</field>
+          </shadow>
+        </value>
+		<value name="calling">
+          <block type="logic_switch_default"></block>
+        </value>
+		<value name="calling">
+          <block type="logic_case">
+			<value name="caseName">
+			  <shadow type="text">
+				<field name="TEXT">abc</field>
+			  </shadow>
+			</value>
+		  </block>
+        </value>
+	  </block>
+	  <block type="logic_switch">
+	    <value name="value_name">
+          <shadow type="variables_get">
+            <field name="VAR">文本</field>
+          </shadow>
+        </value>
+	  </block>
+	  <block type="logic_case">
+	    <value name="caseName">
+          <shadow type="text">
+            <field name="TEXT">abc</field>
+          </shadow>
+        </value>
+	  </block>
+	  <block type="logic_switch_default"></block>
     </category>
     <category name="%{BKY_CATLOOPS}" colour="%{BKY_LOOPS_HUE}">
       <block type="controls_repeat_ext">

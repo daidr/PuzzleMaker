@@ -127,3 +127,23 @@ Blockly.JavaScript['logic_ternary'] = function(block) {
   var code = value_if + ' ? ' + value_then + ' : ' + value_else;
   return [code, Blockly.JavaScript.ORDER_CONDITIONAL];
 };
+
+Blockly.JavaScript["logic_switch_default"] = function(d) {
+	var b = Blockly.JavaScript.statementToCode(d, "onDefault");
+	var c = "default:\n" + b + "  break;";
+	return c
+};
+
+Blockly.JavaScript["logic_case"] = function(f) {
+	var b = Blockly.JavaScript.valueToCode(f, "caseName", Blockly.JavaScript.ORDER_ATOMIC);
+	var d = Blockly.JavaScript.statementToCode(f, "call");
+	var c = "case " + b + ":\n" + d + "  break;\n";
+	return c
+};
+
+Blockly.JavaScript["logic_switch"] = function(f) {
+	var c = Blockly.JavaScript.valueToCode(f, "value_name", Blockly.JavaScript.ORDER_ATOMIC);
+	var b = Blockly.JavaScript.statementToCode(f, "calling");
+	var d = "switch (" + c + ") {\n" + b + "\n}\n";
+	return d
+};
