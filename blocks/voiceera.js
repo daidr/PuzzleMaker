@@ -79,5 +79,22 @@ Blockly.Blocks['ve_gettts'] = {
         .appendField("音源")
         .appendField(new Blockly.FieldDropdown([["度娘","百度语音"], ["度丫丫","度丫丫"], ["糖糖","糖糖"]]), "tts");
 	}
+  },
+   customContextMenu: function(options) {
+    if (this.type == 've_gettts') {
+		var thetype = "learnVoiceEra";
+		var name = "了解「语音时代」";
+    } else {
+    }
+
+    var option = {enabled: true};
+    option.text = name;
+    var learnVoiceEra = function(){
+		if (thetype == "learnVoiceEra"){
+			window.open("https://cqp.cc/t/33196");
+		}
+	};
+    option.callback = learnVoiceEra;
+    options.push(option);
   }
 };

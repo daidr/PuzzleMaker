@@ -186,6 +186,23 @@
           </shadow>
         </value>
       </block>
+	  <block type="text_replace">
+        <value name="FROM">
+          <shadow type="text">
+            <field name="TEXT">78</field>
+          </shadow>
+        </value>
+		<value name="TO">
+          <shadow type="text">
+            <field name="TEXT">4</field>
+          </shadow>
+        </value>
+		<value name="TEXT">
+          <shadow type="text">
+            <field name="TEXT">123785</field>
+          </shadow>
+        </value>
+      </block>
 	  <block type="text_enter"></block>
     </category>
     <category name="%{BKY_CATLISTS}" colour="%{BKY_LISTS_HUE}">
