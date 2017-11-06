@@ -203,6 +203,39 @@
           </shadow>
         </value>
       </block>
+	  <block type="text_REtest">
+	    <value name="tester">
+          <block type="text_newRE">
+			<value name="text">
+			  <shadow type="text">
+				<field name="TEXT">[\u4e00-\u9fa5]+</field>
+			  </shadow>
+			</value>
+		  </block>
+        </value>
+		<value name="testee">
+		  <shadow type="text">
+			<field name="TEXT">这是测试文本</field>
+		  </shadow>
+        </value>
+	  </block>
+	  <block type="text_REexec">
+	    <value name="tester">
+          <block type="text_newRE">
+			<value name="text">
+			  <shadow type="text">
+				<field name="TEXT">[\u4e00-\u9fa5]+</field>
+			  </shadow>
+			</value>
+		  </block>
+        </value>
+		<value name="testee">
+		  <shadow type="text">
+			<field name="TEXT">这是测试文本</field>
+		  </shadow>
+        </value>
+	  </block>
+	  
 	  <block type="text_enter"></block>
     </category>
     <category name="%{BKY_CATLISTS}" colour="%{BKY_LISTS_HUE}">

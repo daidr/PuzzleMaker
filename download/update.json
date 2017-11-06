@@ -2,10 +2,10 @@
     "files": [
         {
 	    "zhname": "PuzzleMaker解析插件",
-	    "version": "0.5.2 Beta",
+	    "version": "0.5.3 Beta",
 	    "filename": "me.daidr.puzzle.cpk",
             "path": "{cqfile}\\app\\me.daidr.puzzle.cpk",
-            "md5": "08f1b545113c8e0902ac300bcae105c6",
+            "md5": "df4c05e5ba6b8a343dbfa36469686d01",
             "url": "https://cqpm.daidr.me/download/me.daidr.puzzle.cpk"
         },
 	{
@@ -17,5 +17,5 @@
             "url": "https://cqpm.daidr.me/download/mujs.dll"
         }
     ],
-    "notice": "PuzzleMaker目前还不是很完善，拼图会不定期增加，感谢您的支持。\n\n0.5.1B -> 0.5.2B的更新内容：\n新增“获取QQ昵称”拼图\n\n\n\n超前预告：你好？语音时代？"
+    "notice": "PuzzleMaker目前还不是很完善，拼图会不定期增加，感谢您的支持。\n0.5.2B -> 0.5.3B的更新内容：\n你好！语音时代！"
 }

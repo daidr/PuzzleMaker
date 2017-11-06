@@ -355,3 +355,36 @@ Blockly.JavaScript['text_enter'] = function(block) {
   var code = "'\\n'";
   return [code, Blockly.JavaScript.ORDER_MEMBER];
 };
+
+Blockly.JavaScript['text_REtest'] = function(f) {
+	var b = Blockly.JavaScript.valueToCode(f, "tester", Blockly.JavaScript.ORDER_ATOMIC);
+	var d = Blockly.JavaScript.valueToCode(f, "testee", Blockly.JavaScript.ORDER_ATOMIC);
+	var c = b + ".test(" + d + ")";
+	return [c, Blockly.JavaScript.ORDER_ATOMIC]
+};
+
+Blockly.JavaScript['text_REexec'] = function(f) {
+	var b = Blockly.JavaScript.valueToCode(f, "tester", Blockly.JavaScript.ORDER_ATOMIC);
+	var d = Blockly.JavaScript.valueToCode(f, "testee", Blockly.JavaScript.ORDER_ATOMIC);
+	var c = b + ".exec(" + d + ")";
+	return [c, Blockly.JavaScript.ORDER_ATOMIC]
+};
+
+Blockly.JavaScript['text_newRE'] = function(h) {
+	var g = Blockly.JavaScript.valueToCode(h, "text", Blockly.JavaScript.ORDER_ATOMIC);
+	var f = h.getFieldValue("g") == "TRUE";
+	var c = h.getFieldValue("i") == "TRUE";
+	var b = h.getFieldValue("m") == "TRUE";
+	var d = "new RegExp(" + g + ',"';
+	if (b) {
+		d = d + "m"
+	}
+	if (c) {
+		d = d + "i"
+	}
+	if (f) {
+		d = d + "g"
+	}
+	d = d + '")';
+	return [d, Blockly.JavaScript.ORDER_ATOMIC]
+};

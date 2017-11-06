@@ -854,6 +854,7 @@ Blockly.Constants.Text.TEXT_CHARAT_MUTATOR_MIXIN = {
   }
 };
 
+
 // Does the initial mutator update of text_charAt and adds the tooltip
 Blockly.Constants.Text.TEXT_CHARAT_EXTENSION = function() {
     this.WHERE_OPTIONS = [
@@ -898,3 +899,13 @@ Blockly.Extensions.registerMutator('text_join_mutator',
 Blockly.Extensions.registerMutator('text_charAt_mutator',
   Blockly.Constants.Text.TEXT_CHARAT_MUTATOR_MIXIN,
   Blockly.Constants.Text.TEXT_CHARAT_EXTENSION);
+
+
+
+Blockly.Blocks['text_newRE']={init:function(){this.appendValueInput("text").setCheck("String").appendField("创建正则表达式");this.appendDummyInput().appendField(new Blockly.FieldCheckbox("FALSE"),"g").appendField("全局匹配").appendField(new Blockly.FieldCheckbox("FALSE"),"i").appendField("忽略大小写").appendField(new Blockly.FieldCheckbox("FALSE"),"m").appendField("多行匹配");this.setInputsInline(true);this.setOutput(true,"RegExp");this.setColour(Blockly.Blocks.texts.HUE);this.setTooltip("创建正则表达式");this.setHelpUrl(null);this.setInputsInline(false);}};
+
+
+
+Blockly.Blocks['text_REtest']={init:function(){this.appendValueInput("tester").setCheck("RegExp").appendField("用正则表达式");this.appendValueInput("testee").setCheck("String").appendField("测试字符串");this.setInputsInline(true);this.setOutput(true,"Boolean");this.setColour(Blockly.Blocks.texts.HUE);this.setTooltip("匹配返回true，反之返回false（test代码块）");this.setHelpUrl(null);this.setInputsInline(false);}};
+
+Blockly.Blocks['text_REexec']={init:function(){this.appendValueInput("tester").setCheck("RegExp").appendField("用正则表达式");this.appendValueInput("testee").setCheck("String").appendField("匹配字符串");this.setInputsInline(true);this.setOutput(true,"Boolean");this.setColour(Blockly.Blocks.texts.HUE);this.setTooltip("返回一个匹配的字符串列表（exec代码块）");this.setHelpUrl(null);this.setInputsInline(false);}};
