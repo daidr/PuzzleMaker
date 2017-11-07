@@ -420,6 +420,7 @@ Blockly.BlockSvg.START_HAT = true;
 Blockly.Msg["EVENT_GROUP_WARNING"] = "只能用在酷Q群消息事件内部";  // untranslated
 Blockly.Msg["EVENT_DISCUSS_WARNING"] = "只能用在酷Q讨论组消息事件内部";
 Blockly.Msg["EVENT_MSG_WARNING"] = "只能用在酷Q消息事件内部";
+Blockly.Msg["EVENT_ADDGROUP_WARNING"] = "只能用在酷Q群添加事件内部";
 
 
 Blockly.Msg["MATH_HUE"] = "230";

@@ -18,3 +18,18 @@ Blockly.JavaScript['ve_gettts'] = function(block) {
 
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
+
+Blockly.JavaScript['ve_getos'] = function(block) {
+  var value_content = Blockly.JavaScript.valueToCode(block, 'content', Blockly.JavaScript.ORDER_ATOMIC);
+  var dropdown_ostype = block.getFieldValue('ostype');
+
+  if(dropdown_ostype == "inos"){
+	var dropdown_os = block.getFieldValue('os');
+	var code = 'VE_GetOS('+value_content+',\''+dropdown_os+'\')';
+  } else {
+    var value_osgroup = Blockly.JavaScript.valueToCode(block, 'ttsos', Blockly.JavaScript.ORDER_ATOMIC);
+	var code = 'VE_GetOS('+value_content+','+value_osgroup+')';
+  }
+
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
