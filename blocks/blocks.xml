@@ -1,698 +1,702 @@
-
-    <category name="%{BKY_CATLOGIC}" colour="%{BKY_LOGIC_HUE}">
-      <block type="controls_if"></block>
-      <block type="logic_compare"></block>
-      <block type="logic_operation"></block>
-      <block type="logic_negate"></block>
-      <block type="logic_boolean"></block>
-      <block type="logic_null"></block>
-      <block type="logic_ternary"></block>
-	  <block type="logic_switch">
-	    <value name="value_name">
-          <shadow type="variables_get">
-            <field name="VAR">文本</field>
-          </shadow>
-        </value>
-		<value name="calling">
-          <block type="logic_switch_default"></block>
-        </value>
-		<value name="calling">
-          <block type="logic_case">
-			<value name="caseName">
-			  <shadow type="text">
-				<field name="TEXT">abc</field>
-			  </shadow>
+<category name="酷Q拼图" colour="#ff9921">
+	<category name="%{BKY_CATCQEVENT}" colour="%{BKY_CQEVENT_HUE}">
+		<block type="cqevent_allevent">
+			<value name="eventTypeInput">
+				<block type="event_cqsys"></block>
 			</value>
-		  </block>
-        </value>
-	  </block>
-	  <block type="logic_switch">
-	    <value name="value_name">
-          <shadow type="variables_get">
-            <field name="VAR">文本</field>
-          </shadow>
-        </value>
-	  </block>
-	  <block type="logic_case">
-	    <value name="caseName">
-          <shadow type="text">
-            <field name="TEXT">abc</field>
-          </shadow>
-        </value>
-	  </block>
-	  <block type="logic_switch_default"></block>
-    </category>
-    <category name="%{BKY_CATLOOPS}" colour="%{BKY_LOOPS_HUE}">
-      <block type="controls_repeat_ext">
-        <value name="TIMES">
-          <shadow type="math_number">
-            <field name="NUM">10</field>
-          </shadow>
-        </value>
-      </block>
-      <block type="controls_whileUntil"></block>
-      <block type="controls_for">
-        <value name="FROM">
-          <shadow type="math_number">
-            <field name="NUM">1</field>
-          </shadow>
-        </value>
-        <value name="TO">
-          <shadow type="math_number">
-            <field name="NUM">10</field>
-          </shadow>
-        </value>
-        <value name="BY">
-          <shadow type="math_number">
-            <field name="NUM">1</field>
-          </shadow>
-        </value>
-      </block>
-      <block type="controls_forEach"></block>
-      <block type="controls_flow_statements"></block>
-    </category>
-    <category name="%{BKY_CATMATH}" colour="%{BKY_MATH_HUE}">
-      <block type="math_number"></block>
-      <block type="math_arithmetic">
-        <value name="A">
-          <shadow type="math_number">
-            <field name="NUM">1</field>
-          </shadow>
-        </value>
-        <value name="B">
-          <shadow type="math_number">
-            <field name="NUM">1</field>
-          </shadow>
-        </value>
-      </block>
-      <block type="math_single">
-        <value name="NUM">
-          <shadow type="math_number">
-            <field name="NUM">9</field>
-          </shadow>
-        </value>
-      </block>
-      <block type="math_trig">
-        <value name="NUM">
-          <shadow type="math_number">
-            <field name="NUM">45</field>
-          </shadow>
-        </value>
-      </block>
-      <block type="math_constant"></block>
-      <block type="math_number_property">
-        <value name="NUMBER_TO_CHECK">
-          <shadow type="math_number">
-            <field name="NUM">0</field>
-          </shadow>
-        </value>
-      </block>
-      <block type="math_round">
-        <value name="NUM">
-          <shadow type="math_number">
-            <field name="NUM">3.1</field>
-          </shadow>
-        </value>
-      </block>
-      <block type="math_on_list"></block>
-      <block type="math_modulo">
-        <value name="DIVIDEND">
-          <shadow type="math_number">
-            <field name="NUM">64</field>
-          </shadow>
-        </value>
-        <value name="DIVISOR">
-          <shadow type="math_number">
-            <field name="NUM">10</field>
-          </shadow>
-        </value>
-      </block>
-      <block type="math_constrain">
-        <value name="VALUE">
-          <shadow type="math_number">
-            <field name="NUM">50</field>
-          </shadow>
-        </value>
-        <value name="LOW">
-          <shadow type="math_number">
-            <field name="NUM">1</field>
-          </shadow>
-        </value>
-        <value name="HIGH">
-          <shadow type="math_number">
-            <field name="NUM">100</field>
-          </shadow>
-        </value>
-      </block>
-      <block type="math_random_int">
-        <value name="FROM">
-          <shadow type="math_number">
-            <field name="NUM">1</field>
-          </shadow>
-        </value>
-        <value name="TO">
-          <shadow type="math_number">
-            <field name="NUM">100</field>
-          </shadow>
-        </value>
-      </block>
-      <block type="math_random_float"></block>
-    </category>
-    <category name="%{BKY_CATTEXT}" colour="%{BKY_TEXTS_HUE}">
-      <block type="text"></block>
-      <block type="text_join"></block>
-      <block type="text_append">
-        <value name="TEXT">
-          <shadow type="text"></shadow>
-        </value>
-      </block>
-      <block type="text_length">
-        <value name="VALUE">
-          <shadow type="text">
-            <field name="TEXT">abc</field>
-          </shadow>
-        </value>
-      </block>
-      <block type="text_isEmpty">
-        <value name="VALUE">
-          <shadow type="text">
-            <field name="TEXT"></field>
-          </shadow>
-        </value>
-      </block>
-      <block type="text_indexOf">
-        <value name="VALUE">
-          <block type="variables_get">
-            <field name="VAR">文本</field>
-          </block>
-        </value>
-        <value name="FIND">
-          <shadow type="text">
-            <field name="TEXT">abc</field>
-          </shadow>
-        </value>
-      </block>
-      <block type="text_charAt">
-        <value name="VALUE">
-          <block type="variables_get">
-            <field name="VAR">文本</field>
-          </block>
-        </value>
-      </block>
-      <block type="text_getSubstring">
-        <value name="STRING">
-          <block type="variables_get">
-            <field name="VAR">文本</field>
-          </block>
-        </value>
-      </block>
-      <block type="text_changeCase">
-        <value name="TEXT">
-          <shadow type="text">
-            <field name="TEXT">abc</field>
-          </shadow>
-        </value>
-      </block>
-      <block type="text_trim">
-        <value name="TEXT">
-          <shadow type="text">
-            <field name="TEXT">abc</field>
-          </shadow>
-        </value>
-      </block>
-	  <block type="text_replace">
-        <value name="FROM">
-          <shadow type="text">
-            <field name="TEXT">78</field>
-          </shadow>
-        </value>
-		<value name="TO">
-          <shadow type="text">
-            <field name="TEXT">4</field>
-          </shadow>
-        </value>
-		<value name="TEXT">
-          <shadow type="text">
-            <field name="TEXT">123785</field>
-          </shadow>
-        </value>
-      </block>
-	  <block type="text_REtest">
-	    <value name="tester">
-          <block type="text_newRE">
-			<value name="text">
-			  <shadow type="text">
-				<field name="TEXT">[\u4e00-\u9fa5]+</field>
-			  </shadow>
+			<value name="action">
+				<block type="variables_set" deletable="false" movable="false" editable="false">
+					<field name="VAR">群_消息内容</field>
+					<value name="VALUE">
+						<block type="from_msg" deletable="false" movable="false" editable="false"></block>
+					</value>
+				</block>
 			</value>
-		  </block>
-        </value>
-		<value name="testee">
-		  <shadow type="text">
-			<field name="TEXT">这是测试文本</field>
-		  </shadow>
-        </value>
-	  </block>
-	  <block type="text_REexec">
-	    <value name="tester">
-          <block type="text_newRE">
-			<value name="text">
-			  <shadow type="text">
-				<field name="TEXT">[\u4e00-\u9fa5]+</field>
-			  </shadow>
+			<value name="action">
+				<block type="variables_set" deletable="false" movable="false" editable="false">
+					<field name="VAR">群_发送时间</field>
+					<value name="VALUE">
+						<block type="from_time" deletable="false" movable="false" editable="false"></block>
+					</value>
+				</block>
 			</value>
-		  </block>
-        </value>
-		<value name="testee">
-		  <shadow type="text">
-			<field name="TEXT">这是测试文本</field>
-		  </shadow>
-        </value>
-	  </block>
-	  
-	  <block type="text_enter"></block>
-    </category>
-    <category name="%{BKY_CATLISTS}" colour="%{BKY_LISTS_HUE}">
-      <block type="lists_create_with">
-        <mutation items="0"></mutation>
-      </block>
-      <block type="lists_create_with"></block>
-      <block type="lists_repeat">
-        <value name="NUM">
-          <shadow type="math_number">
-            <field name="NUM">5</field>
-          </shadow>
-        </value>
-      </block>
-      <block type="lists_length"></block>
-      <block type="lists_isEmpty"></block>
-      <block type="lists_indexOf">
-        <value name="VALUE">
-          <block type="variables_get">
-            <field name="VAR">列表</field>
-          </block>
-        </value>
-      </block>
-      <block type="lists_getIndex">
-        <value name="VALUE">
-          <block type="variables_get">
-            <field name="VAR">列表</field>
-          </block>
-        </value>
-      </block>
-      <block type="lists_setIndex">
-        <value name="LIST">
-          <block type="variables_get">
-            <field name="VAR">列表</field>
-          </block>
-        </value>
-      </block>
-      <block type="lists_getSublist">
-        <value name="LIST">
-          <block type="variables_get">
-            <field name="VAR">列表</field>
-          </block>
-        </value>
-      </block>
-      <block type="lists_split">
-        <value name="DELIM">
-          <shadow type="text">
-            <field name="TEXT">,</field>
-          </shadow>
-        </value>
-      </block>
-      <block type="lists_sort"></block>
-    </category>
-    <category name="%{BKY_CATCOLOUR}" colour="%{BKY_COLOUR_HUE}">
-      <block type="colour_picker"></block>
-      <block type="colour_random"></block>
-      <block type="colour_rgb">
-        <value name="RED">
-          <shadow type="math_number">
-            <field name="NUM">100</field>
-          </shadow>
-        </value>
-        <value name="GREEN">
-          <shadow type="math_number">
-            <field name="NUM">50</field>
-          </shadow>
-        </value>
-        <value name="BLUE">
-          <shadow type="math_number">
-            <field name="NUM">0</field>
-          </shadow>
-        </value>
-      </block>
-      <block type="colour_blend">
-        <value name="COLOUR1">
-          <shadow type="colour_picker">
-            <field name="COLOUR">#ff0000</field>
-          </shadow>
-        </value>
-        <value name="COLOUR2">
-          <shadow type="colour_picker">
-            <field name="COLOUR">#3333ff</field>
-          </shadow>
-        </value>
-        <value name="RATIO">
-          <shadow type="math_number">
-            <field name="NUM">0.5</field>
-          </shadow>
-        </value>
-      </block>
-    </category>
-	<category name="%{BKY_CATTIME}" colour="%{BKY_TIME_HUE}">
-      <block type="cq_timestamptostr">
-	    <value name="timestamp">
-		  <shadow type="variables_get">
-			<field name="VAR">时间戳</field>
-		  </shadow>
-		</value>
-	  </block>
-    </category>
-	<sep></sep>
-	<category name="%{BKY_CATSYSDISK}" colour="%{BKY_SYSDISK_HUE}">
-      <block type="sysdisk_getlocalpath"></block>
-	  <block type="sysdisk_writefile">
-		<value name="filepath">
-            <shadow type="text_join">
-			  <mutation items="2"></mutation>
-			  <value name="ADD0">
-			    <shadow type="sysdisk_getlocalpath"></shadow>
-			  </value>
-			  <value name="ADD1">
-			    <shadow type="text">
-				    <field name="TEXT">/file.txt</field>
-				</shadow>
-			  </value>
-			</shadow>
-        </value>
-		<value name="filecontent">
-          <shadow type="text">
-            <field name="TEXT">这是一个测试文件</field>
-          </shadow>
-        </value>
-	  </block>
+			<value name="action">
+				<block type="variables_set" deletable="false" movable="false" editable="false">
+					<field name="VAR">群_来源QQ</field>
+					<value name="VALUE">
+						<block type="from_person" deletable="false" movable="false" editable="false"></block>
+					</value>
+				</block>
+			</value>
+			<value name="action">
+				<block type="variables_set" deletable="false" movable="false" editable="false">
+					<field name="VAR">群_来源群号</field>
+					<value name="VALUE">
+						<block type="fromgroup_group" deletable="false" movable="false" editable="false"></block>
+					</value>
+				</block>
+			</value>
+		</block>
+		<block type="cqevent_allevent">
+			<value name="eventTypeInput">
+				<block type="event_cqsys">
+					<field name="event_type">CQFriendMsg</field>
+				</block>
+			</value>
+			<value name="action">
+				<block type="variables_set" deletable="false" movable="false" editable="false">
+					<field name="VAR">私聊_消息内容</field>
+					<value name="VALUE">
+						<block type="from_msg" deletable="false" movable="false" editable="false"></block>
+					</value>
+				</block>
+			</value>
+			<value name="action">
+				<block type="variables_set" deletable="false" movable="false" editable="false">
+					<field name="VAR">私聊_发送时间</field>
+					<value name="VALUE">
+						<block type="from_time" deletable="false" movable="false" editable="false"></block>
+					</value>
+				</block>
+			</value>
+			<value name="action">
+				<block type="variables_set" deletable="false" movable="false" editable="false">
+					<field name="VAR">私聊_来源QQ</field>
+					<value name="VALUE">
+						<block type="from_person" deletable="false" movable="false" editable="false"></block>
+					</value>
+				</block>
+			</value>
 
-	  <block type="sysdisk_readfile">
-		<value name="filepath">
-            <shadow type="text_join">
-			  <mutation items="2"></mutation>
-			  <value name="ADD0">
-			    <shadow type="sysdisk_getlocalpath"></shadow>
-			  </value>
-			  <value name="ADD1">
-			    <shadow type="text">
-				    <field name="TEXT">/file.txt</field>
-				</shadow>
-			  </value>
-			</shadow>
-        </value>
-	  </block>
-
-    </category>
-	<category name="%{BKY_CATVOICEERA}" colour="%{BKY_VOICEERA_HUE}">
-      <block type="ve_gettts">
-	    <value name="content">
-          <shadow type="text">
-            <field name="TEXT">你好！语音时代！</field>
-          </shadow>
-        </value>
-		<value name="ttsgroup">
-          <shadow type="text">
-            <field name="TEXT">度丫丫.vdb</field>
-          </shadow>
-        </value>
-	  </block>
-	  <block type="ve_getos">
-	    <value name="content">
-          <shadow type="text">
-            <field name="TEXT">你好啊</field>
-          </shadow>
-        </value>
-		<value name="osgroup">
-          <shadow type="text">
-            <field name="TEXT">聊天女仆.vos</field>
-          </shadow>
-        </value>
-	  </block>
-    </category>
-	<sep></sep>
-	<category name="%{BKY_CATCQFUNC}" colour="%{BKY_CQFUNC_HUE}">
-	  <block type="cq_getgrouplist"></block>
-	  <block type="cq_getusername">
-	    <value name="number">
-          <shadow type="math_number">
-            <field name="NUM">1234567</field>
-          </shadow>
-        </value>
-	  </block>
-	  <block type="cq_sendmsg">
-	    <value name="idnumber">
-          <shadow type="math_number">
-            <field name="NUM">1234567</field>
-          </shadow>
-        </value>
-		<value name="msg">
-          <shadow type="text">
-            <field name="TEXT">这是一条测试消息</field>
-          </shadow>
-        </value>
-	  </block>
-	  <block type="cq_sendlike">
-	    <value name="idnumber">
-          <shadow type="math_number">
-            <field name="NUM">1234567</field>
-          </shadow>
-        </value>
-		<value name="times">
-          <shadow type="math_number">
-            <field name="NUM">10</field>
-          </shadow>
-        </value>
-	  </block>
-	  <block type="cq_jinyan">
-		<value name="groupnumber">
-          <shadow type="math_number">
-            <field name="NUM">1234567</field>
-          </shadow>
-        </value>
-		<value name="idnumber">
-          <shadow type="math_number">
-            <field name="NUM">1234567</field>
-          </shadow>
-        </value>
-		<value name="time">
-          <shadow type="math_number">
-            <field name="NUM">60</field>
-          </shadow>
-        </value>
-	  </block>
-	  <block type="cq_addlog">
-		<value name="content">
-          <shadow type="text">
-            <field name="TEXT">这是一条测试日志</field>
-          </shadow>
-        </value>
-	  </block>
-    </category>
+		</block>
+		<block type="cqevent_allevent">
+			<value name="eventTypeInput">
+				<block type="event_cqsys">
+					<field name="event_type">CQDiscussMsg</field>
+				</block>
+			</value>
+			<value name="action">
+				<block type="variables_set" deletable="false" movable="false" editable="false">
+					<field name="VAR">讨论组_消息内容</field>
+					<value name="VALUE">
+						<block type="from_msg" deletable="false" movable="false" editable="false"></block>
+					</value>
+				</block>
+			</value>
+			<value name="action">
+				<block type="variables_set" deletable="false" movable="false" editable="false">
+					<field name="VAR">讨论组_发送时间</field>
+					<value name="VALUE">
+						<block type="from_time" deletable="false" movable="false" editable="false"></block>
+					</value>
+				</block>
+			</value>
+			<value name="action">
+				<block type="variables_set" deletable="false" movable="false" editable="false">
+					<field name="VAR">讨论组_来源QQ</field>
+					<value name="VALUE">
+						<block type="from_person" deletable="false" movable="false" editable="false"></block>
+					</value>
+				</block>
+			</value>
+			<value name="action">
+				<block type="variables_set" deletable="false" movable="false" editable="false">
+					<field name="VAR">讨论组_来源讨论组号</field>
+					<value name="VALUE">
+						<block type="fromdiscuss_discuss" deletable="false" movable="false" editable="false"></block>
+					</value>
+				</block>
+			</value>
+		</block>
+		<block type="cqevent_allevent">
+			<value name="eventTypeInput">
+				<block type="event_cqsys">
+					<field name="event_type">CQAddGroup</field>
+				</block>
+			</value>
+			<value name="action">
+				<block type="variables_set" deletable="false" movable="false" editable="false">
+					<field name="VAR">群添加_唯一标识</field>
+					<value name="VALUE">
+						<block type="responseFlag_addgroup" deletable="false" movable="false" editable="false"></block>
+					</value>
+				</block>
+			</value>
+			<value name="action">
+				<block type="variables_set" deletable="false" movable="false" editable="false">
+					<field name="VAR">群添加_附加信息</field>
+					<value name="VALUE">
+						<block type="msg_addgroup" deletable="false" movable="false" editable="false"></block>
+					</value>
+				</block>
+			</value>
+			<value name="action">
+				<block type="variables_set" deletable="false" movable="false" editable="false">
+					<field name="VAR">群添加_来源QQ</field>
+					<value name="VALUE">
+						<block type="fromqq_addgroup" deletable="false" movable="false" editable="false"></block>
+					</value>
+				</block>
+			</value>
+			<value name="action">
+				<block type="variables_set" deletable="false" movable="false" editable="false">
+					<field name="VAR">群添加_来源群号</field>
+					<value name="VALUE">
+						<block type="fromgroup_addgroup" deletable="false" movable="false" editable="false"></block>
+					</value>
+				</block>
+			</value>
+			<value name="action">
+				<block type="variables_set" deletable="false" movable="false" editable="false">
+					<field name="VAR">群添加_来源时间</field>
+					<value name="VALUE">
+						<block type="fromtime_addgroup" deletable="false" movable="false" editable="false"></block>
+					</value>
+				</block>
+			</value>
+			<value name="action">
+				<block type="variables_set" deletable="false" movable="false" editable="false">
+					<field name="VAR">群添加_请求类型</field>
+					<value name="VALUE">
+						<block type="subtype_addgroup" deletable="false" movable="false" editable="false"></block>
+					</value>
+				</block>
+			</value>
+		</block>
+	</category>
 	<category name="%{BKY_CATCQCODE}" colour="%{BKY_CQCODE_HUE}">
-      <block type="cqcode_at">
-	    <value name="QQID">
-          <shadow type="math_number">
-            <field name="NUM">1234567</field>
-          </shadow>
-        </value>
-	  </block>
-	  <block type="cqcode_shake"></block>
-	  <block type="cqcode_record">
-	    <value name="filename">
-          <shadow type="ve_gettts">
+		<block type="cqcode_at">
+			<value name="QQID">
+				<shadow type="math_number">
+					<field name="NUM">1234567</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="cqcode_shake"></block>
+		<block type="cqcode_record">
+			<value name="filename">
+				<shadow type="ve_gettts">
+					<value name="content">
+						<shadow type="text">
+							<field name="TEXT">你好！语音时代！</field>
+						</shadow>
+					</value>
+					<value name="ttsgroup">
+						<shadow type="text">
+							<field name="TEXT">度丫丫.vdb</field>
+						</shadow>
+					</value>
+				</shadow>
+			</value>
+		</block>
+		<block type="cqcode_contact">
+			<value name="number">
+				<shadow type="math_number">
+					<field name="NUM">1234567</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="cqcode_emoji_1"></block>
+		<block type="cqcode_emoji_2"></block>
+		<block type="cqcode_sface_1"></block>
+	</category>
+	<category name="%{BKY_CATCQFUNC}" colour="%{BKY_CQFUNC_HUE}">
+		<block type="cq_getgrouplist"></block>
+		<block type="cq_getusername">
+			<value name="number">
+				<shadow type="math_number">
+					<field name="NUM">1234567</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="cq_sendmsg">
+			<value name="idnumber">
+				<shadow type="math_number">
+					<field name="NUM">1234567</field>
+				</shadow>
+			</value>
+			<value name="msg">
+				<shadow type="text">
+					<field name="TEXT">这是一条测试消息</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="cq_sendlike">
+			<value name="idnumber">
+				<shadow type="math_number">
+					<field name="NUM">1234567</field>
+				</shadow>
+			</value>
+			<value name="times">
+				<shadow type="math_number">
+					<field name="NUM">10</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="cq_jinyan">
+			<value name="groupnumber">
+				<shadow type="math_number">
+					<field name="NUM">1234567</field>
+				</shadow>
+			</value>
+			<value name="idnumber">
+				<shadow type="math_number">
+					<field name="NUM">1234567</field>
+				</shadow>
+			</value>
+			<value name="time">
+				<shadow type="math_number">
+					<field name="NUM">60</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="cq_addlog">
 			<value name="content">
-			  <shadow type="text">
-				<field name="TEXT">你好！语音时代！</field>
-			  </shadow>
+				<shadow type="text">
+					<field name="TEXT">这是一条测试日志</field>
+				</shadow>
+			</value>
+		</block>
+	</category>
+	<category name="%{BKY_CATVOICEERA}" colour="%{BKY_VOICEERA_HUE}">
+		<block type="ve_gettts">
+			<value name="content">
+				<shadow type="text">
+					<field name="TEXT">你好！语音时代！</field>
+				</shadow>
 			</value>
 			<value name="ttsgroup">
-			  <shadow type="text">
-				<field name="TEXT">度丫丫.vdb</field>
-			  </shadow>
+				<shadow type="text">
+					<field name="TEXT">度丫丫.vdb</field>
+				</shadow>
 			</value>
-          </shadow>
-        </value>
-	  </block>
-	  <block type="cqcode_contact">
-	    <value name="number">
-          <shadow type="math_number">
-            <field name="NUM">1234567</field>
-          </shadow>
-        </value>
-	  </block>
-	  <block type="cqcode_emoji_1"></block>
-	  <block type="cqcode_emoji_2"></block>
-	  <block type="cqcode_sface_1"></block>
-    </category>
-	<category name="%{BKY_CATCQEVENT}" colour="%{BKY_CQEVENT_HUE}">
-      <block type="cqevent_allevent">
-	    <value name="eventTypeInput">
-		  <block type="event_cqsys"></block>
-		</value>
-		<value name="action">
-          <block type="variables_set" deletable="false" movable="false" editable="false">
-            <field name="VAR">群_消息内容</field>
-			  <value name="VALUE">
-			    <block type="from_msg" deletable="false" movable="false" editable="false"></block>
-			  </value>
-          </block>
-        </value>
-		<value name="action">
-          <block type="variables_set" deletable="false" movable="false" editable="false">
-            <field name="VAR">群_发送时间</field>
-			  <value name="VALUE">
-			    <block type="from_time" deletable="false" movable="false" editable="false"></block>
-			  </value>
-          </block>
-        </value>
-		<value name="action">
-		  <block type="variables_set" deletable="false" movable="false" editable="false">
-            <field name="VAR">群_来源QQ</field>
-			  <value name="VALUE">
-			    <block type="from_person" deletable="false" movable="false" editable="false"></block>
-			  </value>
-          </block>
-        </value>
-		<value name="action">
-          <block type="variables_set" deletable="false" movable="false" editable="false">
-            <field name="VAR">群_来源群号</field>
-			  <value name="VALUE">
-			    <block type="fromgroup_group" deletable="false" movable="false" editable="false"></block>
-			  </value>
-          </block>
-        </value>
-	  </block>
+		</block>
+		<block type="ve_getos">
+			<value name="content">
+				<shadow type="text">
+					<field name="TEXT">你好啊</field>
+				</shadow>
+			</value>
+			<value name="osgroup">
+				<shadow type="text">
+					<field name="TEXT">聊天女仆.vos</field>
+				</shadow>
+			</value>
+		</block>
+	</category>
 
-	  <block type="cqevent_allevent">
-	    <value name="eventTypeInput">
-		  <block type="event_cqsys"><field name="event_type">CQFriendMsg</field></block>
+</category>
+<category name="%{BKY_CATLOGIC}" colour="%{BKY_LOGIC_HUE}">
+	<block type="controls_if"></block>
+	<block type="logic_compare"></block>
+	<block type="logic_operation"></block>
+	<block type="logic_negate"></block>
+	<block type="logic_boolean"></block>
+	<block type="logic_null"></block>
+	<block type="logic_ternary"></block>
+	<block type="logic_switch">
+		<value name="value_name">
+			<shadow type="variables_get">
+				<field name="VAR">文本</field>
+			</shadow>
 		</value>
-		<value name="action">
-          <block type="variables_set" deletable="false" movable="false" editable="false">
-            <field name="VAR">私聊_消息内容</field>
-			  <value name="VALUE">
-			    <block type="from_msg" deletable="false" movable="false" editable="false"></block>
-			  </value>
-          </block>
-        </value>
-		<value name="action">
-          <block type="variables_set" deletable="false" movable="false" editable="false">
-            <field name="VAR">私聊_发送时间</field>
-			  <value name="VALUE">
-			    <block type="from_time" deletable="false" movable="false" editable="false"></block>
-			  </value>
-          </block>
-        </value>
-		<value name="action">
-		  <block type="variables_set" deletable="false" movable="false" editable="false">
-            <field name="VAR">私聊_来源QQ</field>
-			  <value name="VALUE">
-			    <block type="from_person" deletable="false" movable="false" editable="false"></block>
-			  </value>
-          </block>
-        </value>
-		
-	  </block>
-	  <block type="cqevent_allevent">
-	    <value name="eventTypeInput">
-		  <block type="event_cqsys"><field name="event_type">CQDiscussMsg</field></block>
+		<value name="calling">
+			<block type="logic_switch_default"></block>
 		</value>
-		<value name="action">
-          <block type="variables_set" deletable="false" movable="false" editable="false">
-            <field name="VAR">讨论组_消息内容</field>
-			  <value name="VALUE">
-			    <block type="from_msg" deletable="false" movable="false" editable="false"></block>
-			  </value>
-          </block>
-        </value>
-		<value name="action">
-          <block type="variables_set" deletable="false" movable="false" editable="false">
-            <field name="VAR">讨论组_发送时间</field>
-			  <value name="VALUE">
-			    <block type="from_time" deletable="false" movable="false" editable="false"></block>
-			  </value>
-          </block>
-        </value>
-		<value name="action">
-		  <block type="variables_set" deletable="false" movable="false" editable="false">
-            <field name="VAR">讨论组_来源QQ</field>
-			  <value name="VALUE">
-			    <block type="from_person" deletable="false" movable="false" editable="false"></block>
-			  </value>
-          </block>
-        </value>
-		<value name="action">
-          <block type="variables_set" deletable="false" movable="false" editable="false">
-            <field name="VAR">讨论组_来源讨论组号</field>
-			  <value name="VALUE">
-			    <block type="fromdiscuss_discuss" deletable="false" movable="false" editable="false"></block>
-			  </value>
-          </block>
-        </value>
-	  </block>
+		<value name="calling">
+			<block type="logic_case">
+				<value name="caseName">
+					<shadow type="text">
+						<field name="TEXT">abc</field>
+					</shadow>
+				</value>
+			</block>
+		</value>
+	</block>
+	<block type="logic_switch">
+		<value name="value_name">
+			<shadow type="variables_get">
+				<field name="VAR">文本</field>
+			</shadow>
+		</value>
+	</block>
+	<block type="logic_case">
+		<value name="caseName">
+			<shadow type="text">
+				<field name="TEXT">abc</field>
+			</shadow>
+		</value>
+	</block>
+	<block type="logic_switch_default"></block>
+</category>
+<category name="%{BKY_CATLOOPS}" colour="%{BKY_LOOPS_HUE}">
+	<block type="controls_repeat_ext">
+		<value name="TIMES">
+			<shadow type="math_number">
+				<field name="NUM">10</field>
+			</shadow>
+		</value>
+	</block>
+	<block type="controls_whileUntil"></block>
+	<block type="controls_for">
+		<value name="FROM">
+			<shadow type="math_number">
+				<field name="NUM">1</field>
+			</shadow>
+		</value>
+		<value name="TO">
+			<shadow type="math_number">
+				<field name="NUM">10</field>
+			</shadow>
+		</value>
+		<value name="BY">
+			<shadow type="math_number">
+				<field name="NUM">1</field>
+			</shadow>
+		</value>
+	</block>
+	<block type="controls_forEach"></block>
+	<block type="controls_flow_statements"></block>
+</category>
+<category name="%{BKY_CATMATH}" colour="%{BKY_MATH_HUE}">
+	<block type="math_number"></block>
+	<block type="math_arithmetic">
+		<value name="A">
+			<shadow type="math_number">
+				<field name="NUM">1</field>
+			</shadow>
+		</value>
+		<value name="B">
+			<shadow type="math_number">
+				<field name="NUM">1</field>
+			</shadow>
+		</value>
+	</block>
+	<block type="math_single">
+		<value name="NUM">
+			<shadow type="math_number">
+				<field name="NUM">9</field>
+			</shadow>
+		</value>
+	</block>
+	<block type="math_trig">
+		<value name="NUM">
+			<shadow type="math_number">
+				<field name="NUM">45</field>
+			</shadow>
+		</value>
+	</block>
+	<block type="math_constant"></block>
+	<block type="math_number_property">
+		<value name="NUMBER_TO_CHECK">
+			<shadow type="math_number">
+				<field name="NUM">0</field>
+			</shadow>
+		</value>
+	</block>
+	<block type="math_round">
+		<value name="NUM">
+			<shadow type="math_number">
+				<field name="NUM">3.1</field>
+			</shadow>
+		</value>
+	</block>
+	<block type="math_on_list"></block>
+	<block type="math_modulo">
+		<value name="DIVIDEND">
+			<shadow type="math_number">
+				<field name="NUM">64</field>
+			</shadow>
+		</value>
+		<value name="DIVISOR">
+			<shadow type="math_number">
+				<field name="NUM">10</field>
+			</shadow>
+		</value>
+	</block>
+	<block type="math_constrain">
+		<value name="VALUE">
+			<shadow type="math_number">
+				<field name="NUM">50</field>
+			</shadow>
+		</value>
+		<value name="LOW">
+			<shadow type="math_number">
+				<field name="NUM">1</field>
+			</shadow>
+		</value>
+		<value name="HIGH">
+			<shadow type="math_number">
+				<field name="NUM">100</field>
+			</shadow>
+		</value>
+	</block>
+	<block type="math_random_int">
+		<value name="FROM">
+			<shadow type="math_number">
+				<field name="NUM">1</field>
+			</shadow>
+		</value>
+		<value name="TO">
+			<shadow type="math_number">
+				<field name="NUM">100</field>
+			</shadow>
+		</value>
+	</block>
+	<block type="math_random_float"></block>
+</category>
+<category name="%{BKY_CATTEXT}" colour="%{BKY_TEXTS_HUE}">
+	<block type="text"></block>
+	<block type="text_join"></block>
+	<block type="text_append">
+		<value name="TEXT">
+			<shadow type="text"></shadow>
+		</value>
+	</block>
+	<block type="text_length">
+		<value name="VALUE">
+			<shadow type="text">
+				<field name="TEXT">abc</field>
+			</shadow>
+		</value>
+	</block>
+	<block type="text_isEmpty">
+		<value name="VALUE">
+			<shadow type="text">
+				<field name="TEXT"></field>
+			</shadow>
+		</value>
+	</block>
+	<block type="text_indexOf">
+		<value name="VALUE">
+			<block type="variables_get">
+				<field name="VAR">文本</field>
+			</block>
+		</value>
+		<value name="FIND">
+			<shadow type="text">
+				<field name="TEXT">abc</field>
+			</shadow>
+		</value>
+	</block>
+	<block type="text_charAt">
+		<value name="VALUE">
+			<block type="variables_get">
+				<field name="VAR">文本</field>
+			</block>
+		</value>
+	</block>
+	<block type="text_getSubstring">
+		<value name="STRING">
+			<block type="variables_get">
+				<field name="VAR">文本</field>
+			</block>
+		</value>
+	</block>
+	<block type="text_changeCase">
+		<value name="TEXT">
+			<shadow type="text">
+				<field name="TEXT">abc</field>
+			</shadow>
+		</value>
+	</block>
+	<block type="text_trim">
+		<value name="TEXT">
+			<shadow type="text">
+				<field name="TEXT">abc</field>
+			</shadow>
+		</value>
+	</block>
+	<block type="text_replace">
+		<value name="FROM">
+			<shadow type="text">
+				<field name="TEXT">78</field>
+			</shadow>
+		</value>
+		<value name="TO">
+			<shadow type="text">
+				<field name="TEXT">4</field>
+			</shadow>
+		</value>
+		<value name="TEXT">
+			<shadow type="text">
+				<field name="TEXT">123785</field>
+			</shadow>
+		</value>
+	</block>
+	<block type="text_REtest">
+		<value name="tester">
+			<block type="text_newRE">
+				<value name="text">
+					<shadow type="text">
+						<field name="TEXT">[\u4e00-\u9fa5]+</field>
+					</shadow>
+				</value>
+			</block>
+		</value>
+		<value name="testee">
+			<shadow type="text">
+				<field name="TEXT">这是测试文本</field>
+			</shadow>
+		</value>
+	</block>
+	<block type="text_REexec">
+		<value name="tester">
+			<block type="text_newRE">
+				<value name="text">
+					<shadow type="text">
+						<field name="TEXT">[\u4e00-\u9fa5]+</field>
+					</shadow>
+				</value>
+			</block>
+		</value>
+		<value name="testee">
+			<shadow type="text">
+				<field name="TEXT">这是测试文本</field>
+			</shadow>
+		</value>
+	</block>
+	<block type="text_enter"></block>
+</category>
+<category name="%{BKY_CATLISTS}" colour="%{BKY_LISTS_HUE}">
+	<block type="lists_create_with">
+		<mutation items="0"></mutation>
+	</block>
+	<block type="lists_create_with"></block>
+	<block type="lists_repeat">
+		<value name="NUM">
+			<shadow type="math_number">
+				<field name="NUM">5</field>
+			</shadow>
+		</value>
+	</block>
+	<block type="lists_length"></block>
+	<block type="lists_isEmpty"></block>
+	<block type="lists_indexOf">
+		<value name="VALUE">
+			<block type="variables_get">
+				<field name="VAR">列表</field>
+			</block>
+		</value>
+	</block>
+	<block type="lists_getIndex">
+		<value name="VALUE">
+			<block type="variables_get">
+				<field name="VAR">列表</field>
+			</block>
+		</value>
+	</block>
+	<block type="lists_setIndex">
+		<value name="LIST">
+			<block type="variables_get">
+				<field name="VAR">列表</field>
+			</block>
+		</value>
+	</block>
+	<block type="lists_getSublist">
+		<value name="LIST">
+			<block type="variables_get">
+				<field name="VAR">列表</field>
+			</block>
+		</value>
+	</block>
+	<block type="lists_split">
+		<value name="DELIM">
+			<shadow type="text">
+				<field name="TEXT">,</field>
+			</shadow>
+		</value>
+	</block>
+	<block type="lists_sort"></block>
+</category>
+<category name="%{BKY_CATCOLOUR}" colour="%{BKY_COLOUR_HUE}">
+	<block type="colour_picker"></block>
+	<block type="colour_random"></block>
+	<block type="colour_rgb">
+		<value name="RED">
+			<shadow type="math_number">
+				<field name="NUM">100</field>
+			</shadow>
+		</value>
+		<value name="GREEN">
+			<shadow type="math_number">
+				<field name="NUM">50</field>
+			</shadow>
+		</value>
+		<value name="BLUE">
+			<shadow type="math_number">
+				<field name="NUM">0</field>
+			</shadow>
+		</value>
+	</block>
+	<block type="colour_blend">
+		<value name="COLOUR1">
+			<shadow type="colour_picker">
+				<field name="COLOUR">#ff0000</field>
+			</shadow>
+		</value>
+		<value name="COLOUR2">
+			<shadow type="colour_picker">
+				<field name="COLOUR">#3333ff</field>
+			</shadow>
+		</value>
+		<value name="RATIO">
+			<shadow type="math_number">
+				<field name="NUM">0.5</field>
+			</shadow>
+		</value>
+	</block>
+</category>
+<category name="%{BKY_CATTIME}" colour="%{BKY_TIME_HUE}">
+	<block type="cq_timestamptostr">
+		<value name="timestamp">
+			<shadow type="variables_get">
+				<field name="VAR">时间戳</field>
+			</shadow>
+		</value>
+	</block>
+</category>
+<sep></sep>
+<category name="%{BKY_CATSYSDISK}" colour="%{BKY_SYSDISK_HUE}">
+	<block type="sysdisk_getlocalpath"></block>
+	<block type="sysdisk_writefile">
+		<value name="filepath">
+			<shadow type="text_join">
+				<mutation items="2"></mutation>
+				<value name="ADD0">
+					<shadow type="sysdisk_getlocalpath"></shadow>
+				</value>
+				<value name="ADD1">
+					<shadow type="text">
+						<field name="TEXT">/file.txt</field>
+					</shadow>
+				</value>
+			</shadow>
+		</value>
+		<value name="filecontent">
+			<shadow type="text">
+				<field name="TEXT">这是一个测试文件</field>
+			</shadow>
+		</value>
+	</block>
+	<block type="sysdisk_readfile">
+		<value name="filepath">
+			<shadow type="text_join">
+				<mutation items="2"></mutation>
+				<value name="ADD0">
+					<shadow type="sysdisk_getlocalpath"></shadow>
+				</value>
+				<value name="ADD1">
+					<shadow type="text">
+						<field name="TEXT">/file.txt</field>
+					</shadow>
+				</value>
+			</shadow>
+		</value>
+	</block>
 
-	  <block type="cqevent_allevent">
-	    <value name="eventTypeInput">
-		  <block type="event_cqsys"><field name="event_type">CQAddGroup</field></block>
-		</value>
-		<value name="action">
-          <block type="variables_set" deletable="false" movable="false" editable="false">
-            <field name="VAR">群添加_唯一标识</field>
-			  <value name="VALUE">
-			    <block type="responseFlag_addgroup" deletable="false" movable="false" editable="false"></block>
-			  </value>
-          </block>
-        </value>
-		<value name="action">
-          <block type="variables_set" deletable="false" movable="false" editable="false">
-            <field name="VAR">群添加_附加信息</field>
-			  <value name="VALUE">
-			    <block type="msg_addgroup" deletable="false" movable="false" editable="false"></block>
-			  </value>
-          </block>
-        </value>
-		<value name="action">
-          <block type="variables_set" deletable="false" movable="false" editable="false">
-            <field name="VAR">群添加_来源QQ</field>
-			  <value name="VALUE">
-			    <block type="fromqq_addgroup" deletable="false" movable="false" editable="false"></block>
-			  </value>
-          </block>
-        </value>
-		<value name="action">
-          <block type="variables_set" deletable="false" movable="false" editable="false">
-            <field name="VAR">群添加_来源群号</field>
-			  <value name="VALUE">
-			    <block type="fromgroup_addgroup" deletable="false" movable="false" editable="false"></block>
-			  </value>
-          </block>
-        </value>
-		<value name="action">
-          <block type="variables_set" deletable="false" movable="false" editable="false">
-            <field name="VAR">群添加_来源时间</field>
-			  <value name="VALUE">
-			    <block type="fromtime_addgroup" deletable="false" movable="false" editable="false"></block>
-			  </value>
-          </block>
-        </value>
-		<value name="action">
-		  <block type="variables_set" deletable="false" movable="false" editable="false">
-            <field name="VAR">群添加_请求类型</field>
-			  <value name="VALUE">
-			    <block type="subtype_addgroup" deletable="false" movable="false" editable="false"></block>
-			  </value>
-          </block>
-        </value>
-	  </block>
-    </category>
-	<sep></sep>
-    <category name="%{BKY_CATVARIABLES}" colour="%{BKY_VARIABLES_HUE}" custom="VARIABLE"></category>
-    <category name="%{BKY_CATFUNCTIONS}" colour="%{BKY_PROCEDURES_HUE}" custom="PROCEDURE"></category>
+</category>
+
+<sep></sep>
+<category name="%{BKY_CATVARIABLES}" colour="%{BKY_VARIABLES_HUE}" custom="VARIABLE"></category>
+<category name="%{BKY_CATFUNCTIONS}" colour="%{BKY_PROCEDURES_HUE}" custom="PROCEDURE"></category>
