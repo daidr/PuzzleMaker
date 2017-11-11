@@ -174,7 +174,8 @@ button {
 }
 
 #tab_blocks {
-	min-width: 102px;
+	min-width: 180px;
+	max-height:41px;
 	border: none !important;
 	padding: 0;
 	text-align: center;
@@ -278,7 +279,7 @@ a[title='站长统计'] {
 	line-height: 16px;
 	position: relative;
 	left: -10px;
-	top: -8px;
+	top: -5px;
 	cursor: pointer;
 }
 
@@ -381,12 +382,15 @@ a[title='站长统计'] {
 	/*   css[手机样式]  */
 	.headermenu {
 		padding: 5px;
-		top: 33px !important;
+		top: 41px !important;
 		left: 0 !important;
 		right: 0 !important;
 		height: auto;
 		border-radius: 0 0 0px 0px;
 		padding-bottom: 10px;
+	}
+	.menu-btns {
+		width: 98% !important;
 	}
 }
 
@@ -407,8 +411,8 @@ a[title='站长统计'] {
 	display: none;
 }
 
-.menubtns {
-	width:100%;
+.menu-btns {
+	width:95%;
 }
 
 .headermenumark{

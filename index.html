@@ -9,6 +9,7 @@
 		<title>拼图式编写插件</title>
 		<link rel="stylesheet" href="style.css">
 		<link rel="stylesheet" href="help/style.css">
+		<link rel="stylesheet" href="iconfont/material-icons.css">
 		<link rel="stylesheet" href="//cdn.staticfile.org/animate.css/3.5.2/animate.min.css">
 		<script>
 			var serverpath = "apps/";
@@ -103,6 +104,12 @@
 			a[title='站长统计'] {
 				display: none;
 			}
+			table {
+				border-collapse: collapse;
+				margin: 0;
+				padding: 0;
+				border: none;
+			}
 		</style>
 
 	</head>
@@ -127,18 +134,18 @@
 			<tr>
 				<td colspan=2>
 					<table width="100%">
-						<tr id="tabRow" height="33px" style="height: 33px !important;overflow:hidden;">
-							<td id="tab_blocks" class="tabon">拼图</td>
+						<tr id="tabRow" height="41px" style="height: 41px !important;overflow:hidden;">
+							<td id="tab_blocks" class="tabon" style="background:url(media/logo.png);background-position-y: 4px;background-repeat: no-repeat;"></td>
 
-							<td class="tabmax" style="height: 33px !important;overflow:hidden;">
+							<td class="tabmax" style="height: 41px !important;overflow:hidden;">
 								<a class="userinfobtn headerbtn">用户信息</a>
 								<a class="menubtngroupbtn headerbtn">功能按键</a>
-								<div style="top: -9px;position: relative;display: inline-block;" class="login tologin">
+								<div style="top: -5px;position: relative;display: inline-block;" class="login tologin">
 									<div class="WB_loginButton WB_widgets">
 										<a href="javascript:void(0);"><img src="media/loginButton_32.png"></a>
 									</div>
 								</div>
-								<button id="trashButton" class="notext primary" style="padding:1px 7px" title="...">
+								<button id="trashButton" class="notext primary" style="padding:1px 7px;margin-top: 4px;" title="...">
 									<i class="material-icons" style="font-size:27px;">delete</i>
               </button>
 							</td>
@@ -166,52 +173,52 @@
 			<span class="useroutput"><a class="loginout userinfo_val" href="#" style="float: right;font-size: 13px;">安全退出</a></span>
 		</div>
 		<div class="menubtngroup headermenu">
-			<button id="docButton" class="notext menubtns" style="padding:1px 7px" title="...">
+			<button id="docButton" class="notext menu-btns" style="padding:1px 7px" title="...">
 				<i class="material-icons" style="font-size:27px;color:#5f5f5f;">live_help</i>
 				<span class="menubtngroup_btntext">打开帮助文档</span>
     </button>
      <br />
-			<select name="projectid" class="projectid menubtns">
+			<select name="projectid" class="projectid menu-btns">
 				<option value="temp">浏览器本地缓存</option>
 			</select>
-			<button id="switchButton" class="notext menubtns" style="padding:1px 7px;display:none" title="...">
+			<button id="switchButton" class="notext menu-btns" style="padding:1px 7px;display:none" title="...">
 				<i class="material-icons" style="font-size:27px;color:#5f5f5f;">settings_input_svideo</i>
               </button>
               <br />
-			<button id="pullButton" class="notext menubtns" style="padding:1px 7px;display:none" title="...">
+			<button id="pullButton" class="notext menu-btns" style="padding:1px 7px;display:none" title="...">
 				<i class="material-icons" style="font-size:27px;color:#5f5f5f;">cloud_download</i>
 				<span class="menubtngroup_btntext">远程拉取代码</span>
               </button>
               <br class="nobr" />
-			<button id="saveButton" class="notext menubtns" style="padding:1px 7px;display:none" title="...">
+			<button id="saveButton" class="notext menu-btns" style="padding:1px 7px;display:none" title="...">
 				<i class="material-icons" style="font-size:27px;color:#5f5f5f;">cloud_upload</i>
 				<span class="menubtngroup_btntext">远程上传代码</span>
              </button>
              <br class="nobr" />
 			<input id="addcqwpk" type="file" name="addcqwpk" style="display: none;" accept="application/xml" />
-			<button id="addButton" class="notext menubtns" style="padding:1px 7px" title="...">
+			<button id="addButton" class="notext menu-btns" style="padding:1px 7px" title="...">
 				<i class="material-icons" style="font-size:27px;color:#5f5f5f;">publish</i>
 				<span class="menubtngroup_btntext">追加拼图文件</span>
               </button>
               <br />
 			<input id="loadcqwpk" type="file" name="loadcqwpk" style="display: none;" accept="application/xml" />
-			<button id="loadButton" class="notext menubtns" style="padding:1px 7px" title="...">
+			<button id="loadButton" class="notext menu-btns" style="padding:1px 7px" title="...">
 				<i class="material-icons" style="font-size:27px;color:#5f5f5f;">file_upload</i>
 				<span class="menubtngroup_btntext">载入拼图文件</span>
              </button>
              <br />
-			<button id="downloadButton" class="notext menubtns" style="padding:1px 7px" title="...">
+			<button id="downloadButton" class="notext menu-btns" style="padding:1px 7px" title="...">
 				<i class="material-icons" style="font-size:27px;color:#5f5f5f;">save</i>
 				<span class="menubtngroup_btntext">下载拼图文件</span>
               </button>
               <br />
-			<button id="temporaryButton" class="notext menubtns" style="padding:1px 7px" title="...">
+			<button id="temporaryButton" class="notext menu-btns" style="padding:1px 7px" title="...">
 				<i class="material-icons" style="font-size:27px;color:#5f5f5f;">sd_card</i>
 				<span class="menubtngroup_btntext">暂存到浏览器</span>
               </button>
 		</div>
-		<div id="content_blocks" class="content menubtns"></div>
-		<div id="content_doc" class="content" style="visibility: visible; top: 33px; right: 0px;position: absolute;">
+		<div id="content_blocks" class="content"></div>
+		<div id="content_doc" class="content" style="visibility: visible; top: 41px; right: 0px;position: absolute;">
 			<div id="content_doc_in"></div>
 		</div>
 		<div></div>
@@ -224,7 +231,6 @@
 		</div>
 
 		<link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
-		<link rel="stylesheet" href="iconfont/material-icons.css">
 		<link rel="stylesheet" href="css/Lobibox.min.css">
 		<script type="text/javascript" src="js/Base64.js"></script>
 		<script src="//cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
@@ -287,9 +293,9 @@
 				$(".menubtngroup").css("left", $(".menubtngroupbtn").offset().left + "px");
 				$(".menubtngroup").css("top", $(".menubtngroupbtn").offset().top + 27 + "px");*/
 				$(".userinfo").css("right", "0px");
-				$(".userinfo").css("top", "33px");
+				$(".userinfo").css("top", "41px");
 				$(".menubtngroup").css("right", "0px");
-				$(".menubtngroup").css("top", "33px");
+				$(".menubtngroup").css("top", "41px");
 			}
 			window.setInterval("userinforeplace()", 500);
 		</script>
