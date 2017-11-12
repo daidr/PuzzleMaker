@@ -290,3 +290,9 @@
     background: #CCC;
 	color:#fff;
 }
+
+.noSel {
+	-moz-user-select:none;
+    -webkit-user-select:none;
+    user-select:none;   
+}

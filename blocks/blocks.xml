@@ -1,6 +1,6 @@
 <category name="酷Q拼图" colour="#ff9921">
 	<category name="%{BKY_CATCQEVENT}" colour="%{BKY_CQEVENT_HUE}">
-		<block type="cqevent_allevent">
+		<block type="cqevent_allevent" data-keywords="群消息|事件|酷q">
 			<value name="eventTypeInput">
 				<block type="event_cqsys"></block>
 			</value>
@@ -37,7 +37,7 @@
 				</block>
 			</value>
 		</block>
-		<block type="cqevent_allevent">
+		<block type="cqevent_allevent" data-keywords="好友消息|私聊|事件|酷q">
 			<value name="eventTypeInput">
 				<block type="event_cqsys">
 					<field name="event_type">CQFriendMsg</field>
@@ -69,7 +69,7 @@
 			</value>
 
 		</block>
-		<block type="cqevent_allevent">
+		<block type="cqevent_allevent" data-keywords="讨论组消息|事件|酷q">
 			<value name="eventTypeInput">
 				<block type="event_cqsys">
 					<field name="event_type">CQDiscussMsg</field>
@@ -108,7 +108,7 @@
 				</block>
 			</value>
 		</block>
-		<block type="cqevent_allevent">
+		<block type="cqevent_allevent" data-keywords="群添加|群申请|事件|酷q">
 			<value name="eventTypeInput">
 				<block type="event_cqsys">
 					<field name="event_type">CQAddGroup</field>
@@ -165,15 +165,15 @@
 		</block>
 	</category>
 	<category name="%{BKY_CATCQCODE}" colour="%{BKY_CQCODE_HUE}">
-		<block type="cqcode_at">
+		<block type="cqcode_at" data-keywords="at|@|cq码|酷q码|酷q">
 			<value name="QQID">
 				<shadow type="math_number">
 					<field name="NUM">1234567</field>
 				</shadow>
 			</value>
 		</block>
-		<block type="cqcode_shake"></block>
-		<block type="cqcode_record">
+		<block type="cqcode_shake" data-keywords="抖一抖|戳一戳|窗口抖动|cq码|酷q码|酷q"></block>
+		<block type="cqcode_record" data-keywords="发送语音|cq码|酷q码|酷q">
 			<value name="filename">
 				<shadow type="ve_gettts">
 					<value name="content">
@@ -189,27 +189,27 @@
 				</shadow>
 			</value>
 		</block>
-		<block type="cqcode_contact">
+		<block type="cqcode_contact" data-keywords="群名片|cq码|酷q码|酷q">
 			<value name="number">
 				<shadow type="math_number">
 					<field name="NUM">1234567</field>
 				</shadow>
 			</value>
 		</block>
-		<block type="cqcode_emoji_1"></block>
-		<block type="cqcode_emoji_2"></block>
-		<block type="cqcode_sface_1"></block>
+		<block type="cqcode_emoji_1" data-keywords="emoji|cq码|酷q码|酷q"></block>
+		<block type="cqcode_emoji_2" data-keywords="emoji|cq码|酷q码|酷q"></block>
+		<block type="cqcode_sface_1" data-keywords="小表情|黄豆表情|cq码|酷q码|酷q"></block>
 	</category>
 	<category name="%{BKY_CATCQFUNC}" colour="%{BKY_CQFUNC_HUE}">
-		<block type="cq_getgrouplist"></block>
-		<block type="cq_getusername">
+		<block type="cq_getgrouplist" data-keywords="获取群列表|酷q"></block>
+		<block type="cq_getusername" data-keywords="获取昵称|获取群名称|酷q">
 			<value name="number">
 				<shadow type="math_number">
 					<field name="NUM">1234567</field>
 				</shadow>
 			</value>
 		</block>
-		<block type="cq_sendmsg">
+		<block type="cq_sendmsg" data-keywords="发送消息|群消息|私聊消息|讨论组消息|酷q">
 			<value name="idnumber">
 				<shadow type="math_number">
 					<field name="NUM">1234567</field>
@@ -221,7 +221,7 @@
 				</shadow>
 			</value>
 		</block>
-		<block type="cq_sendlike">
+		<block type="cq_sendlike" data-keywords="点赞|名片赞|发送赞|酷q">
 			<value name="idnumber">
 				<shadow type="math_number">
 					<field name="NUM">1234567</field>
@@ -233,7 +233,7 @@
 				</shadow>
 			</value>
 		</block>
-		<block type="cq_jinyan">
+		<block type="cq_jinyan" data-keywords="禁言|酷q">
 			<value name="groupnumber">
 				<shadow type="math_number">
 					<field name="NUM">1234567</field>
@@ -250,7 +250,7 @@
 				</shadow>
 			</value>
 		</block>
-		<block type="cq_addlog">
+		<block type="cq_addlog" data-keywords="日志|酷q">
 			<value name="content">
 				<shadow type="text">
 					<field name="TEXT">这是一条测试日志</field>
@@ -259,7 +259,7 @@
 		</block>
 	</category>
 	<category name="%{BKY_CATVOICEERA}" colour="%{BKY_VOICEERA_HUE}">
-		<block type="ve_gettts">
+		<block type="ve_gettts" data-keywords="语音合成|语音时代|酷q">
 			<value name="content">
 				<shadow type="text">
 					<field name="TEXT">你好！语音时代！</field>
@@ -271,7 +271,7 @@
 				</shadow>
 			</value>
 		</block>
-		<block type="ve_getos">
+		<block type="ve_getos" data-keywords="词库|词库交互|语音时代|酷q">
 			<value name="content">
 				<shadow type="text">
 					<field name="TEXT">你好啊</field>
@@ -287,14 +287,14 @@
 
 </category>
 <category name="%{BKY_CATLOGIC}" colour="%{BKY_LOGIC_HUE}">
-	<block type="controls_if"></block>
-	<block type="logic_compare"></block>
-	<block type="logic_operation"></block>
-	<block type="logic_negate"></block>
-	<block type="logic_boolean"></block>
-	<block type="logic_null"></block>
-	<block type="logic_ternary"></block>
-	<block type="logic_switch">
+	<block type="controls_if" data-keywords="如果|if|逻辑"></block>
+	<block type="logic_compare" data-keywords="=|<>|!=|≠|<|>|条件|if|逻辑"></block>
+	<block type="logic_operation" data-keywords="&&||||且|和|或|if|逻辑"></block>
+	<block type="logic_negate" data-keywords="非|!|if|逻辑"></block>
+	<block type="logic_boolean" data-keywords="false|true|假|真|boolean|逻辑"></block>
+	<block type="logic_null" data-keywords="空|empty|逻辑"></block>
+	<block type="logic_ternary" data-keywords="测试|如果为真|test|如果为假|if|逻辑"></block>
+	<block type="logic_switch" data-keywords="当变量拥有以下情况|switch|逻辑">
 		<value name="value_name">
 			<shadow type="variables_get">
 				<field name="VAR">文本</field>
@@ -313,31 +313,31 @@
 			</block>
 		</value>
 	</block>
-	<block type="logic_switch">
+	<block type="logic_switch" data-keywords="当变量拥有以下情况|switch|逻辑">
 		<value name="value_name">
 			<shadow type="variables_get">
 				<field name="VAR">文本</field>
 			</shadow>
 		</value>
 	</block>
-	<block type="logic_case">
+	<block type="logic_case" data-keywords="case|逻辑">
 		<value name="caseName">
 			<shadow type="text">
 				<field name="TEXT">abc</field>
 			</shadow>
 		</value>
 	</block>
-	<block type="logic_switch_default"></block>
+	<block type="logic_switch_default" data-keywords="default|逻辑"></block>
 </category>
 <category name="%{BKY_CATLOOPS}" colour="%{BKY_LOOPS_HUE}">
-	<block type="controls_repeat_ext">
+	<block type="controls_repeat_ext" data-keywords="重复|repeat|循环">
 		<value name="TIMES">
 			<shadow type="math_number">
 				<field name="NUM">10</field>
 			</shadow>
 		</value>
 	</block>
-	<block type="controls_whileUntil"></block>
+	<block type="controls_whileUntil" data-keywords="条件重复|重复当|循环"></block>
 	<block type="controls_for">
 		<value name="FROM">
 			<shadow type="math_number">
@@ -355,12 +355,12 @@
 			</shadow>
 		</value>
 	</block>
-	<block type="controls_forEach"></block>
-	<block type="controls_flow_statements"></block>
+	<block type="controls_forEach" data-keywords="重复|循环"></block>
+	<block type="controls_flow_statements" data-keywords="中断循环|跳出循环|重复|循环"></block>
 </category>
 <category name="%{BKY_CATMATH}" colour="%{BKY_MATH_HUE}">
-	<block type="math_number"></block>
-	<block type="math_arithmetic">
+	<block type="math_number" data-keywords="input|输入|number|数字|数学"></block>
+	<block type="math_arithmetic" data-keywords="加法|减法|除法|乘法|*x×÷/-＋+|calc|运算|计算|数学">
 		<value name="A">
 			<shadow type="math_number">
 				<field name="NUM">1</field>
@@ -372,37 +372,37 @@
 			</shadow>
 		</value>
 	</block>
-	<block type="math_single">
+	<block type="math_single" data-keywords="平方根|绝对值|in|log10|e^|10^|运算|计算|数学">
 		<value name="NUM">
 			<shadow type="math_number">
 				<field name="NUM">9</field>
 			</shadow>
 		</value>
 	</block>
-	<block type="math_trig">
+	<block type="math_trig" data-keywords="三角函数|反正弦|反余弦|反正切|asin|acos|atan|运算|计算|数学">
 		<value name="NUM">
 			<shadow type="math_number">
 				<field name="NUM">45</field>
 			</shadow>
 		</value>
 	</block>
-	<block type="math_constant"></block>
-	<block type="math_number_property">
+	<block type="math_constant" data-keywords="圆周率|pai|π|e|无限大|无穷大|∞|运算|计算|数学"></block>
+	<block type="math_number_property" data-keywords="是奇数|是偶数|是整数|是质数|可被整除|是正数|是负数|数学">
 		<value name="NUMBER_TO_CHECK">
 			<shadow type="math_number">
 				<field name="NUM">0</field>
 			</shadow>
 		</value>
 	</block>
-	<block type="math_round">
+	<block type="math_round" data-keywords="四舍五入|退一法|进位法|进一法|向上舍入|向下舍入|数学">
 		<value name="NUM">
 			<shadow type="math_number">
 				<field name="NUM">3.1</field>
 			</shadow>
 		</value>
 	</block>
-	<block type="math_on_list"></block>
-	<block type="math_modulo">
+	<block type="math_on_list" data-keywords="列表平均数|计算|数学"></block>
+	<block type="math_modulo" data-keywords="取余数|除法|运算|计算|数学">
 		<value name="DIVIDEND">
 			<shadow type="math_number">
 				<field name="NUM">64</field>
@@ -431,7 +431,7 @@
 			</shadow>
 		</value>
 	</block>
-	<block type="math_random_int">
+	<block type="math_random_int" data-keywords="取随机整数|随机数|数学">
 		<value name="FROM">
 			<shadow type="math_number">
 				<field name="NUM">1</field>
@@ -443,31 +443,31 @@
 			</shadow>
 		</value>
 	</block>
-	<block type="math_random_float"></block>
+	<block type="math_random_float" data-keywords="取随机分数|数学"></block>
 </category>
 <category name="%{BKY_CATTEXT}" colour="%{BKY_TEXTS_HUE}">
-	<block type="text"></block>
-	<block type="text_join"></block>
-	<block type="text_append">
+	<block type="text" data-keywords="input|text|输入|文字|文本"></block>
+	<block type="text_join" data-keywords="连接字符串|连接文本|文字|文本"></block>
+	<block type="text_append" data-keywords="添加成员|追加成员|列表|文字|文本">
 		<value name="TEXT">
 			<shadow type="text"></shadow>
 		</value>
 	</block>
-	<block type="text_length">
+	<block type="text_length" data-keywords="取字符串长度|取文本长度|文字|文本">
 		<value name="VALUE">
 			<shadow type="text">
 				<field name="TEXT">abc</field>
 			</shadow>
 		</value>
 	</block>
-	<block type="text_isEmpty">
+	<block type="text_isEmpty" data-keywords="是否为空|empty|文字|文本">
 		<value name="VALUE">
 			<shadow type="text">
 				<field name="TEXT"></field>
 			</shadow>
 		</value>
 	</block>
-	<block type="text_indexOf">
+	<block type="text_indexOf" data-keywords="寻找文本|文字|文本">
 		<value name="VALUE">
 			<block type="variables_get">
 				<field name="VAR">文本</field>
@@ -479,35 +479,35 @@
 			</shadow>
 		</value>
 	</block>
-	<block type="text_charAt">
+	<block type="text_charAt" data-keywords="获得字符串|获得文本|文字|文本">
 		<value name="VALUE">
 			<block type="variables_get">
 				<field name="VAR">文本</field>
 			</block>
 		</value>
 	</block>
-	<block type="text_getSubstring">
+	<block type="text_getSubstring" data-keywords="获得字符串|获得文本|文字|文本">
 		<value name="STRING">
 			<block type="variables_get">
 				<field name="VAR">文本</field>
 			</block>
 		</value>
 	</block>
-	<block type="text_changeCase">
+	<block type="text_changeCase" data-keywords="到大写|到小写|文字|文本">
 		<value name="TEXT">
 			<shadow type="text">
 				<field name="TEXT">abc</field>
 			</shadow>
 		</value>
 	</block>
-	<block type="text_trim">
+	<block type="text_trim" data-keywords="去首尾空格|去空格|文字|文本">
 		<value name="TEXT">
 			<shadow type="text">
 				<field name="TEXT">abc</field>
 			</shadow>
 		</value>
 	</block>
-	<block type="text_replace">
+	<block type="text_replace" data-keywords="子文本替换|替换文本|文字|文本">
 		<value name="FROM">
 			<shadow type="text">
 				<field name="TEXT">78</field>
@@ -524,7 +524,7 @@
 			</shadow>
 		</value>
 	</block>
-	<block type="text_REtest">
+	<block type="text_REtest" data-keywords="测试正则表达式|re|文字|文本">
 		<value name="tester">
 			<block type="text_newRE">
 				<value name="text">
@@ -540,7 +540,7 @@
 			</shadow>
 		</value>
 	</block>
-	<block type="text_REexec">
+	<block type="text_REexec" data-keywords="匹配字符串|匹配正则表达式|exec|文字|文本">
 		<value name="tester">
 			<block type="text_newRE">
 				<value name="text">
@@ -556,60 +556,60 @@
 			</shadow>
 		</value>
 	</block>
-	<block type="text_enter"></block>
+	<block type="text_enter" data-keywords="换行符|回车符|enter|br|文字|文本"></block>
 </category>
 <category name="%{BKY_CATLISTS}" colour="%{BKY_LISTS_HUE}">
-	<block type="lists_create_with">
+	<block type="lists_create_with" data-keywords="创建列表|创建空列表|数组|列表">
 		<mutation items="0"></mutation>
 	</block>
-	<block type="lists_create_with"></block>
-	<block type="lists_repeat">
+	<block type="lists_create_with" data-keywords="创建列表|数组|列表"></block>
+	<block type="lists_repeat" data-keywords="重复|创建|数组|列表">
 		<value name="NUM">
 			<shadow type="math_number">
 				<field name="NUM">5</field>
 			</shadow>
 		</value>
 	</block>
-	<block type="lists_length"></block>
-	<block type="lists_isEmpty"></block>
-	<block type="lists_indexOf">
+	<block type="lists_length" data-keywords="取数组成员数|取列表成员数|取数组长度|取列表长度|数组|列表"></block>
+	<block type="lists_isEmpty" data-keywords="列表是空的|empty|数组|列表"></block>
+	<block type="lists_indexOf" data-keywords="寻找列表|数组|列表">
 		<value name="VALUE">
 			<block type="variables_get">
 				<field name="VAR">列表</field>
 			</block>
 		</value>
 	</block>
-	<block type="lists_getIndex">
+	<block type="lists_getIndex" data-keywords="获取列表成员|数组|列表">
 		<value name="VALUE">
 			<block type="variables_get">
 				<field name="VAR">列表</field>
 			</block>
 		</value>
 	</block>
-	<block type="lists_setIndex">
+	<block type="lists_setIndex" data-keywords="设置列表成员|数组|列表">
 		<value name="LIST">
 			<block type="variables_get">
 				<field name="VAR">列表</field>
 			</block>
 		</value>
 	</block>
-	<block type="lists_getSublist">
+	<block type="lists_getSublist" data-keywords="设置列表成员|数组|列表">
 		<value name="LIST">
 			<block type="variables_get">
 				<field name="VAR">列表</field>
 			</block>
 		</value>
 	</block>
-	<block type="lists_split">
+	<block type="lists_split" data-keywords="分割文本|分割字符串|数组|列表">
 		<value name="DELIM">
 			<shadow type="text">
 				<field name="TEXT">,</field>
 			</shadow>
 		</value>
 	</block>
-	<block type="lists_sort"></block>
+	<block type="lists_sort" data-keywords="排序|升序|降序|数组|列表"></block>
 </category>
-<category name="%{BKY_CATCOLOUR}" colour="%{BKY_COLOUR_HUE}">
+<!-- <category name="%{BKY_CATCOLOUR}" colour="%{BKY_COLOUR_HUE}">
 	<block type="colour_picker"></block>
 	<block type="colour_random"></block>
 	<block type="colour_rgb">
@@ -646,9 +646,9 @@
 			</shadow>
 		</value>
 	</block>
-</category>
+</category> -->
 <category name="%{BKY_CATTIME}" colour="%{BKY_TIME_HUE}">
-	<block type="cq_timestamptostr">
+	<block type="cq_timestamptostr" data-keywords="转换时间戳|time|时间">
 		<value name="timestamp">
 			<shadow type="variables_get">
 				<field name="VAR">时间戳</field>
@@ -658,8 +658,8 @@
 </category>
 <sep></sep>
 <category name="%{BKY_CATSYSDISK}" colour="%{BKY_SYSDISK_HUE}">
-	<block type="sysdisk_getlocalpath"></block>
-	<block type="sysdisk_writefile">
+	<block type="sysdisk_getlocalpath" data-keywords="获取运行目录|磁盘操作"></block>
+	<block type="sysdisk_writefile" data-keywords="写入文件|写文件|磁盘操作">
 		<value name="filepath">
 			<shadow type="text_join">
 				<mutation items="2"></mutation>
@@ -679,7 +679,7 @@
 			</shadow>
 		</value>
 	</block>
-	<block type="sysdisk_readfile">
+	<block type="sysdisk_readfile" data-keywords="读取文件|读文件|磁盘操作">
 		<value name="filepath">
 			<shadow type="text_join">
 				<mutation items="2"></mutation>

@@ -229,6 +229,7 @@ Code.renderContent = function() {
  */
 Code.init = function() {
   Code.initLanguage();
+  Code.scrolledPos=0;
 
   var rtl = Code.isRtl();
   var container = document.getElementById('content_area');
@@ -374,7 +375,52 @@ Code.discard = function() {
   }
   
 };
-$("#toolbox").load("blocks/blocks.xml",function(){Code.init();});
+$("#toolbox").load("blocks/blocks.xml",function(){
+	Code.init();
+	var b = function() {
+				Code.workspace.updateToolbox($("#toolbox")[0]);
+				Code.workspace.toolbox_.flyout_.hide()
+			};
+		var a = (function() {
+			var c = 0;
+			return function(e, d) {
+				clearTimeout(c);
+				c = setTimeout(e, d)
+			}
+		})();
+		$("#searchBlockForm").bind("keypress", function(c) {
+			if (c.keyCode == 13) {
+				return false
+			}
+		});
+		$(".searchSwitch").click(function() {
+			$("#searchBlockInput").val("");
+			b()
+		});
+		$("#searchBlockInput").keyup(function(c) {
+			a(function() {
+				var h = $("#searchBlockInput").val().toLowerCase();
+				if (h && h.trim() != "") {
+					var j = $("<xml>" + $("#toolbox")[0].innerHTML + "</xml>");
+					var d = $('<xml><category colour="233" expanded="true" id="catSearchResult" name="搜索结果"></category></xml>');
+					var f = d.find("category").eq(0);
+					var m = "block[type*=" + h + "], block[data-keywords*=" + h + "]";
+					try {
+						var k = j.find("category").find(m);
+						k.clone().appendTo(f)
+					} catch (l) {}
+					var g = 1;
+					while (g < 1) {
+						j.children("category").eq(g++).clone().appendTo(f.parent())
+					}
+					Code.workspace.updateToolbox(d.appendTo("<xml></xml>").parent().html());
+				} else {
+					b()
+				}
+			}, 250)
+		});
+		b();
+});
 
 
 
