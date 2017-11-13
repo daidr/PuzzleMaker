@@ -1,0 +1,57 @@
+body {
+	background-color: #4b515a !important;
+}
+
+a,i,p,h1,h2,h3,h4,h5,span {
+	color: #b5b5b5 !important;
+}
+
+input {
+	background-color:#4b515a !important;
+	color: #b5b5b5 !important;
+}
+
+#searchBlockInput{
+	border: 1px #4b515a solid !important;
+}
+
+.headermenu {
+    background: #4b515a !important;
+    border: solid 1px #2d2d2d !important;
+}
+.blocklyToolboxDiv {
+    background-color: #4b515a !important;
+}
+
+.blocklyTreeRow:not(.blocklyTreeSelected):hover {
+    background-color: #2f2f2f !important;
+}
+
+.menu-btns {
+    border: 1px solid #353535 !important;
+    background-color: #353535 !important;
+}
+
+.projectid {
+    border: 1px solid #353535 !important;
+    background-color: #353535 !important;
+	color: #b5b5b5 !important;
+}
+
+.blocklySvg {
+    background-color: #5f646b !important;
+}
+
+.blocklyTreeSeparator {
+    border-bottom: solid #404040 1px !important;
+	border-left:none !important;
+}
+
+.blocklyMainBackground {
+    stroke-width: 0 !important;
+    stroke: #c6c6c6 !important;
+}
+
+.blocklyFlyoutBackground {
+    fill: #969696 !important;
+}
