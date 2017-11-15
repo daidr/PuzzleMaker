@@ -1,0 +1,68 @@
+<!--Header Start-->
+<div class="doctitlemask"></div>
+<i class="material-icons docback" style="font-size:27px;color:#5f5f5f;cursor: pointer;">arrow_back</i>
+<p class="doctitle">相关视频(教程&更新)</p>
+<!--Header End-->
+
+<!--Body Start-->
+<div class="docbody">
+	<div class="helpdoc_videoFrameOut">
+		<iframe src="help/subpage/novideo.html" class="helpdoc_videoFrame" />
+		<div class="helpdoc_videoFrame_controlBtn">
+			<i class="material-icons helpdoc_videoFrame_controlBtn_fullScreen" title="网页全屏">fullscreen</i>
+		</div>
+	</div>
+	<hr class="docend" texts="视频教程" />
+	<a class="videolist" avnum="15747201">基本操作教学</a>
+	<a class="videolist" avnum="15997493">广告杀手思路详解</a>
+	<hr class="docend" texts="更新日志" />
+	<a class="videolist" avnum="16303954">2017-11-13更新内容</a>
+</div>
+
+
+<!--Body End-->
+
+<!--Script Start-->
+<script>
+$(".videolist").click(function() {
+	$(".helpdoc_videoFrame").remove();
+	$(".helpdoc_videoFrameOut").prepend("<iframe src=\"https://www.bilibili.com/blackboard/player.html?aid="+$(this).attr("avnum")+"&wmode=transparent&as_wide=1&crossDomain=1\" class=\"helpdoc_videoFrame\" />");
+});
+$(".helpdoc_videoFrame_controlBtn_fullScreen").click(function() {
+	if($(this).attr("title") == "网页全屏"){
+		$(".helpdoc_videoFrameOut").css({
+											"position":"fixed",
+											"top":"0",
+											"left":"0",
+											"bottom":"0",
+											"right":"0",
+											"z-index":"9997",
+											"width":"100%",
+											"margin":"0 0 0 0"
+										});
+		$(".helpdoc_videoFrame").css({"height":"calc(100% - 30px)"});
+		$(".helpdoc_videoFrame_controlBtn").css({"height":"30px"});
+		$(".helpdoc_videoFrame_controlBtn_fullScreen").attr("title","退出全屏");
+		$(".helpdoc_videoFrame_controlBtn_fullScreen").html("fullscreen_exit");
+		return;
+	}
+	if($(this).attr("title") == "退出全屏"){
+		$(".helpdoc_videoFrameOut").css({
+											"position":"",
+											"top":"",
+											"left":"",
+											"bottom":"",
+											"right":"",
+											"z-index":"",
+											"width":"",
+											"margin":""
+										});
+		$(".helpdoc_videoFrame").css({"height":""});
+		$(".helpdoc_videoFrame_controlBtn").css({"margin-top":"","height":"","width":""});
+		$(".helpdoc_videoFrame_controlBtn_fullScreen").attr("title","网页全屏");
+		$(".helpdoc_videoFrame_controlBtn_fullScreen").html("fullscreen");
+		return;
+	}
+});
+</script>
+<!--Script End-->
