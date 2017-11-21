@@ -163,6 +163,26 @@ Blockly.defineBlocksWithJsonArray([
   "colour": "%{BKY_CQFUNC_HUE}",
   "tooltip": "输出机器人所加的所有群，格式为“xxxxxxx|xxxxxxx|xxxxxxx”",
   "helpUrl": ""
+},
+{
+  "type": "cq_deleteMsg",
+  "message0": "撤回指定消息 %1 消息ID %2",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "input_value",
+      "name": "msgid",
+      "check": "String",
+      "align": "RIGHT"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": "%{BKY_CQFUNC_HUE}",
+  "tooltip": "根据消息ID撤回指定消息",
+  "helpUrl": ""
 }
 ]);
 

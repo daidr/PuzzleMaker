@@ -19,6 +19,7 @@ Blockly.JavaScript['from_person'] = function(b){var a="eventarray[2]";return[a,B
 Blockly.JavaScript['from_time'] = function(b){var a="eventarray[0]";return[a,Blockly.JavaScript.ORDER_ATOMIC]};
 Blockly.JavaScript['from_msg'] = function(b){var a="eventarray[3]";return[a,Blockly.JavaScript.ORDER_ATOMIC]};
 Blockly.JavaScript['fromdiscuss_discuss'] = function(b){var a="eventarray[1]";return[a,Blockly.JavaScript.ORDER_ATOMIC]};
+Blockly.JavaScript['msg_id'] = function(b){var a="eventarray[4]";return[a,Blockly.JavaScript.ORDER_ATOMIC]};
 
 Blockly.JavaScript['subtype_addgroup'] = function(b){var a="eventarray[0]";return[a,Blockly.JavaScript.ORDER_ATOMIC]};
 Blockly.JavaScript['fromtime_addgroup'] = function(b){var a="eventarray[1]";return[a,Blockly.JavaScript.ORDER_ATOMIC]};

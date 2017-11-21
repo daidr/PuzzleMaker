@@ -53,3 +53,9 @@ Blockly.JavaScript['cq_getusername'] = function(block) {
   var code = "GetUserName(\"" + dropdown_type + "\"," + value_number + ")";
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
+
+Blockly.JavaScript['cq_deleteMsg'] = function(block) {
+  var value_msgid = Blockly.JavaScript.valueToCode(block, 'msgid', Blockly.JavaScript.ORDER_ATOMIC);
+  var code = 'deleteMsg('+ value_msgid +');\n';
+  return code;
+};

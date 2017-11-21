@@ -165,6 +165,36 @@ Blockly.Blocks.from_time = {
 	EVENT_TYPES: ["CQGroupMsg", "CQFriendMsg", "CQDiscussMsg"]
 };
 
+Blockly.Blocks.msg_id = {
+	init: function() {
+		this.appendDummyInput().appendField("消息的唯一ID");
+		this.setOutput(true, "String");
+		this.setColour(210);
+		this.setTooltip("只能用在酷Q消息事件内部")
+	},
+	onchange: function(b) {
+		var a = false;
+		var c = this;
+		do {
+			if (c.getInput("eventTypeInput") != null) {
+				try {
+					if (this.EVENT_TYPES.indexOf(c.inputList[0].connection.targetBlock().getFieldValue("event_type")) != -1) {
+						a = true;
+						break
+					}
+				} catch (b) {}
+			}
+			c = c.getSurroundParent()
+		} while (c);
+		if (a) {
+			this.setWarningText(null);
+		} else {
+			this.setWarningText(Blockly.Msg.EVENT_MSG_WARNING);
+		}
+	},
+	EVENT_TYPES: ["CQGroupMsg", "CQFriendMsg", "CQDiscussMsg"]
+};
+
 Blockly.Blocks.from_msg = {
 	init: function() {
 		this.appendDummyInput().appendField("收到的消息内容");

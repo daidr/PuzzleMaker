@@ -6,6 +6,14 @@
 			</value>
 			<value name="action">
 				<block type="variables_set" deletable="false" movable="false" editable="false">
+					<field name="VAR">群_消息ID</field>
+					<value name="VALUE">
+						<block type="msg_id" deletable="false" movable="false" editable="false"></block>
+					</value>
+				</block>
+			</value>
+			<value name="action">
+				<block type="variables_set" deletable="false" movable="false" editable="false">
 					<field name="VAR">群_消息内容</field>
 					<value name="VALUE">
 						<block type="from_msg" deletable="false" movable="false" editable="false"></block>
@@ -45,6 +53,14 @@
 			</value>
 			<value name="action">
 				<block type="variables_set" deletable="false" movable="false" editable="false">
+					<field name="VAR">私聊_消息ID</field>
+					<value name="VALUE">
+						<block type="msg_id" deletable="false" movable="false" editable="false"></block>
+					</value>
+				</block>
+			</value>
+			<value name="action">
+				<block type="variables_set" deletable="false" movable="false" editable="false">
 					<field name="VAR">私聊_消息内容</field>
 					<value name="VALUE">
 						<block type="from_msg" deletable="false" movable="false" editable="false"></block>
@@ -73,6 +89,14 @@
 			<value name="eventTypeInput">
 				<block type="event_cqsys">
 					<field name="event_type">CQDiscussMsg</field>
+				</block>
+			</value>
+			<value name="action">
+				<block type="variables_set" deletable="false" movable="false" editable="false">
+					<field name="VAR">讨论组_消息ID</field>
+					<value name="VALUE">
+						<block type="msg_id" deletable="false" movable="false" editable="false"></block>
+					</value>
 				</block>
 			</value>
 			<value name="action">
@@ -247,6 +271,13 @@
 			<value name="time">
 				<shadow type="math_number">
 					<field name="NUM">60</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="cq_deleteMsg" data-keywords="撤回消息|酷q">
+			<value name="msgid">
+				<shadow type="text">
+					<field name="TEXT">1234567</field>
 				</shadow>
 			</value>
 		</block>

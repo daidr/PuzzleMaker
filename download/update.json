@@ -2,10 +2,10 @@
     "files": [
         {
 	    "zhname": "PuzzleMaker解析插件",
-	    "version": "0.5.6 Beta",
+	    "version": "0.5.7 Beta",
 	    "filename": "me.daidr.puzzle.cpk",
             "path": "{cqfile}\\app\\me.daidr.puzzle.cpk",
-            "md5": "4f81c0d0027661a9c95562242a5a6456",
+            "md5": "f40a1a21ef5c5a483fd206cc706ab21f",
             "url": "https://cqpm.daidr.me/download/me.daidr.puzzle.cpk"
         },
 	{
@@ -17,5 +17,5 @@
             "url": "https://cqpm.daidr.me/download/mujs.dll"
         }
     ],
-    "notice": "PuzzleMaker目前还不是很完善，拼图会不定期增加，感谢您的支持。\n0.5.5B -> 0.5.6B的更新内容：\n增加“词库交互”拼图"
+    "notice": "PuzzleMaker目前还不是很完善，拼图会不定期增加，感谢您的支持。\n0.5.6B -> 0.5.7B的更新内容：\n增加“撤回消息”拼图"
 }
