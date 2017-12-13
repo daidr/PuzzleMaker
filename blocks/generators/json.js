@@ -37,7 +37,7 @@ Blockly.JavaScript.json_getKey = function(d) {
 	return [b, Blockly.JavaScript.ORDER_ATOMIC]
 };
 
-Blockly.JavaScript.json_array2json_str = function(d) {
+Blockly.JavaScript.json_stringify = function(d) {
 	var c = Blockly.JavaScript.valueToCode(d, "text", Blockly.JavaScript.ORDER_ATOMIC);
 	if (c == "" || c == null) {
 		c = "[]"
@@ -46,11 +46,8 @@ Blockly.JavaScript.json_array2json_str = function(d) {
 	return [b, Blockly.JavaScript.ORDER_ATOMIC]
 };
 
-Blockly.JavaScript.json_array2json_obj = function(d) {
-	var c = Blockly.JavaScript.valueToCode(d, "text", Blockly.JavaScript.ORDER_ATOMIC);
-	if (c == "" || c == null) {
-		c = "[]"
-	}
-	var b = "JSON.parse(" + c + ")";
-	return [b, Blockly.JavaScript.ORDER_ATOMIC]
+Blockly.JavaScript.json_parse = function(b) {
+	var c = Blockly.JavaScript.valueToCode(b, "content", Blockly.JavaScript.ORDER_ATOMIC);
+	var a = "JSON.parse(" + c + ")";
+	return [a, Blockly.JavaScript.ORDER_ATOMIC]
 };

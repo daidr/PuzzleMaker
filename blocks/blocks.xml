@@ -732,8 +732,8 @@
 		</value>
 	</block>
 	<block type="json_getLength"></block>
-	<block type="json_array2json_str"></block>
-	<block type="json_array2json_obj"></block>
+	<block type="json_stringify"></block>
+	<block type="json_parse"></block>
 </category>
 <sep></sep>
 <category name="%{BKY_CATVARIABLES}" colour="%{BKY_VARIABLES_HUE}" custom="VARIABLE"></category>

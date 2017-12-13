@@ -73,31 +73,31 @@ Blockly.Blocks.json_createJson = {
 	init: function() {
 		this.appendDummyInput().appendField("创建一个空json");
 		this.setInputsInline(true);
-		this.setOutput(true,"json");
+		this.setOutput(true);
 		this.setColour(Blockly.Blocks.json.HUE);
 		this.setTooltip("创建一个空json");
 		this.setHelpUrl(null)
 	}
 };
 
-Blockly.Blocks.json_array2json_str = {
+Blockly.Blocks.json_stringify = {
 	init: function() {
-		this.appendValueInput("text").setCheck("Array").appendField("将列表");
-		this.appendDummyInput().appendField("转换为json文本");
+		this.appendValueInput("text").setCheck("Array").appendField("将js对象");
+		this.appendDummyInput().appendField("反解析为json文本");
 		this.setOutput(true, "String");
 		this.setColour(Blockly.Blocks.json.HUE);
-		this.setTooltip("把列表解析为json文本");
+		this.setTooltip("将js对象反解析为json文本");
 		this.setHelpUrl(null)
 	}
 };
 
-Blockly.Blocks.json_array2json_obj = {
+Blockly.Blocks.json_parse = {
 	init: function() {
-		this.appendValueInput("text").setCheck("Array").appendField("将json文本");
-		this.appendDummyInput().appendField("转换为json对象");
-		this.setOutput(true, "json");
+		this.appendValueInput("content").setCheck("String").appendField("将JSON");
+		this.appendDummyInput().appendField("解析为js对象");
+		this.setOutput(true);
 		this.setColour(Blockly.Blocks.json.HUE);
-		this.setTooltip("把列表解析为json对象");
+		this.setTooltip("将JSON解析为js对象");
 		this.setHelpUrl(null)
 	}
 };
