@@ -83,7 +83,6 @@
 					</value>
 				</block>
 			</value>
-
 		</block>
 		<block type="cqevent_allevent" data-keywords="讨论组消息|事件|酷q">
 			<value name="eventTypeInput">
@@ -315,11 +314,11 @@
 			</value>
 		</block>
 	</category>
-
 </category>
 <category name="%{BKY_CATLOGIC}" colour="%{BKY_LOGIC_HUE}">
 	<block type="controls_if" data-keywords="如果|if|逻辑"></block>
-	<block type="logic_compare" data-keywords="=|<>|!=|≠|<|>|条件|if|逻辑"></block>
+	<block type="logic_compare" data-keywords="=|<>|!=|≠|<|>|条件|if|逻辑">
+	</block>
 	<block type="logic_operation" data-keywords="&&||||且|和|或|if|逻辑"></block>
 	<block type="logic_negate" data-keywords="非|!|if|逻辑"></block>
 	<block type="logic_boolean" data-keywords="false|true|假|真|boolean|逻辑"></block>
@@ -640,44 +639,7 @@
 	</block>
 	<block type="lists_sort" data-keywords="排序|升序|降序|数组|列表"></block>
 </category>
-<!-- <category name="%{BKY_CATCOLOUR}" colour="%{BKY_COLOUR_HUE}">
-	<block type="colour_picker"></block>
-	<block type="colour_random"></block>
-	<block type="colour_rgb">
-		<value name="RED">
-			<shadow type="math_number">
-				<field name="NUM">100</field>
-			</shadow>
-		</value>
-		<value name="GREEN">
-			<shadow type="math_number">
-				<field name="NUM">50</field>
-			</shadow>
-		</value>
-		<value name="BLUE">
-			<shadow type="math_number">
-				<field name="NUM">0</field>
-			</shadow>
-		</value>
-	</block>
-	<block type="colour_blend">
-		<value name="COLOUR1">
-			<shadow type="colour_picker">
-				<field name="COLOUR">#ff0000</field>
-			</shadow>
-		</value>
-		<value name="COLOUR2">
-			<shadow type="colour_picker">
-				<field name="COLOUR">#3333ff</field>
-			</shadow>
-		</value>
-		<value name="RATIO">
-			<shadow type="math_number">
-				<field name="NUM">0.5</field>
-			</shadow>
-		</value>
-	</block>
-</category> -->
+<!-- <category name="%{BKY_CATCOLOUR}" colour="%{BKY_COLOUR_HUE}"><block type="colour_picker"></block><block type="colour_random"></block><block type="colour_rgb"><value name="RED"><shadow type="math_number"><field name="NUM">100</field></shadow></value><value name="GREEN"><shadow type="math_number"><field name="NUM">50</field></shadow></value><value name="BLUE"><shadow type="math_number"><field name="NUM">0</field></shadow></value></block><block type="colour_blend"><value name="COLOUR1"><shadow type="colour_picker"><field name="COLOUR">#ff0000</field></shadow></value><value name="COLOUR2"><shadow type="colour_picker"><field name="COLOUR">#3333ff</field></shadow></value><value name="RATIO"><shadow type="math_number"><field name="NUM">0.5</field></shadow></value></block></category> -->
 <category name="%{BKY_CATTIME}" colour="%{BKY_TIME_HUE}">
 	<block type="cq_timestamptostr" data-keywords="转换时间戳|time|时间">
 		<value name="timestamp">
@@ -725,9 +687,54 @@
 			</shadow>
 		</value>
 	</block>
-
 </category>
-
+<category colour="%{BKY_JSON_HUE}" name="%{BKY_CATJSON}">
+	<block type="variables_set">
+		<field name="VAR">json</field>
+		<value name="VALUE">
+			<block type="json_createJson"></block>
+		</value>
+	</block>
+	<block type="json_getKey">
+		<value name="VAR">
+			<block type="variables_get">
+				<field name="VAR">json</field>
+			</block>
+		</value>
+		<value name="propertyName">
+			<shadow type="text">
+				<field name="TEXT"></field>
+			</shadow>
+		</value>
+	</block>
+	<block type="json_setKey">
+		<value name="VAR">
+			<block type="variables_get">
+				<field name="VAR">json</field>
+			</block>
+		</value>
+		<value name="propertyName">
+			<shadow type="text">
+				<field name="TEXT"></field>
+			</shadow>
+		</value>
+	</block>
+	<block type="json_deleteKey">
+		<value name="VAR">
+			<block type="variables_get">
+				<field name="VAR">json</field>
+			</block>
+		</value>
+		<value name="propertyName">
+			<shadow type="text">
+				<field name="TEXT"></field>
+			</shadow>
+		</value>
+	</block>
+	<block type="json_getLength"></block>
+	<block type="json_array2json_str"></block>
+	<block type="json_array2json_obj"></block>
+</category>
 <sep></sep>
 <category name="%{BKY_CATVARIABLES}" colour="%{BKY_VARIABLES_HUE}" custom="VARIABLE"></category>
 <category name="%{BKY_CATFUNCTIONS}" colour="%{BKY_PROCEDURES_HUE}" custom="PROCEDURE"></category>
