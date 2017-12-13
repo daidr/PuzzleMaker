@@ -17,6 +17,7 @@ var MSG = {
   catcqcode: "CQ码",
   catcqevent: "CQ事件",
   catvoiceera: "语音时代",
+  catjson: "Json",
   catcqfunc: "CQ程序",
   catMath: "数学",
   catText: "文本",

@@ -440,3 +440,5 @@ Blockly.Msg["CQFUNC_HUE"] = "270";
 Blockly.Msg["VOICEERA_HUE"] = "#009AD2";
 
 Blockly.Msg["SYSDISK_HUE"] = "180";
+
+Blockly.Msg["JSON_HUE"] = "240";
