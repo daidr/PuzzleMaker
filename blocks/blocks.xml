@@ -588,6 +588,53 @@
 	</block>
 	<block type="text_enter" data-keywords="换行符|回车符|enter|br|文字|文本"></block>
 </category>
+<category colour="%{BKY_JSON_HUE}" name="%{BKY_CATJSON}">
+	<block type="variables_set">
+		<field name="VAR">json</field>
+		<value name="VALUE">
+			<block type="json_createJson"></block>
+		</value>
+	</block>
+	<block type="json_getKey">
+		<value name="VAR">
+			<block type="variables_get">
+				<field name="VAR">json</field>
+			</block>
+		</value>
+		<value name="propertyName">
+			<shadow type="text">
+				<field name="TEXT"></field>
+			</shadow>
+		</value>
+	</block>
+	<block type="json_setKey">
+		<value name="VAR">
+			<block type="variables_get">
+				<field name="VAR">json</field>
+			</block>
+		</value>
+		<value name="propertyName">
+			<shadow type="text">
+				<field name="TEXT"></field>
+			</shadow>
+		</value>
+	</block>
+	<block type="json_deleteKey">
+		<value name="VAR">
+			<block type="variables_get">
+				<field name="VAR">json</field>
+			</block>
+		</value>
+		<value name="propertyName">
+			<shadow type="text">
+				<field name="TEXT"></field>
+			</shadow>
+		</value>
+	</block>
+	<block type="json_getLength"></block>
+	<block type="json_stringify"></block>
+	<block type="json_parse"></block>
+</category>
 <category name="%{BKY_CATLISTS}" colour="%{BKY_LISTS_HUE}">
 	<block type="lists_create_with" data-keywords="创建列表|创建空列表|数组|列表">
 		<mutation items="0"></mutation>
@@ -687,53 +734,6 @@
 			</shadow>
 		</value>
 	</block>
-</category>
-<category colour="%{BKY_JSON_HUE}" name="%{BKY_CATJSON}">
-	<block type="variables_set">
-		<field name="VAR">json</field>
-		<value name="VALUE">
-			<block type="json_createJson"></block>
-		</value>
-	</block>
-	<block type="json_getKey">
-		<value name="VAR">
-			<block type="variables_get">
-				<field name="VAR">json</field>
-			</block>
-		</value>
-		<value name="propertyName">
-			<shadow type="text">
-				<field name="TEXT"></field>
-			</shadow>
-		</value>
-	</block>
-	<block type="json_setKey">
-		<value name="VAR">
-			<block type="variables_get">
-				<field name="VAR">json</field>
-			</block>
-		</value>
-		<value name="propertyName">
-			<shadow type="text">
-				<field name="TEXT"></field>
-			</shadow>
-		</value>
-	</block>
-	<block type="json_deleteKey">
-		<value name="VAR">
-			<block type="variables_get">
-				<field name="VAR">json</field>
-			</block>
-		</value>
-		<value name="propertyName">
-			<shadow type="text">
-				<field name="TEXT"></field>
-			</shadow>
-		</value>
-	</block>
-	<block type="json_getLength"></block>
-	<block type="json_stringify"></block>
-	<block type="json_parse"></block>
 </category>
 <sep></sep>
 <category name="%{BKY_CATVARIABLES}" colour="%{BKY_VARIABLES_HUE}" custom="VARIABLE"></category>
